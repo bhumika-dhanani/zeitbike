@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Rishabhsoft_Speedorder>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Rishabhsoft_Speedorder>
+    </modules>
+</config>

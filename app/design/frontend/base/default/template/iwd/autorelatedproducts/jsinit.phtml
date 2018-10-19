@@ -1,0 +1,12 @@
+<script type="text/javascript">
+    /*jQuery(window).load(function () {*/
+    jQuery(document).ready(function () {
+        IWD.AutoRelatedProducts.min_slides = <?php echo $this->getMinSlides() ?>;
+        IWD.AutoRelatedProducts.max_slides = <?php echo $this->getMaxSlides() ?>;
+        IWD.AutoRelatedProducts.slide_width = <?php echo $this->getSlideWidth() ?>;
+        IWD.AutoRelatedProducts.slide_margin = <?php echo $this->getSlideMargin() ?>;
+        IWD.AutoRelatedProducts.slide_mode = '<?php echo $this->getSlideMode() ?>';
+        IWD.AutoRelatedProducts.infinite_loop = <?php echo $this->getInfiniteLoop() ?>;
+        IWD.AutoRelatedProducts.init();
+    });
+</script>

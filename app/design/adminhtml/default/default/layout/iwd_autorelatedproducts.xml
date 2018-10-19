@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+    <default>
+        <reference name="head">
+            <action method="addItem"><type>js</type><name>extjs/ext-tree.js</name><params/></action>
+            <action method="addItem"><type>js</type><name>extjs/fix-defer.js</name><params/></action>
+            <action method="addItem"><type>js</type><name>extjs/ext-tree-checkbox.js</name><params/></action>
+            <action method="addItem"><type>js</type><name>mage/adminhtml/rules.js</name><params/></action>
+            <action method="addItem"><type>js_css</type><name>extjs/resources/css/ext-all.css</name><params/></action>
+            <action method="addCss"><name>iwd/autorelatedproducts/style.css</name></action>
+        </reference>
+    </default>
+
+    <!-- system -->
+    <adminhtml_system_config_edit>
+        <reference name="head">
+            <action method="addCss"><name>iwd/autorelatedproducts/colpick.css</name></action>
+            <action method="addJs"><script>iwd/autorelatedproducts/colpick.js</script></action>
+            <action method="addJs"><script>iwd/autorelatedproducts/system.js</script></action>
+        </reference>
+    </adminhtml_system_config_edit>
+</layout>

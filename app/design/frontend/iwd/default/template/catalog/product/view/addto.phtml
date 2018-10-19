@@ -1,0 +1,52 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+?>
+
+<?php $_product = $this->getProduct(); ?>
+<?php $_wishlistSubmitUrl = $this->helper('wishlist')->getAddUrl($_product); ?>
+<?php $_compare_helper = $this->helper('catalog/product_compare');
+//$_productCollection = Mage::helper('catalog/product_compare')->getItemCollection();
+//$_productCollection
+
+?>
+
+<ul class="add-to-links">
+<?php if ($this->canEmailToFriend()): ?>
+    <li class="email-a-friend"><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>" class="link-email-friend" title="<?php echo $this->__('Email a Friend') ?>"><?php echo $this->__('Email a Friend') ?></a></li>
+<?php endif; ?>
+<?php
+    $_compareUrl = $this->helper('catalog/product_compare')->getAddUrl($_product);
+?>
+<?php if($_compareUrl) : ?>
+    <li class="compare"><span class="separator">|</span> <a href="<?php echo $_compareUrl ?>" class="link-compare"><?php echo $this->__('Add to Compare') ?></a></li>
+<?php endif; ?>
+
+<?php if($_compare_helper->getItemCount() > 0):?>
+	<li class="view-compare"><a title="<?php echo $this->__('Compare') ?>"  onclick="popWin('<?php echo $_compare_helper->getListUrl() ?>//','compare','top:0,left:0,width=820,height=600,resizable=yes,scrollbars=yes')"><?php echo $this->__('View Compare') ?></a>
+<?php endif;?>
+</ul>
+

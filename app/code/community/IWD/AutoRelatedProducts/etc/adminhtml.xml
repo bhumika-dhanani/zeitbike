@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <menu>
+        <system>
+            <children>
+                <iwdall>
+                    <children>
+                        <iwd_autorelatedproducts module="iwd_autorelatedproducts">
+                            <title>Auto Related Products</title>
+                            <sort_order>20</sort_order>
+                            <action>iwd_auto_related_products/blocks/index</action>
+                        </iwd_autorelatedproducts>
+                    </children>
+                </iwdall>
+            </children>
+        </system>
+    </menu>
+    <acl>
+        <resources>
+            <all>Allow everything</all>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <iwd_autorelatedproducts translate="title" module="iwd_autorelatedproducts">
+                                        <title>Auto Related Products</title>
+                                    </iwd_autorelatedproducts>
+                                </children>
+                            </config>
+                            <iwdall>
+                                <children>
+                                    <iwd_autorelatedproducts translate="title">
+                                        <title>Auto Related Products</title>
+                                    </iwd_autorelatedproducts>
+                                </children>
+                            </iwdall>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

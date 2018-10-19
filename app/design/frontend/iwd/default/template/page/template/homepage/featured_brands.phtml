@@ -1,0 +1,5 @@
+<?php $cms_block_name = $this->getLayout()->createBlock('cms/block')->setBlockId('homepage_featured_brands')->toHtml() ?>
+<?php if(!isset($cms_block_name)) return;?>
+<div class="block-container featured-brands">
+	<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('homepage_featured_brands')->toHtml()?>
+</div>

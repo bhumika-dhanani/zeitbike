@@ -1,0 +1,75 @@
+<?php 
+	$_helper = Mage::helper('stocknotification');
+	
+	/** skip render template if module is disabled */
+	if (!$_helper->isEnabled()) {
+		return;
+	}
+	
+	$_product = $this->getProduct();
+	
+	/** skip render template if type is disabled */
+	if ($_helper->isSkipProductType($_product)){
+		return;
+	}
+	
+?>
+
+<?php 
+$_product = Mage::getModel('catalog/product')->load($_product->getId());
+$stock = Mage::getModel('cataloginventory/stock_item')->loadByProduct($_product);
+?>
+
+ <?php if (!$_product->isSaleable() && !$stock->getIsInStock()): ?>
+    <div class="stock-notification">
+		<div class="stock-notification-header">
+			<div class="input-box config">
+				<h5><?php echo $this->__('Notify me when this product is in stock:')?></h5>
+				<input placeholder="Enter Email Address" type="text" class="input-text" id="email_notification" name="email_notification" />
+				<input type="hidden" name="product_id" id="product_id" value="<?php echo $this->getProduct()->getId()?>" />
+				<button class="button request-notice" type="button"><span><span><?php echo $this->__('Notify Me')?></span></span></button>
+			</div>
+			<input type="hidden" name="parent_id"  value="<?php echo $this->getProduct()->getId()?>" />
+		</div>
+		<div class="stock-notification-message"></div>
+	</div>
+	<script type="text/javascript">
+	//<![CDATA[
+	IWD.StockNotification.requestUrl = '<?php echo $_helper->getRequestJsonUrl();?>';
+	jQuery(document).ready(function(){
+		IWD.StockNotification.init();
+	});
+	//]]>
+	</script>
+    <?php endif;?>
+
+<?php if (!$this->isAvailableAssociatedProduct() && $stock->getIsInStock()):?>
+<div class="stock-notification">
+	<div class="stock-notification-header">
+
+		
+		<div class="input-box config">
+			<h5><?php echo $this->__('Some options of this product are currently unavailable. Please
+register to be notified when these options are available.')?></h5>
+			<select name="product_id" id="product_id">
+				<option value="">Please select a product</option>
+				<?php foreach($this->getNotAvailabelProducts() as $item):?>
+					<option value="<?php echo $item->getId();?>"><?php $name = Mage::getModel('catalog/product')->load($item->getId()); echo $name->getName();?></option>
+				<?php endforeach;?>
+			</select>
+			<input placeholder="Enter Email Address" type="text" class="input-text" id="email_notification" name="email_notification" />
+			<button class="button request-notice" type="button"><span><span><?php echo $this->__('Notify Me')?></span></span></button>
+		</div>
+		<input type="hidden" name="parent_id"  value="<?php echo $this->getProduct()->getId()?>" />
+	</div>
+	<div class="stock-notification-message"></div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+IWD.StockNotification.requestUrl = '<?php echo $_helper->getRequestJsonUrl();?>';
+jQuery(document).ready(function(){
+	IWD.StockNotification.init();
+});
+//]]>
+</script>
+<?php endif;?>

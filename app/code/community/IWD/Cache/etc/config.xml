@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <IWD_Cache>
+            <version>1.0.1</version>
+        </IWD_Cache>
+    </modules>
+    <global>
+        <helpers>
+            <cache>
+                <class>IWD_Cache_Helper</class>
+            </cache>
+        </helpers>
+        <models>
+            <iwdcache>
+                <class>IWD_Cache_Model</class>
+                <resourceModel>cache_mysql4</resourceModel>
+            </iwdcache>
+        </models>
+    </global>
+    <crontab>
+        <jobs>
+            <cache_refreshinvalidecache>
+                <schedule>
+                    <cron_expr>*/2 * * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>iwdcache/cron::refreshInvalideCache</model>
+                </run>
+            </cache_refreshinvalidecache>
+        </jobs>
+    </crontab>
+</config> 

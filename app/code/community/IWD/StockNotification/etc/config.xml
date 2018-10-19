@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<config>
+
+	<modules>
+		<IWD_StockNotification>
+			<version>1.0.5</version>
+		</IWD_StockNotification>
+	</modules>
+
+	<frontend>
+	
+		<routers>
+			<stocknotification>
+				<use>standard</use>
+				<args>
+                    <module>IWD_StockNotification</module>
+                    <frontName>stocknotification</frontName>
+                </args>
+            </stocknotification>
+        </routers>
+        
+        <layout>
+            <updates>
+                <stocknotification>
+                    <file>iwd_stocknotification.xml</file>
+                </stocknotification>
+            </updates>
+        </layout>
+        
+        <translate>
+            <modules>
+                <IWD_StockNotification>
+                    <files>
+                        <default>IWD_StockNotification.csv</default>
+                    </files>
+                </IWD_StockNotification>
+            </modules>
+        </translate>
+        
+    </frontend>
+    
+    
+     <admin>
+		<routers>
+			<adminhtml>
+				<args>
+					<modules>
+						<stocknotification before="Mage_Adminhtml">IWD_StockNotification_Adminhtml</stocknotification>
+					</modules>
+				</args>
+			</adminhtml>
+        </routers>
+    </admin>
+    
+    <adminhtml>
+
+        <translate>
+            <modules>
+                <IWD_StockNotification>
+                    <files>
+                        <default>IWD_StockNotification.csv</default>
+                    </files>
+                </IWD_StockNotification>
+            </modules>
+        </translate>
+
+        <layout>
+            <updates>
+                <stocknotification>
+                    <file>stocknotification.xml</file>
+                </stocknotification>
+            </updates>
+        </layout>
+    </adminhtml>
+    
+    <global>
+    
+    	<blocks>
+            <stocknotification>
+                <class>IWD_StockNotification_Block</class>
+            </stocknotification>
+	            
+        </blocks>
+        <helpers>
+            <stocknotification>
+                <class>IWD_StockNotification_Helper</class>
+            </stocknotification>
+        </helpers>
+    
+		<models>
+		
+			<stocknotification>
+				<class>IWD_StockNotification_Model</class>
+				<resourceModel>stocknotification_mysql4</resourceModel>
+            </stocknotification>
+            
+            <stocknotification_mysql4>
+                <class>IWD_StockNotification_Model_Mysql4</class>
+                <entities>
+                    <notice>
+                        <table>iwd_stocknotification</table>
+                    </notice>
+                </entities>
+            </stocknotification_mysql4>
+        </models>
+
+        <resources>
+            <stocknotification_setup>
+                <setup>
+                    <module>IWD_StockNotification</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </stocknotification_setup>
+            <stocknotification_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </stocknotification_write>
+            <stocknotification_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </stocknotification_read>
+        </resources>
+    
+    
+		<events>
+			<catalog_product_save_after>             
+	                <observers>
+	                    <stocknotification>
+	                        <type>singleton</type>
+	                        <class>stocknotification/observer</class>
+	                        <method>verifyStockStatus</method>
+	                    </stocknotification>
+	                </observers>
+	        </catalog_product_save_after>
+	        
+	        <catalog_product_edit_action>             
+	                <observers>
+	                    <stocknotification>
+	                        <type>singleton</type>
+	                        <class>stocknotification/observer</class>
+	                        <method>verifyStockStatusBundleProduct</method>
+	                    </stocknotification>
+	                </observers>
+	        </catalog_product_edit_action>
+	        
+	        
+	         <controller_action_predispatch>
+	            <observers>
+	                <stocknotification_check_related>
+	                    <type>singleton</type>
+	                    <class>stocknotification/observer</class>
+	                    <method>checkRequiredModules</method>
+	                </stocknotification_check_related>
+	            </observers>
+	        </controller_action_predispatch>
+		</events>
+    
+    
+    	<template>
+            <email>
+                <stocknotification_email_email_template translate="label" module="stocknotification">
+                    <label>Out Of Stock Email</label>
+                    <file>stocknotification.html</file>
+                    <type>html</type>
+                </stocknotification_email_email_template>
+            </email>
+        </template>
+        
+       
+        
+    </global>
+    
+    
+    <default>
+        <stocknotification>
+            <default>
+                <status>1</status>
+            </default>
+            
+            <email>                
+                <sender_email_identity>general</sender_email_identity>
+                <email_template>stocknotification_email_email_template</email_template>
+            </email>
+        </stocknotification>
+    </default>
+</config>

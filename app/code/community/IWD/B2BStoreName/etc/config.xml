@@ -1,0 +1,67 @@
+<config>
+
+    <modules>
+        <IWD_B2BStoreName>
+            <version>1.0.0</version>
+        </IWD_B2BStoreName>
+    </modules>
+
+    <global>
+
+        <blocks>
+            <IWD_B2BStoreName>
+                <class>IWD_B2BStoreName_Block</class>
+            </IWD_B2BStoreName>
+            <adminhtml>
+                <rewrite>
+                    <customer_grid>IWD_B2BStoreName_Block_Adminhtml_Customer_Grid</customer_grid>
+                </rewrite>
+                <rewrite>
+                    <customer_online_grid>IWD_B2BStoreName_Block_Adminhtml_Customer_Online_Grid</customer_online_grid>
+                </rewrite>
+
+                <rewrite>
+                    <sales_invoice_grid>IWD_B2BStoreName_Block_Adminhtml_Sales_Invoice_Grid</sales_invoice_grid>
+                </rewrite>
+                <rewrite>
+                    <sales_order_grid>IWD_B2BStoreName_Block_Adminhtml_Sales_Order_Grid</sales_order_grid>
+                </rewrite>
+
+            </adminhtml>
+        </blocks>
+
+        <models>
+            <IWD_B2BStoreName>
+                <class>IWD_B2BStoreName_Model</class>
+            </IWD_B2BStoreName>
+        </models>
+
+        <helpers>
+            <IWD_B2BStoreName>
+                <class>IWD_B2BStoreName_Helper</class>
+            </IWD_B2BStoreName>
+        </helpers>
+
+    </global>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <IWD_B2BStoreName>
+                    <file>iwd_b2bstorename.xml</file>
+                </IWD_B2BStoreName>
+            </updates>
+        </layout>
+        <!--<events>
+            <sales_order_invoice_grid_collection_load_before>
+                <observers>
+                    <b2bstorename_updategrid>
+                        <model>IWD_B2BStoreName/observer</model>
+                        <method>salesInvoiceGridCollectionLoadBefore</method>
+                    </b2bstorename_updategrid>
+                </observers>
+            </sales_order_invoice_grid_collection_load_before>
+        </events>-->
+    </adminhtml>
+
+</config>

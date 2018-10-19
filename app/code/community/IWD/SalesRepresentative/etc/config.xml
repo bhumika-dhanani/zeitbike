@@ -1,0 +1,300 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<IWD_SalesRepresentative>
+			<version>2.4.8.4</version>
+		</IWD_SalesRepresentative>
+	</modules>
+
+	<admin>
+		<routers>
+			<adminhtml>
+				<args>
+					<modules>
+						<salesrep after="Mage_Adminhtml">IWD_SalesRepresentative_Adminhtml</salesrep>
+					</modules>
+				</args>
+			</adminhtml>
+		</routers>
+	</admin>
+
+	<adminhtml>
+		<translate>
+			<modules>
+				<IWD_SalesRepresentative>
+					<files>
+						<default>IWD_SalesRepresentative.csv</default>
+					</files>
+				</IWD_SalesRepresentative>
+			</modules>
+		</translate>
+		<layout>
+			<updates>
+				<salesrep>
+					<file>iwd_salesrepresentative.xml</file>
+				</salesrep>
+			</updates>
+		</layout>
+		<events>
+			<checkout_submit_all_after>
+				<observers>
+					<create_related_user_to_order>
+						<type>singleton</type>
+						<class>salesrep/observer</class>
+						<method>createRelatedUser</method>
+					</create_related_user_to_order>
+				</observers>
+			</checkout_submit_all_after>
+
+			<sales_order_grid_collection_load_before>
+	            <observers>
+	                <salesrep_extendedgrid>
+	                    <model>salesrep/observer</model>
+	                    <method>salesOrderGridCollectionLoadBefore</method>
+	                </salesrep_extendedgrid>
+	            </observers>
+	        </sales_order_grid_collection_load_before>
+	        
+	        <sales_order_invoice_grid_collection_load_before>
+	            <observers>
+	                <salesrep_extendedgrid>
+	                    <model>salesrep/observer</model>
+	                    <method>salesInvoiceGridCollectionLoadBefore</method>
+	                </salesrep_extendedgrid>
+	            </observers>
+	        </sales_order_invoice_grid_collection_load_before>
+	        
+	        <!--<sales_order_shipment_grid_collection_load_before>-->
+	            <!--<observers>-->
+	                <!--<salesrep_extendedgrid>-->
+	                    <!--<model>salesrep/observer</model>-->
+	                    <!--<method>salesShipmentGridCollectionLoadBefore</method>-->
+	                <!--</salesrep_extendedgrid>-->
+	            <!--</observers>-->
+	        <!--</sales_order_shipment_grid_collection_load_before>-->
+	         
+	        <eav_collection_abstract_load_before>
+	            <observers>
+	                <salesrep_customer_grid>
+	                    <model>salesrep/observer</model>
+	                    <method>customerGridCollectionLoadBefore</method>
+	                </salesrep_customer_grid>
+	            </observers>
+	        </eav_collection_abstract_load_before>
+
+			<controller_action_predispatch>
+	            <observers>
+	                <salesrep_check_related>
+	                    <type>singleton</type>
+	                    <class>salesrep/observer</class>
+	                    <method>checkRequiredModules</method>
+	                </salesrep_check_related>
+	            </observers>
+	        </controller_action_predispatch>
+
+	        <adminhtml_customer_prepare_save>
+	            <observers>
+	                <salesrep_adminhtml_customer_prepare_save>
+	                    <type>singleton</type>
+	                    <class>salesrep/observer</class>
+	                    <method>newCustomerCheck</method>
+	                </salesrep_adminhtml_customer_prepare_save>
+	            </observers>
+	        </adminhtml_customer_prepare_save>
+	        <adminhtml_customer_save_after>
+	            <observers>
+	                <salesrep_new_customer>
+	                    <type>singleton</type>
+	                    <class>salesrep/observer</class>
+	                    <method>applyNewCustomer</method>
+	                </salesrep_new_customer>
+	            </observers>
+	        </adminhtml_customer_save_after>
+		</events>
+	</adminhtml>
+
+	<frontend>
+		<events>
+			<checkout_onepage_controller_success_action>
+				<observers>
+					<create_related_user_to_order>
+						<type>singleton</type>
+						<class>salesrep/observer</class>
+						<method>createRelatedUserFront</method>
+					</create_related_user_to_order>
+				</observers>
+			</checkout_onepage_controller_success_action>
+		</events>
+	</frontend>
+	<global>
+		<models>
+			<salesrep>
+				<class>IWD_SalesRepresentative_Model</class>
+				<resourceModel>salesrep_resource</resourceModel>
+			</salesrep>
+			
+			<salesrep_resource>
+				<class>IWD_SalesRepresentative_Model_Resource</class>
+				<entities>
+					<sales>
+						<table>iwd_sales_representative</table>
+					</sales>
+					<users>
+						<table>iwd_sales_representative_users</table>
+					</users>
+					<link>
+                        <table>iwd_sales_representative_users_link</table>
+                    </link>
+                    <customers>
+                        <table>iwd_sales_representative_users_customers</table>
+                    </customers>
+				</entities>
+			</salesrep_resource>
+			
+			<core>
+                <rewrite>
+                    <layout>IWD_SalesRepresentative_Model_Core_Layout</layout>
+                </rewrite>
+            </core>
+		</models>
+		
+		
+		<resources>
+			<salesrep_setup>
+				<setup>
+					<module>IWD_SalesRepresentative</module>
+					<class>Mage_Catalog_Model_Resource_Setup</class>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</salesrep_setup>
+
+			<salesrep_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</salesrep_write>
+
+			<salesrep_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</salesrep_read>
+		</resources>
+		
+		<helpers>
+			<salesrep>
+				<class>IWD_SalesRepresentative_Helper</class>
+			</salesrep>
+		</helpers>
+
+		<blocks>	
+			<salesrep>
+				<class>IWD_SalesRepresentative_Block</class>
+			</salesrep>
+			
+			<!--<adminhtml>
+                <rewrite>
+                    <sales_invoice_grid>IWD_SalesRepresentative_Block_Adminhtml_Sales_Invoice_Grid</sales_invoice_grid>
+                </rewrite>
+			</adminhtml>-->
+		</blocks>
+
+
+		<template>
+            <email>
+                <salerep_report_order_daily translate="label" module="salesrep">
+                    <label>Daily Order Report</label>
+                    <file>salesrep/daily_order_report.html</file>
+                    <type>html</type>
+                </salerep_report_order_daily>
+                
+                <salerep_report_order_weekly translate="label" module="salesrep">
+                    <label>Weekly Order Report</label>
+                    <file>salesrep/weekly_order_report.html</file>
+                    <type>html</type>
+                </salerep_report_order_weekly>
+                
+                <salerep_report_order_monthly translate="label" module="salesrep">
+                    <label>Monthly Order Report</label>
+                    <file>salesrep/monthly_order_report.html</file>
+                    <type>html</type>
+                </salerep_report_order_monthly>
+
+                <salerep_report_products_daily translate="label" module="salesrep">
+                    <label>Daily Products Report</label>
+                    <file>salesrep/daily_products_report.html</file>
+                    <type>html</type>
+                </salerep_report_products_daily>
+                
+                <salerep_report_products_weekly translate="label" module="salesrep">
+                    <label>Weekly Products Report</label>
+                    <file>salesrep/weekly_products_report.html</file>
+                    <type>html</type>
+                </salerep_report_products_weekly>
+                
+                <salerep_report_products_monthly translate="label" module="salesrep">
+                    <label>Monthly Products Report</label>
+                    <file>salesrep/monthly_products_report.html</file>
+                    <type>html</type>
+                </salerep_report_products_monthly>
+                
+                 <salesrep_email_autoassign_template translate="label" module="salesrep">
+                    <label>Assign order to user</label>
+                    <file>salesrep/order_user.html</file>
+                    <type>html</type>
+                </salesrep_email_autoassign_template>
+            </email>
+        </template>
+	</global>
+	
+	 <crontab>
+        <jobs>
+            <salesrep_daily>
+                <schedule>
+                     <cron_expr>0 1 * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>salesrep/cron::daily</model>
+                </run>
+            </salesrep_daily>
+            
+             <salesrep_weekly>
+                <schedule>
+                    <cron_expr>0 1 * * 7</cron_expr>
+                </schedule>
+                <run>
+                    <model>salesrep/cron::weekly</model>
+                </run>
+            </salesrep_weekly>
+            
+             <salesrep_monthly>
+                <schedule>
+                    <cron_expr>0 1 1 * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>salesrep/cron::monthly</model>
+                </run>
+            </salesrep_monthly>
+        </jobs>
+    </crontab>
+	
+	
+	<default>
+		<salesrep>
+			<order>
+				<representative>1</representative>
+				<disable_edit>0</disable_edit>
+			</order>
+			<create_order>
+				<auto_assign>0</auto_assign>
+				<type>1</type>
+			</create_order>
+			<email>
+				<autoassign_template>salesrep_email_autoassign_template</autoassign_template>
+			</email>
+		</salesrep>	
+	</default>
+	
+</config>     

@@ -1,0 +1,26 @@
+.featured-products{position: relative; margin-top: 40px !important;}
+.featured-products ul.slides li{float: left; list-style-type: none; margin: 0 !important; text-align: center;}
+.featured-products ul.slides li .inner{margin: 0 5px; padding: 0 0 20px;}
+.featured-products ul.slides li:hover .inner{box-shadow:0 2px 5px rgba(0, 0, 0, 0.2);}
+.featured-products ul li .product-image{border: none;}
+.featured-products .direction-nav{position: absolute; top: 10px; right: 30px;}
+.featured-products ul li img{display: inline;}
+.featured-products ul li .fixed-block{min-height: 59px;}
+.featured-products ul li .product-name a{color: #888888;}
+.featured-products ul li .product-name:hover a{color: #008a99;}
+.featured-products ul li .price-box .price{font-size: 14px; font-family: "Open Sans";}
+.featured-products ul li .price-box p {margin: 0;}
+.direction-nav a{background: url("../images/sprite.png") no-repeat; text-indent: -999em; width: 29px; height: 29px; display: block; }
+.direction-nav li{float: left; list-style-type: none; margin: 0 !important; padding: 0 0 20px;}
+.direction-nav .prev{background-position: -188px -21px;}
+.direction-nav .prev:hover{background-position: -188px -60px;}
+.direction-nav .next{background-position: -236px -21px; margin: 0 0 0 15px;}
+.direction-nav .next:hover{background-position: -236px -60px;}
+.featured-products .viewport{padding: 31px 0 0 0;}
+.featured-products ul li h3.product-name{line-height: 16px; margin: 0;}
+.featured-products ul li .price-box{margin: 3px 0 5px;}
+.featured-products ul li .btn-cart{padding: 8px 19px; }
+.featured-products .slides{margin-bottom: 0; padding: 0 0 10px;}
+.featured-products ul li .product-image img{max-width: 100%;}
+.featured-products ul.slides li .inner .actions{margin: 0;}
+.featured-products .price-box .old-price .price{font-size: 14px !important;}

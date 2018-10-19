@@ -1,0 +1,68 @@
+.featured-products{max-width: 1200px; margin: 50px auto; position: relative; padding: 0 25px;}
+.featured-products .owl-carousel{position: static;}
+.featured-products h2.subtitle {color: #070707; font-size: 28px; text-transform: uppercase; font-weight: lighter; text-align: left; font-family: "Yanone Kaffeesatz",sans-serif;}
+.featured-products .product-image{border: none; text-align: center;}
+.featured-products .fixed-block {margin-top: 35px;}
+.featured-products .owl-carousel .owl-wrapper .item{padding: 0 10px;min-height: 403px;}
+.featured-products .owl-carousel .owl-wrapper .item .inner{min-height: 385px;position: relative;}
+.main .featured-products .product-image img{display: inline-block; max-width: 100%;}
+.featured-products .product-name{ margin: 7px 0 0; line-height: 15px; overflow: hidden; text-align: center;}
+.featured-products .product-name a{font-size: 14px; line-height: 18px; color: #070707; text-transform: uppercase;}
+.featured-products .price-box{text-align: center; margin: 3px 0 15px;}
+.featured-products .price-box .price{color: #070707; font-size: 16px; font-weight: bold;}
+.featured-products .price-box .special-price{padding-left: 10px;}
+.featured-products .price-box .old-price .price{font-weight: normal;}
+.featured-products .price-box p {margin: 0;}
+.featured-products .actions{bottom: 0;
+	margin: 22px 0 23px;
+	position: relative;
+	text-align: center;
+	width: 100%;}
+.featured-products .points-prediction {
+    text-align: center;
+}
+.featured-products .points-prediction .earnable table{
+    float: none;
+    margin: 0 auto;
+}
+.featured-products .map-link{display: none;}
+.featured-products .direction-nav{display: none;}
+.featured-products .button{font-weight: lighter;}
+.featured-products .button.btn-cart{font-family: 'Oswald',sans-serif;padding: 10px; background: #fff;color: #070707;border: 1px solid #070707; font-weight: lighter; font-size: 18px;}
+.featured-products .button.btn-cart:hover{background: #070707;color: #fff;border: 1px solid #070707;}
+.featured-products .button.btn-cart:hover span{color: #fff;}
+
+.featured-products .button.btn-cart span{color: #070707; font-family: "Oswald",sans-serif; font-weight: 300; text-transform: uppercase;}
+.featured-products .owl-controls{position: absolute; top: 5px; right: 30px;}
+.featured-products .owl-carousel{margin: 53px 0 0 0;}
+.featured-products .owl-controls .owl-buttons div{float: left; border: 1px solid #070707; width: 30px; height: 30px; line-height: 30px; text-align: center;}
+.featured-products .owl-controls .owl-buttons div:hover{color: #7e7e7e;border: 1px solid #7e7e7e;}
+.featured-products .owl-controls .owl-buttons div i{color: #070707; font-size: 22px;font-weight: bold;}
+.featured-products .owl-controls .owl-buttons div.owl-prev{margin: 0 15px 0 0;}
+@media only screen and (max-width: 850px) {
+	.featured-products .owl-carousel .owl-wrapper .item {
+		padding: 0 10px;
+		min-height: 403px;
+	}
+
+	.featured-products .owl-carousel .owl-wrapper .item .inner {
+		min-height: 403px;
+		position: relative;
+	}
+
+	.featured-products .fixed-block {
+		float: left;
+		width: 100%;
+	}
+
+	.featured-products .actions {
+		position: relative;
+		bottom: 0px;
+	}
+}@media only screen and (max-width: 750px) {
+	.featured-products .actions {position: relative;}
+}
+@media only screen and (max-width: 340px) {
+	.cms-index-index h2.subtitle{text-align: center;}
+	.featured-products .owl-controls{right: 50%; margin-right: -35px; top: 40px;}
+}

@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <iwdall>
+            <label>IWD Extensions</label>
+            <sort_order>210</sort_order>
+            <class>iwd-block</class>
+        </iwdall>
+    </tabs>
+    <sections>
+        <iwd_autorelatedproducts translate="label" module="iwd_autorelatedproducts">
+            <label>Auto Related Products</label>
+            <tab>iwdall</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>120</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label">
+                    <label>General</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <info>
+                            <label>Version</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_model>iwd_autorelatedproducts/system_config_form_fieldset_extensions
+                            </frontend_model>
+                        </info>
+                        <user_guide>
+                            <label>Documentations</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_model>iwd_autorelatedproducts/system_config_form_fieldset_documentations
+                            </frontend_model>
+                        </user_guide>
+                    </fields>
+                </general>
+                <slider translate="label">
+                    <label>Slider</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <min_slides>
+                            <label>Min Slides</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>The minimum number of slides to be shown.</comment>
+                        </min_slides>
+                        <max_slides>
+                            <label>Max Slides</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>The maximum number of slides to be shown.</comment>
+                        </max_slides>
+                        <slide_width>
+                            <label>Slide Width</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>The width of each slide.</comment>
+                        </slide_width>
+                        <slide_margin>
+                            <label>Slide Margin</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Margin between each slide.</comment>
+                        </slide_margin>
+                        <slide_mode>
+                            <label>Mode</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>iwd_autorelatedproducts/system_config_slidemode</source_model>
+                            <comment>Type of transition between slides.</comment>
+                        </slide_mode>
+                        <infinite_loop>
+                            <label>Infinite Loop</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <comment>If true, clicking "Next" while on the last slide will transition to the first slide
+                                and vice-versa.
+                            </comment>
+                        </infinite_loop>
+                    </fields>
+                </slider>
+                <design translate="label">
+                    <label>Design</label>
+                    <sort_order>100</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <addbutton_standard translate="label">
+                            <label>Standard 'Add To Cart' button style</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <comment>Enable standard 'Add to Cart' button style</comment>
+                        </addbutton_standard>
+                        <addbutton_textcolor translate="label">
+                            <label>"Add to Cart" text color</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>color</validate>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <comment>"Add to Cart" text color</comment>
+                        </addbutton_textcolor>
+                        <addbutton_textcolor_hover translate="label">
+                            <label>"Add to Cart" text color (hover)</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>color</validate>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <comment>"Add to Cart" text hover color</comment>
+                        </addbutton_textcolor_hover>
+                        <addbutton_background translate="label">
+                            <label>"Add to Cart" button color</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>color</validate>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <comment>"Add to Cart" button background color</comment>
+                        </addbutton_background>
+                        <addbutton_background_hover> translate="label">
+                            <label>"Add to Cart" button color (hover)</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>color</validate>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <comment>"Add to Cart" button background hover color</comment>
+                        </addbutton_background_hover>
+                    </fields>
+                </design>
+            </groups>
+        </iwd_autorelatedproducts>
+    </sections>
+</config>

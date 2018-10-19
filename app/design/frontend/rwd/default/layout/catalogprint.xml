@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * Magedelight
+ * Copyright (C) 2014  Magedelight <info@magedelight.com>
+ *
+ * NOTICE OF LICENSE
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see http://opensource.org/licenses/gpl-3.0.html.
+ *
+ * @category   Ktpl
+ * @package    Ktpl_Catalogprint
+ * @copyright  Copyright (c) 2014 Mage Delight (http://www.magedelight.com/)
+ * @license    http://opensource.org/licenses/gpl-3.0.html GNU General Public License, version 3 (GPL-3.0)
+ * @author     Magedelight <info@magedelight.com>
+ */
+-->
+<layout version="0.1.0">
+    <catalog_category_default>
+        <reference name="head">
+            <action method="addItem"><type>skin_css</type><name>css/fancybox/catalogprint.fancybox.css</name></action>
+            <action method="addItem"><type>js</type><name>catalog-print/jquery-1.9.0.min.js</name></action>
+            <action method="addItem"><type>js</type><name>catalog-print/jquery.fancybox.pack.js</name></action>
+            <action method="addItem"><type>js</type><name>catalog-print/jquery.fancybox.pdfopt.js</name></action>
+        </reference>
+        <reference name="content">
+            <block type="core/template" before="-" name="catalogprint.link" template="catalogprint/link.phtml">
+            </block>
+        </reference>
+    </catalog_category_default>
+    <catalog_category_layered>
+        <reference name="head">
+            <action method="addItem"><type>skin_css</type><name>css/fancybox/catalogprint.fancybox.css</name></action>
+            <action method="addItem"><type>js</type><name>catalog-print/jquery-1.9.0.min.js</name></action>
+            <action method="addItem"><type>js</type><name>catalog-print/jquery.fancybox.pack.js</name></action>
+            <action method="addItem"><type>js</type><name>catalog-print/jquery.fancybox.pdfopt.js</name></action>
+        </reference>
+        <reference name="content">
+            <block type="core/template" before="-" name="catalogprint.link" template="catalogprint/link.phtml">
+            </block>
+        </reference>
+    </catalog_category_layered>
+
+    <!-- <default>
+        <reference name="catalog_product_price_template">
+            <action method="addPriceBlockType"><type>bundle</type><block>bundle/catalog_product_price</block><template>catalogprint/product/bundle_price.phtml</template></action>
+        </reference>
+    </default> -->
+
+    <catalogprint_index_index>
+        <block type="page/html" name="root" output="toHtml" template="catalogprint/layout.phtml">
+            <block type="page/html_head" name="head" as="head">
+                <action method="addItem"><type>js</type><name>catalog-print/jquery-1.9.0.min.js</name></action>
+                <action method="addItem">
+                    <type>skin_js</type>
+                    <name>catalogprint/progress.js</name>
+                </action>
+                <action method="addItem">
+                    <type>skin_css</type>
+                    <name>catalogprint/progress.css</name>
+                </action>
+            </block>
+            <block type="core/text_list" name="content" as="content" translate="label">
+                <block type="core/template" name="catalogprint.progress" template="catalogprint/progress.phtml"/>
+            </block>
+        </block>	
+    </catalogprint_index_index>
+</layout>

@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<IWD_FeaturedProducts>
+			<version>1.1.0</version>
+		</IWD_FeaturedProducts>
+	</modules>
+
+	<admin>
+		<routers>
+			<adminhtml>
+				<args>
+					<modules>
+						<iwdfeaturedproduct before="Mage_Adminhtml">IWD_FeaturedProducts_Adminhtml</iwdfeaturedproduct>
+					</modules>
+				</args>
+			</adminhtml>
+		</routers>
+	</admin>
+
+	<frontend>
+		<layout>
+			<updates>
+				<iwdfeaturedproduct>
+					<file>iwdfeaturedproduct.xml</file>
+				</iwdfeaturedproduct>
+			</updates>
+		</layout>
+	</frontend>
+
+	<adminhtml>
+		<layout>
+			<updates>
+				<iwdfeaturedproduct>
+					<file>iwdfeaturedproduct.xml</file>
+				</iwdfeaturedproduct>
+			</updates>
+		</layout>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<catalog>
+							<children>
+								<iwdfeaturedproduct translate="title" module="iwdfeaturedproduct">
+									<title>Featured Products</title>
+								</iwdfeaturedproduct>
+							</children>
+						</catalog>
+						<system>
+							<children>
+								<config>
+									<children>
+										<iwdfeaturedproduct translate="title" module="iwdfeaturedproduct">
+											<title>Store Locations</title>
+											<sort_order>60</sort_order>
+										</iwdfeaturedproduct>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+	</adminhtml>
+	<global>
+		<models>
+			<iwdfeaturedproduct>
+				<class>IWD_FeaturedProducts_Model</class>
+				<resourceModel>iwdfeaturedproduct_mysql4</resourceModel>
+			</iwdfeaturedproduct>
+
+			<iwdfeaturedproduct_mysql4>
+				<class>IWD_FeaturedProducts_Model_Mysql4</class>
+				<entities>
+					<slider>
+						<table>iwdfeaturedproduct_slider</table>
+					</slider>
+				</entities>
+			</iwdfeaturedproduct_mysql4>
+		</models>
+
+		<resources>
+			<iwdfeaturedproduct_setup>
+				<setup>
+					<module>IWD_FeaturedProducts</module>
+					<class>Mage_Eav_Model_Entity_Setup</class>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</iwdfeaturedproduct_setup>
+
+			<iwdfeaturedproduct_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</iwdfeaturedproduct_write>
+
+			<iwdfeaturedproduct_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</iwdfeaturedproduct_read>
+		</resources>
+		<blocks>
+			<iwdfeaturedproduct>
+				<class>IWD_FeaturedProducts_Block</class>
+			</iwdfeaturedproduct>
+		</blocks>
+		<helpers>
+			<iwdfeaturedproduct>
+				<class>IWD_FeaturedProducts_Helper</class>
+			</iwdfeaturedproduct>
+		</helpers>
+
+	</global>
+	 <default>
+	 	<iwdfeaturedproduct>
+	 		<main>
+	 			<peritems>5</peritems>
+	 			<sort>name</sort>
+	 		</main>
+	 		<sidebar>
+	 			<peritems>5</peritems>
+	 			<sort>name</sort>
+	 		</sidebar>
+	 	</iwdfeaturedproduct>
+	 </default>
+	
+</config>

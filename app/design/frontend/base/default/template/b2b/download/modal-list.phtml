@@ -1,0 +1,100 @@
+<div class="b2b-dialog-title">
+            <h5><?php echo $this->getProductName();?></h5>
+</div>
+<?php 
+
+$params = Mage::getModel('customer/session')->getDownloadParams();
+$filter = new Varien_Object();
+if ($params!=null){
+    $filter->addData($params);
+}
+if ($params['sort']=='asc'){
+    $sort = 'desc';
+}else{
+    $sort = 'asc';
+}
+
+?>
+<div class="b2b-wrapper">
+<div class="div-table">
+        <div class="table-header ">
+                <div class="fixed-wrapper">
+                    <form id="b2b-filter-download-modal">
+                       
+                        <div class="left b2b-product-name">
+                            <a href="" data-attribute="title" <?php if ($params['attribute']=='title'):?>data-sort="<?php echo $sort?>"<?php else:?>data-sort="asc"<?php endif;?>><?php echo $this->__('Title')?>
+                            <?php if ($params['attribute']=='title'):?><i class="fa <?php if($params['sort'] == 'asc') echo 'fa-arrow-down '; else echo 'fa-arrow-up '; echo $params['sort']; ?>"></i><?php endif;?>
+                            </a>
+                            <div ><input type="text" name="title" value="<?php echo $filter->getTitle()?>"/></div>
+                        </div>
+                        
+                        <div class="left b2b-product-type">
+                            <a href="" data-attribute="type_id" <?php if ($params['attribute']=='type_id'):?>data-sort="<?php echo $sort?>"<?php else:?>data-sort="asc"<?php endif;?>><?php echo $this->__('TYPE')?>
+                            <?php if ($params['attribute']=='type_id'):?><i class="fa <?php if($params['sort'] == 'asc') echo 'fa-arrow-down '; else echo 'fa-arrow-up '; echo $params['sort']; ?>"></i><?php endif;?>
+                            </a>
+                            <div>
+                                <select name="type_id">
+                                    <option value=""></option>
+                                    <?php foreach ($this->getTypes() as $type): ?>
+                                    <option value="<?php echo $type->getId()?>" <?php if ($filter->getTypeId()==$type->getId()):?>selected="selected"<?php endif;?>><?php echo $type->getName()?></option>
+                                    <?php endforeach;?>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="left b2b-product-size">
+                            <a href="" data-attribute="size" <?php if ($params['attribute']=='size'):?>data-sort="<?php echo $sort?>"<?php else:?>data-sort="asc"<?php endif;?>><?php echo $this->__('SIZE')?>
+                            <?php if ($params['attribute']=='size'):?><i class="fa <?php if($params['sort'] == 'asc') echo 'fa-arrow-down '; else echo 'fa-arrow-up '; echo $params['sort']; ?>"></i><?php endif;?>
+                            </a>
+                            <div ><input type="text" name="size" value="<?php echo $filter->getSize()?>"/></div>
+                        </div>
+                        
+                        
+                        <div class="left b2b-product-select">
+                            <a class="no-sortable" data-sort="no-sortable"><?php echo $this->__('Select')?></a>
+                            <div ><input type="checkbox" name="name" data-label="" class="b2b-checkbox"/></div>
+                        </div>
+                        
+                        
+                    </form>
+                    <div class="clear"></div>
+                </div>
+                <div class="b2b-header-shadow"></div>
+            </div>
+            <div class="botex"></div>
+            <form id="b2b-form-download">
+            <div class="table-body">
+            
+                <?php foreach ($this->getCollectionItems() as $_item):?>                              
+                <?php $_product = Mage::getModel('catalog/product')->load($_item->getProductId());?>
+                <div class="table-row">
+                   
+                    
+                    <div class="left b2b-product-name">
+                          <?php echo $_item->getTitle()?>
+                    </div>
+                    
+                    <div class="left b2b-product-type">
+                         <?php echo $this->getType($_item->getTypeId())?>
+                    </div>
+                    
+                    <div class="left b2b-product-size">
+                          <?php echo $_item->getSize()?> MB
+                    </div>
+                    
+                    <div class="left b2b-product-select">
+                          <input type="checkbox" name="id[]" data-label="" class="b2b-checkbox" value="<?php echo $_item->getFileId()?>"/>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <?php endforeach;?>
+            </div>
+            </form>
+    </div>
+</div>
+
+<script>
+$ji('input.b2b-checkbox').prettyCheckable();
+IWD.Download.checked = 0;
+IWD.Download.updateText();
+</script>

@@ -1,0 +1,95 @@
+<div class="b2b-overflow">
+    <h5><?php echo $this->__('Billing address')?></h5>
+    <input type="hidden" name="billing[same_as_shipping]" id="billing_same_as_shipping" value="" autocomplete="off">
+    <div class="input-box same-as">        
+        <div class="checkbox-box">
+            <label><input type="checkbox" id="same_as_shipping" /><?php echo $this->__('Same as shipping address')?></label>
+        </div>
+    </div>
+                
+    <div class="clear"></div>
+    <div id="b2b-billing-form">
+    
+    
+        <div class="b2b-overflow">
+            <div class="left left-column">
+                <div class="input-box">
+                    <label><?php echo $this->__('Address 1')?><em>*</em></label>
+                    <div>
+                        <input type="text" name="billing[street][]" class="required-entry" />
+                    </div>
+                </div>
+            </div>
+            <div class="right right-column">
+                <div class="input-box">
+                    <label><?php echo $this->__('Address 2')?></label>
+                    <div>
+                        <input type="text" name="billing[street][]"  />
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+    
+        <div class="b2b-overflow">
+            <div class="left left-column">
+                <div class="input-box">
+                    <label><?php echo $this->__('City')?><em>*</em></label>
+                    <div>
+                         <input type="text" name="billing[city]" class="required-entry" />
+                    </div>
+                </div>
+            </div>
+            <div class="right right-column">
+                <div class="combo-box">
+                    <div class="input-box left">
+                        <label><?php echo $this->__('State')?><em>*</em></label>
+                        <div>
+                            <select id="billing_region_id" name="billing[region_id]" title="<?php echo $this->__('State/Province') ?>" class="validate-select" style="display:none;">
+                                <option value=""><?php echo $this->__('Please select region, state or province') ?></option>
+                            </select>
+                            <script type="text/javascript">
+                            //<![CDATA[
+                                $('billing_region_id').setAttribute('defaultValue', "null");
+                            //]]>
+                            </script>
+                            <input type="text" id="billing_region" name="billing[region]" value="<?php echo $this->escapeHtml($this->getRegion()) ?>" title="<?php echo $this->__('State/Province') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('region') ?>" style="display:none;" />
+                        </div>
+                    </div>
+                    
+                    <div class="input-box right">
+                        <label><?php echo $this->__('Zipcode')?><em>*</em></label>                        
+                        <div>
+                            <input type="text" name="billing[postcode]" class="required-entry" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="b2b-overflow">
+            <div class="left left-column">
+                 <div class="input-box">
+                    <label><?php echo $this->__('Country')?><em>*</em></label>
+                    <div>
+                        <?php echo $this->getCountryHtmlSelect($defValue=null, $name='billing[country_id]', $id='billing_country', $title='Country') ?>
+                    </div>
+                </div>
+            </div>
+            <div class="right right-column">
+                
+            </div>
+        </div>
+    
+    
+     </div>
+</div>
+
+<script type="text/javascript">
+    //<![CDATA[
+        var billing = new RegionUpdater('billing_country', 'billing_region', 'billing_region_id', <?php echo $this->helper('directory')->getRegionJson() ?>, undefined, 'zip');
+    //]]>
+</script>

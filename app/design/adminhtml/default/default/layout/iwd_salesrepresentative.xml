@@ -1,0 +1,168 @@
+<?xml version="1.0" ?>
+<layout>
+
+	<default>
+		<reference name="head">
+			<action method="addCss"><name>iwd/salesrep/css/font-awesome.min.css</name></action>
+			<action method="addCss"><name>iwd/salesrep/css/style.css</name></action>					
+			<action method="addJs"><script>iwd/salesrep/adminhtml/salesrep.js</script></action>		
+			<action method="addJs"><script>iwd/salesrep/adminhtml/colorpicker.js</script></action>	
+		</reference>
+	</default>
+	
+	<adminhtml_sales_order_view>
+		<reference name="before_body_end">
+           <block type="salesrep/adminhtml_order_view" name="sales.representative.edit" />
+        </reference>
+	</adminhtml_sales_order_view>
+	
+	<adminhtml_sales_order_create_index>
+		<reference name="before_body_end">
+           <block type="salesrep/adminhtml_order_create" name="sales.representative.create" />
+        </reference>        
+	</adminhtml_sales_order_create_index>
+
+
+	<sales_order_grid_update_handle>
+		<reference name="sales_order.grid">
+			<action method="addColumnAfter" ifconfig="salesrep/order/representative" ifvalue="1">
+				<columnId>user</columnId>
+				<arguments>
+					<header>Representative</header>
+					<index>username</index>
+					<filter_index>user.user_id</filter_index>
+					<type>options</type>
+                    <sortable>false</sortable>
+					<filter>IWD_SalesRepresentative_Block_Adminhtml_Order_Render_Filter</filter>
+                	<renderer>IWD_SalesRepresentative_Block_Adminhtml_Order_Render_Options</renderer>
+                	<width>60px</width>
+                	<column_css_class>salesrep-order-column</column_css_class>
+                	<header_css_class>salesrep-order-column</header_css_class>
+				</arguments>
+				<after>status</after>
+			</action>
+		</reference>
+	</sales_order_grid_update_handle>
+	
+	<adminhtml_sales_order_grid>
+		<!-- apply layout handle defined above -->
+		<update handle="sales_order_grid_update_handle" />
+	</adminhtml_sales_order_grid>
+	
+	<adminhtml_sales_order_index>
+		<!-- apply layout handle defined above -->
+		<update handle="sales_order_grid_update_handle" />
+	</adminhtml_sales_order_index>
+	
+	
+	
+	<!--  REPORTS -->
+	
+	<adminhtml_iwd_salesrep_reports_orders_index>
+        <update handle="report_sales"/>
+        <reference name="content">
+        
+            <block type="salesrep/adminhtml_report_orders_orders" template="report/grid/container.phtml" name="sales.report.grid.container">
+                <block type="adminhtml/store_switcher" template="report/store/switcher/enhanced.phtml" name="store.switcher">
+                    <action method="setStoreVarName"><var_name>store_ids</var_name></action>
+                </block>
+                
+                <block type="salesrep/adminhtml_report_filter_form_order" name="grid.filter.form" />                
+            </block>
+        </reference>
+    </adminhtml_iwd_salesrep_reports_orders_index>
+	
+	<adminhtml_iwd_salesrep_reports_products_index>
+       
+        <reference name="content">
+        
+            <block type="salesrep/adminhtml_report_products_products" template="report/grid/container.phtml" name="product.report.grid.container">
+                <block type="adminhtml/store_switcher" template="report/store/switcher/enhanced.phtml" name="store.switcher">
+                    <action method="setStoreVarName"><var_name>store_ids</var_name></action>
+                </block>
+                
+                <block type="salesrep/adminhtml_report_filter_form_order" name="grid.filter.form" />                
+            </block>
+        </reference>
+    </adminhtml_iwd_salesrep_reports_products_index>
+	
+	<!-- USERS -->
+	<adminhtml_iwd_salesrep_users_index>
+		<reference name="content">
+			<block type="salesrep/adminhtml_users_list" name="salesrep.users.list" />
+		</reference>
+	</adminhtml_iwd_salesrep_users_index>
+	
+	
+	<adminhtml_iwd_salesrep_users_edit>
+        <reference name="head">
+            <action method="addJs"><script>iwd/all/modal.js</script></action>
+        </reference>
+       <update handle="editor"/>
+        <reference name="content">
+            <block type="salesrep/adminhtml_users_list_edit" name="user_edit"></block>
+        </reference>
+        <reference name="left">          
+            <block type="salesrep/adminhtml_users_list_edit_tabs" name="product_tabs"></block>
+        </reference>
+    </adminhtml_iwd_salesrep_users_edit>
+    
+    
+     <adminhtml_iwd_salesrep_users_related>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="salesrep/adminhtml_users_list_edit_tab_related" name="salesrep.product.edit.tab.related"/>
+            <block type="adminhtml/widget_grid_serializer" name="related_grid_serializer">
+                <reference name="related_grid_serializer">
+                    <action method="initSerializerBlock">
+                        <grid_block_name>salesrep.product.edit.tab.related</grid_block_name>
+                        <data_callback>getSelectedRelatedProducts</data_callback>
+                        <hidden_input_name>links[related]</hidden_input_name>
+                        <reload_param_name>products_related</reload_param_name>
+                    </action>
+                    <action method="addColumnInputName">
+                        <input_name>position</input_name>
+                    </action>
+                </reference>
+            </block>
+        </block>
+    </adminhtml_iwd_salesrep_users_related>
+
+    <adminhtml_iwd_salesrep_users_relatedgrid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="salesrep/adminhtml_users_list_edit_tab_related" name="salesrep.product.edit.tab.related"/>
+        </block>
+    </adminhtml_iwd_salesrep_users_relatedgrid>
+    
+    <adminhtml_iwd_salesrep_users_ratedetails>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="salesrep/adminhtml_users_list_edit_rate" name="salesrep.product.edit.rate"/>
+        </block>
+    </adminhtml_iwd_salesrep_users_ratedetails>
+	
+	
+	
+	 <adminhtml_iwd_salesrep_users_customers>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="salesrep/adminhtml_users_list_edit_tab_customers" name="salesrep.product.edit.tab.customers"/>
+            <block type="adminhtml/widget_grid_serializer" name="related_grid_serializer">
+                <reference name="related_grid_serializer">
+                    <action method="initSerializerBlock">
+                        <grid_block_name>salesrep.product.edit.tab.customers</grid_block_name>
+                        <data_callback>getSelectedRelatedCustomers</data_callback>
+                        <hidden_input_name>links[related]</hidden_input_name>
+                        <reload_param_name>products_related</reload_param_name>
+                    </action>
+                    <action method="addColumnInputName">
+                        <input_name>position</input_name>
+                    </action>
+                </reference>
+            </block>
+        </block>
+     </adminhtml_iwd_salesrep_users_customers>
+	
+	 <adminhtml_iwd_salesrep_users_customersgrid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="salesrep/adminhtml_users_list_edit_tab_customers" name="salesrep.product.edit.tab.customers"/>
+        </block>
+     </adminhtml_iwd_salesrep_users_customersgrid>
+</layout>

@@ -1,0 +1,69 @@
+/*
+This is the visible area of you carousel.
+Set a width here to define how much items are visible.
+The width can be either fixed in px or flexible in %.
+Position must be relative!
+*/
+.jcarousel {
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+	width:100%;
+}
+
+/*
+This is the container of the carousel items.
+You must ensure that the position is relative or absolute and
+that the width is big enough to contain all items.
+*/
+.jcarousel ul {
+    width: 100%;
+    position: relative;
+	overflow:hidden;
+    /* Optional, required in this case since it's a <ul> element */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+These are the item elements. jCarousel works best, if the items
+have a fixed width and height (but it's not required).
+*/
+.jcarousel li img{max-width:100%;}
+.jcarousel li {
+    /* Required only for block elements like <li>'s */
+   
+	float:left;
+}
+.jcarousel ul {
+    width: 100%
+}
+.jcarousel.bottom ul {
+    width: 20000em;
+}
+.jcarousel.bottom ul li{
+	float:left;
+	max-height: 70px;
+    max-width: 70px;
+}
+.jcarousel.left ul li {
+    float: none;
+    margin-left: 0;
+    margin-right: 0;
+	display:block;
+}
+.jcarousel-prev, 
+.jcarousel-next{position:absolute;z-index:1000;	}
+
+.jcarusel-control.left .jcarousel-prev{top:0}
+.jcarusel-control.left .jcarousel-prev i:before{font-family: FontAwesome;content:"\f106"}
+.jcarusel-control.left .jcarousel-next{bottom:0;}
+.jcarusel-control.left .jcarousel-next i:before{font-family: FontAwesome;content:"\f107"}
+
+
+.jcarusel-control.bottom .jcarousel-prev{left:0}
+.jcarusel-control.bottom .jcarousel-prev i:before{font-family: FontAwesome;content:"\f104"}
+.jcarusel-control.bottom .jcarousel-next{right:0;}
+.jcarusel-control.bottom .jcarousel-next i:before{font-family: FontAwesome;content:"\f105"}
+.jcarousel ul li a{display:block;}

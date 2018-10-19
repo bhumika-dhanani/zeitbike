@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<widgets>
+    <iwd_alsobought type="iwd_alsobought/frontend_block" translate="name description" module="iwd_alsobought">
+        <name>IWD Who Bought This Also Bought</name>
+        <description>IWD Who Bought This Also Bought</description>
+        <parameters>
+            <template translate="label">
+                <label>Frontend Template</label>
+                <visible>1</visible>
+                <required>1</required>
+                <type>select</type>
+                <values>
+                    <block translate="label">
+                        <value>iwd/alsobought/block.phtml</value>
+                        <label>Slider</label>
+                    </block>
+                </values>
+            </template>
+            <block_type>
+                <label>Block type</label>
+                <visible>1</visible>
+                <required>1</required>
+                <type>select</type>
+                <source_model>iwd_alsobought/config_type</source_model>
+            </block_type>
+        </parameters>
+    </iwd_alsobought>
+</widgets>

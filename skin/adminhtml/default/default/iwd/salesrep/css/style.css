@@ -1,0 +1,150 @@
+@CHARSET "UTF-8";
+.salesrep-edit-form input[type="checkbox"]{margin-top:10px}
+.salesrep-edit-form .fa-circle-o-notch input{display:none;}
+.salesrep-edit-form .fa-circle-o-notch {font-size:16px;color:#a00401;margin-top:10px}
+.salesrep-edit-form .headings input[type="checkbox"]{display:none}
+.salesrep-edit-form .setup-rate{text-decoration:none}
+.salesrep-edit-form .setup-rate:hover{color:#000; text-decoration:none}
+.salesrep-edit-form .grid table td.last{vertical-align: middle;text-align:center}
+.salesrep-edit-form .grid table td.last small{font-size:10px;}
+.salesrep-adminhtml-users-edit .head-products{background: none !important;padding-left: 0;}
+.salesrep-adminhtml-users-edit .update-product-rate{text-decoration:none;display:block;color:#ca0c09;}
+.salesrep-adminhtml-users-edit .update-product-rate:hover{color:#000}
+.salesrep-adminhtml-users-edit .update-product-rate i{font-size:11px;}
+.modal-header h4 {font-size: 20px;font-weight: normal;}
+.modal-body{padding: 15px;}
+#iwd-modal-salesrep{}
+#iwd-modal-salesrep .entry-edit-head{background:none;padding-left:0;padding-right:0}
+#iwd-modal-salesrep .entry-edit-head h4{color:#000}
+#iwd-modal-salesrep .fieldset{/*background: none repeat scroll 0 0 transparent;border: medium none;padding-left:0;padding-right:0*/}
+#iwd-modal-salesrep tr{border-bottom: 1px solid #C4C8CA;}
+#iwd-modal-salesrep tr td{padding-left: 0 !important;}
+#iwd-modal-salesrep label{color:#000}
+.salesrep-order-column{}
+.salesrep-notice{color:#fff;padding: 3px 7px !important;;-webkit-border-radius: 5px;border-radius: 5px;;display:block;text-align:center;line-height: 1;font-size: 11px;}
+.salesrep-notice span{}
+.head-adminhtml-users-list{padding-left:0 }
+.head-adminhtml-users-list i{margin-right: 5px}
+
+.colpick {	position: absolute;	width: 346px;	height: 170px;	overflow: hidden;	display: none;	font-family: Arial, Helvetica, sans-serif;	background:#ebebeb;	border: 1px solid #bbb;	-webkit-border-radius: 5px;	-moz-border-radius: 5px;	border-radius: 5px;		/*Prevents selecting text when dragging the selectors*/	-webkit-user-select: none;	-moz-user-select: none;	-ms-user-select: none;	-o-user-select: none;	user-select: none;}
+/*Color selection box*/
+.colpick_color {	position: absolute;	left: 7px;	top: 7px;	width: 156px;	height: 156px;	overflow: hidden;	outline: 1px solid #aaa;	cursor: crosshair;}
+.colpick_color_overlay1 {	position: absolute;	left:0;	top:0;	width: 156px;	height: 156px;	filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr='#ffffff', endColorstr='#00ffffff'); /* IE6 & IE7 */	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr='#ffffff', endColorstr='#00ffffff')"; /* IE8 */	background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0));}
+.colpick_color_overlay2 {	position: absolute;	left:0;	top:0;	width: 156px;	height: 156px;	filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#00000000', endColorstr='#000000'); /* IE6 & IE7 */	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#00000000', endColorstr='#000000')"; /* IE8 */	background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1));}
+/*Circular color selector*/
+.colpick_selector_outer {	background:none;	position: absolute;	width: 11px;	height: 11px;	margin: -6px 0 0 -6px;	border: 1px solid black;	border-radius: 50%;}
+.colpick_selector_inner{	position: absolute;	width: 9px;	height: 9px;	border: 1px solid white;	border-radius: 50%;}
+/*Vertical hue bar*/
+.colpick_hue {	position: absolute;	top: 6px;	left: 175px;	width: 19px;	height: 156px;	border: 1px solid #aaa;	cursor: n-resize;}
+/*Hue bar sliding indicator*/
+.colpick_hue_arrs {	position: absolute;	left: -8px;	width: 35px;	height: 7px;	margin: -7px 0 0 0;}
+.colpick_hue_larr {	position:absolute;	width: 0;	height: 0;	border-top: 6px solid transparent;	border-bottom: 6px solid transparent;	border-left: 7px solid #858585;}
+.colpick_hue_rarr {	position:absolute;	right:0;	width: 0;	height: 0;	border-top: 6px solid transparent;	border-bottom: 6px solid transparent;	border-right: 7px solid #858585;}
+/*New color box*/
+.colpick_new_color {	position: absolute;	left: 207px;	top: 6px;	width: 60px;	height: 27px;	background: #f00;	border: 1px solid #8f8f8f;}
+/*Current color box*/
+.colpick_current_color {	position: absolute;	left: 277px;	top: 6px;	width: 60px;	height: 27px;	background: #f00;	border: 1px solid #8f8f8f;}
+/*Input field containers*/
+.colpick_field, .colpick_hex_field  {	position: absolute;	height: 20px;	width: 60px;	overflow:hidden;	background:#f3f3f3;	color:#b8b8b8;	font-size:12px;	border:1px solid #bdbdbd;	-webkit-border-radius: 3px;	-moz-border-radius: 3px;	border-radius: 3px;}
+.colpick_rgb_r {	top: 40px;	left: 207px;}
+.colpick_rgb_g {	top: 67px;	left: 207px;}
+.colpick_rgb_b {	top: 94px;	left: 207px;}
+.colpick_hsb_h {	top: 40px;	left: 277px;}
+.colpick_hsb_s {	top: 67px;	left: 277px;}
+.colpick_hsb_b {	top: 94px;	left: 277px;}
+.colpick_hex_field {	width: 68px;	left: 207px;	top: 121px;display:none;}
+/*Text field container on focus*/
+.colpick_focus {	border-color: #999;}
+/*Field label container*/
+.colpick_field_letter {	position: absolute;	width: 12px;	height: 20px;	line-height: 20px;	padding-left: 4px;	background: #efefef;	border-right: 1px solid #bdbdbd;	font-weight: bold;	color:#777;}
+/*Text inputs*/
+.colpick_field input, .colpick_hex_field input {	position: absolute;	right: 11px;	margin: 0;	padding: 0;	height: 20px;	line-height: 20px;	background: transparent;	border: none;	font-size: 12px;	font-family: Arial, Helvetica, sans-serif;	color: #555;	text-align: right;	outline: none;}
+.colpick_hex_field input {	right: 4px;}
+/*Field up/down arrows*/
+.colpick_field_arrs {	position: absolute;	top: 0;	right: 0;	width: 9px;	height: 21px;	cursor: n-resize;}
+.colpick_field_uarr {	position: absolute;	top: 5px;	width: 0;	height: 0;	border-left: 4px solid transparent;	border-right: 4px solid transparent;	border-bottom: 4px solid #959595;}
+.colpick_field_darr {	position: absolute;	bottom:5px;	width: 0;	height: 0;	border-left: 4px solid transparent;	border-right: 4px solid transparent;	border-top: 4px solid #959595;}
+/*Submit/Select button*/
+.colpick_submit {	position: absolute;	left: 207px;	top: 149px;	width: 130px;	height: 22px;	line-height:22px;	background: #efefef;	text-align: center;	color: #555;	font-size: 12px;	font-weight:bold;	border: 1px solid #bdbdbd;	-webkit-border-radius: 3px;	-moz-border-radius: 3px;	border-radius: 3px;}
+.colpick_submit:hover {	background:#f3f3f3;	border-color:#999;	cursor: pointer;}
+
+/*full layout with no submit button*/
+.colpick_full_ns  .colpick_submit, .colpick_full_ns .colpick_current_color{	display:none;}
+.colpick_full_ns .colpick_new_color {	width: 130px;	height: 25px;}
+.colpick_full_ns .colpick_rgb_r, .colpick_full_ns .colpick_hsb_h {	top: 42px;}
+.colpick_full_ns .colpick_rgb_g, .colpick_full_ns .colpick_hsb_s {	top: 73px;}
+.colpick_full_ns .colpick_rgb_b, .colpick_full_ns .colpick_hsb_b {	top: 104px;}
+.colpick_full_ns .colpick_hex_field {	top: 135px;}
+
+/*rgbhex layout*/
+.colpick_rgbhex .colpick_hsb_h, .colpick_rgbhex .colpick_hsb_s, .colpick_rgbhex .colpick_hsb_b {	display:none;}
+.colpick_rgbhex {	width:282px;}
+.colpick_rgbhex .colpick_field, .colpick_rgbhex .colpick_submit {	width:68px;}
+.colpick_rgbhex .colpick_new_color {	width:34px;	border-right:none;}
+.colpick_rgbhex .colpick_current_color {	width:34px;	left:240px;	border-left:none;}
+
+/*rgbhex layout, no submit button*/
+.colpick_rgbhex_ns  .colpick_submit, .colpick_rgbhex_ns .colpick_current_color{	display:none;}
+.colpick_rgbhex_ns .colpick_new_color{	width:68px;	border: 1px solid #8f8f8f;}
+.colpick_rgbhex_ns .colpick_rgb_r {	top: 42px;}
+.colpick_rgbhex_ns .colpick_rgb_g {	top: 73px;}
+.colpick_rgbhex_ns .colpick_rgb_b {	top: 104px;}
+.colpick_rgbhex_ns .colpick_hex_field {	top: 135px;}
+
+/*hex layout*/
+.colpick_hex .colpick_hsb_h, .colpick_hex .colpick_hsb_s, .colpick_hex .colpick_hsb_b, .colpick_hex .colpick_rgb_r, .colpick_hex .colpick_rgb_g, .colpick_hex .colpick_rgb_b {display:none}
+.colpick_hex {	width:206px;	height:201px;}
+.colpick_hex .colpick_hex_field {	width:72px;	height:25px;	top:168px;	left:80px;}
+.colpick_hex .colpick_hex_field div, .colpick_hex .colpick_hex_field input {	height: 25px;	line-height: 25px;}
+.colpick_hex .colpick_new_color {	left:9px;	top:168px;	width:30px;	border-right:none;}
+.colpick_hex .colpick_current_color {	left:39px;	top:168px;	width:30px;	border-left:none;}
+.colpick_hex .colpick_submit {	left:164px;	top: 168px;	width:30px;	height:25px;	line-height: 25px;}
+
+/*hex layout, no submit button*/
+.colpick_hex_ns  .colpick_submit, .colpick_hex_ns .colpick_current_color {	display:none;}
+.colpick_hex_ns .colpick_hex_field {	width:80px;}
+.colpick_hex_ns .colpick_new_color{	width:60px;	border: 1px solid #8f8f8f;}
+
+/*Dark color scheme*/
+.colpick_dark {	background: #161616;	border-color: #2a2a2a;}
+.colpick_dark .colpick_color {	outline-color: #333;}
+.colpick_dark .colpick_hue {	border-color: #555;}
+.colpick_dark .colpick_field, .colpick_dark .colpick_hex_field {	background: #101010;	border-color: #2d2d2d;}
+.colpick_dark .colpick_field_letter {	background: #131313;	border-color: #2d2d2d;	color: #696969;}
+.colpick_dark .colpick_field input, .colpick_dark .colpick_hex_field input {	color: #7a7a7a;}
+.colpick_dark .colpick_field_uarr {	border-bottom-color:#696969;}
+.colpick_dark .colpick_field_darr {	border-top-color:#696969;}
+.colpick_dark .colpick_focus {	border-color:#444;}
+.colpick_dark .colpick_submit {	background: #131313;	border-color:#2d2d2d;	color:#7a7a7a;}
+.colpick_dark .colpick_submit:hover {	background-color:#101010;	border-color:#444;}
+.colorpicker-colorswatch{border: 1px solid #E2E2E2;height: 20px;width: 20px;cursor:pointer}
+.colorpicker-colorswatch input{display:none}
+
+/* modal */
+.modal-open {overflow:hidden;}
+.sr-modal {display:none; overflow:hidden; position:fixed; top:0; right:0; bottom:0; left:0; z-index:1040; -webkit-overflow-scrolling:touch; outline:0;}
+.sr-modal.fade .sr-modal-dialog {-webkit-transform:translate(0, -25%); -ms-transform:translate(0, -25%); -o-transform:translate(0, -25%); transform:translate(0, -25%);-webkit-transition: -webkit-transform 0.3s ease-out;-o-transition: -o-transform 0.3s ease-out;transition: transform 0.3s ease-out;}
+.sr-modal.in .sr-modal-dialog {-webkit-transform: translate(0, 0);-ms-transform: translate(0, 0);-o-transform: translate(0, 0);transform: translate(0, 0);}
+.modal-open .sr-modal {overflow-x: hidden;overflow-y: auto;}
+.sr-modal-dialog {position:relative; width:auto; margin:10px;}
+.sr-modal-content {position:relative; background-color:#ffffff; border: 1px solid rgba(0, 0, 0, 0.2); border-radius:6px; -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5); box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);-webkit-background-clip: padding-box;background-clip: padding-box;outline: 0;}
+.sr-modal-content h3{text-align:center;font-size:2.4em; font-weight:300;opacity:0.8; border-radius:3px 3px 0 0;margin:0;padding:.4em}
+.modal-backdrop {position: absolute;top: 0;right: 0;left: 0;background-color: #000000;}
+.modal-backdrop.fade {opacity:0; filter:alpha(opacity=0);}
+.modal-backdrop.in {opacity:0.5; filter:alpha(opacity=50);}
+.sr-modal-header {}
+.sr-modal-header h4{padding:20px 35px; color:#4a4a4a; font-weight:400; font-size:20px; text-align:left; margin-bottom:0; text-transform:none;}
+.sr-modal-header .close {cursor:pointer; position:absolute; background:url("img/close.png") no-repeat scroll 0 0 transparent; right:10px; text-decoration:none; top:10px; z-index:1000; display:block; height:8px; width:8px; text-indent:-999em; border:none}
+.sr-modal-title {margin:0; line-height:1.42857143;}
+.sr-modal-body {position:relative; padding:0 35px 20px;}
+.modal-scrollbar-measure {position:absolute; top:-9999px; width:50px; height:50px; overflow:scroll;}
+.sr-modal-footer:before,
+.sr-modal-footer:after {content: " ";display: table;}
+.clearfix:after,
+.sr-modal-footer:after {clear: both;}
+.sr-modal .btn-link {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ed6502 #a04300 #a04300 #ed6502;
+    background: #ffac47 url(images/btn_bg.gif) repeat-x 0 100%;
+}

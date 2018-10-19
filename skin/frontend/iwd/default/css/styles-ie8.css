@@ -1,0 +1,120 @@
+* Config: Three columns + flexible gutter */
+.products-grid {
+  /* Undo two-column config */
+  /* Set three-column config */
+}
+.products-grid > li:nth-child(odd) {
+  clear: none;
+}
+.products-grid > li:nth-child(even) {
+  margin-right: 3.7037%;
+}
+.products-grid > li {
+  width: 30.8642%;
+  margin-right: 3.7037%;
+}
+.products-grid > li:nth-child(3n+1) {
+  clear: left;
+}
+.products-grid > li:nth-child(3n) {
+  margin-right: 0;
+}
+
+/* Config: Columns + flexible gutter */
+/* Undo three-column config */
+.products-grid--max-4-col > li:nth-child(odd) {
+  clear: none;
+}
+
+.products-grid--max-4-col > li:nth-child(3n+1) {
+  clear: none;
+}
+
+.products-grid--max-4-col > li:nth-child(even),
+.products-grid--max-4-col > li:nth-child(3n) {
+  margin-right: 2.22222%;
+}
+
+/* Set column config */
+.products-grid--max-4-col > li {
+  margin-right: 2.22222%;
+}
+
+.products-grid--max-4-col > li {
+  width: 23.33333%;
+  margin-right: 2.22222%;
+}
+
+.products-grid--max-4-col > li:nth-child(4n+1) {
+  clear: left;
+}
+
+.products-grid--max-4-col > li:nth-child(4n) {
+  margin-right: 0;
+}
+
+/* Config: Columns + flexible gutter */
+/* Undo three-column config */
+.products-grid--max-5-col > li:nth-child(odd) {
+  clear: none;
+}
+
+.products-grid--max-5-col > li:nth-child(3n+1) {
+  clear: none;
+}
+
+.products-grid--max-5-col > li:nth-child(even),
+.products-grid--max-5-col > li:nth-child(3n) {
+  margin-right: 2.22222%;
+}
+
+/* Set column config */
+.products-grid--max-5-col > li {
+  margin-right: 2.22222%;
+}
+
+.products-grid--max-5-col > li {
+  width: 18.22222%;
+  margin-right: 2.22222%;
+}
+
+.products-grid--max-5-col > li:nth-child(5n+1) {
+  clear: left;
+}
+
+.products-grid--max-5-col > li:nth-child(5n) {
+  margin-right: 0;
+}
+
+/* Config: Columns + flexible gutter */
+/* Undo three-column config */
+.products-grid--max-6-col > li:nth-child(odd) {
+  clear: none;
+}
+
+.products-grid--max-6-col > li:nth-child(3n+1) {
+  clear: none;
+}
+
+.products-grid--max-6-col > li:nth-child(even),
+.products-grid--max-6-col > li:nth-child(3n) {
+  margin-right: 2.22222%;
+}
+
+/* Set column config */
+.products-grid--max-6-col > li {
+  margin-right: 2.22222%;
+}
+
+.products-grid--max-6-col > li {
+  width: 14.81481%;
+  margin-right: 2.22222%;
+}
+
+.products-grid--max-6-col > li:nth-child(6n+1) {
+  clear: left;
+}
+
+.products-grid--max-6-col > li:nth-child(6n) {
+  margin-right: 0;
+}

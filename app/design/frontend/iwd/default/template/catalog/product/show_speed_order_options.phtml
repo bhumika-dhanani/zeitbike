@@ -1,0 +1,178 @@
+<?php
+$productID =  Mage::app()->getRequest()->getParam('pid');
+
+
+if($productID != '') {
+    $_product = Mage::getModel('catalog/product')->load($productID);
+}
+if($_product) {
+    $typeInstance = $_product->getTypeInstance(true);
+    if ($_product->getTypeId() == "configurable") {
+
+        $allProducts = $typeInstance->getUsedProductCollection($_product)->addAttributeToSelect('*')->addFilterByRequiredOptions();
+        $productAttributeOptions = $typeInstance->getConfigurableAttributesAsArray($_product);
+        if (!empty($productAttributeOptions)) {
+            ?>
+            <tbody>
+            <tr>
+                <?php foreach ($productAttributeOptions as $options) { ?>
+                    <th><?php echo $options['label']; ?></th>
+
+                <?php } ?>
+                <th class="spof_price">Price</th>
+                <th class="prdimg">Image</th>
+                <th class="stock">Stock</th>
+                <th class="spof_select_qty">Quantity</th>
+                <th class="vrntSKU">SKU</th>
+                <th></th>
+            </tr><?php
+            foreach ($allProducts as $finalproduct) {
+
+                if (!empty($finalproduct)):?>
+                    <tr class="variant items">
+                        <?php foreach ($productAttributeOptions as $attribute) {
+                            $attr = $finalproduct->getResource()->getAttribute($attribute['attribute_code']);
+                            if ($attr->usesSource()) {
+                                $color_label = $attr->getSource()->getOptionText($finalproduct[$attribute['attribute_code']]);
+                            }
+                            if ($color_label != '') {
+                                ?>
+                                <td><?php echo $color_label; ?></td>
+                                <?php
+                            }
+                        }
+                        ?>
+                        <td><?php echo $this->getPriceHtml($finalproduct, true); ?></td>
+                        <td class="item prdimg">
+                            <?php $_imgSize = 50; ?>
+                            <img id="product-collection-image-<?php echo $finalproduct->getId(); ?>"
+                                 src="<?php echo $this->helper('catalog/image')->init($finalproduct, 'small_image')->keepFrame(false)->resize($_imgSize); ?>"
+                                 alt="<?php echo $this->stripTags($this->getImageLabel($finalproduct, 'small_image'), null, true) ?>"/>
+
+                        </td>
+                        <td class="stock"><?php echo $finalproduct->getStockItem()->getQty() * 1; ?></td>
+                        <td>
+                    <?php if($finalproduct->isSaleable()):?>
+                            <div class="quantity buttons_added">
+                                <input type="button" value="-" class="minus"><input type="text" step="1" min="1" max id="quantity_<?php echo $finalproduct->getId();?>" class="input-text qty text quantity_<?php echo $finalproduct->getId();?>" name="quantity" value="1" title="Qty" ><input type="button" value="+" class="plus">
+                            </div>
+                    <?php endif;?>
+                        </td>
+                        <td class="vrntSKU"><?php echo $finalproduct->getSku(); ?></td>
+                        <td>
+                            <?php if ($finalproduct->isSaleable()): ?>
+                                <button class="cart_btn" id= "show_<?php echo $finalproduct->getId()?>" onclick="setLocationAjax('<?php echo $this->getAddToCartUrl($finalproduct) ?>','<?php echo $finalproduct->getId()?>','<?php echo $finalproduct->getTypeId();?>')">Add to Cart</button>
+                                <!--<span id='ajax_loader<?php /*echo $finalproduct->getId()*/?>' style='display:none'><img src='<?php /*echo $this->getSkinUrl('images/opc-ajax-loader.gif')*/?>'/></span>-->
+                            <?php else:
+                                echo $this->__('Out of stock');
+                            endif; ?>
+                        </td>
+                    </tr>
+                <?php endif;
+            }
+            ?>
+            </tbody>
+
+        <?php } ?>
+
+    <?php }elseif ($_product->getTypeId() == "bundle"){
+        $selectionCollection = $typeInstance->getSelectionsCollection(
+            $typeInstance->getOptionsIds($_product), $_product
+        );
+        if(!empty($selectionCollection)) {?>
+                <tbody>
+                <tr>
+                    <th>Name</th>
+                    <th class="spof_price">Price</th>
+                    <th class="prdimg">Image</th>
+                    <th class="stock">Stock</th>
+                    <th class="spof_select_qty">Quantity</th>
+                    <th class="vrntSKU">SKU</th>
+                    <th></th>
+                </tr><?php
+                foreach ($selectionCollection as $finalproduct) {
+                    ?>
+                        <tr class="variant items">
+                            <td><?php echo $finalproduct->getName();?></td>
+                            <td><?php echo $this->getPriceHtml($finalproduct, true); ?></td>
+                            <td class="item prdimg">
+                                <?php $_imgSize = 50; ?>
+                                <img id="product-collection-image-<?php echo $finalproduct->getId(); ?>"
+                                     src="<?php echo $this->helper('catalog/image')->init($finalproduct, 'small_image')->keepFrame(false)->resize($_imgSize); ?>"
+                                     alt="<?php echo $this->stripTags($this->getImageLabel($finalproduct, 'small_image'), null, true) ?>"/>
+
+                            </td>
+                            <td class="stock"><?php echo $finalproduct->getStockItem()->getQty() * 1; ?></td>
+                            <td>
+                                <?php if($finalproduct->isSaleable()):?>
+                                    <div class="quantity buttons_added">
+                                        <input type="button" value="-" class="minus"><input type="text" step="1" min="1" max id="quantity_<?php echo $finalproduct->getId();?>" class="input-text qty text quantity_<?php echo $finalproduct->getId();?>" name="quantity" value="1" title="Qty" ><input type="button" value="+" class="plus">
+                                    </div>
+                                <?php endif;?>
+                            </td>
+                            <td class="vrntSKU"><?php echo $finalproduct->getSku(); ?></td>
+                            <td>
+                                <?php if ($finalproduct->isSaleable()): ?>
+                                    <button class="cart_btn" id= "show_<?php echo $finalproduct->getId()?>" onclick="setLocationAjax('<?php echo $this->getAddToCartUrl($finalproduct) ?>','<?php echo $finalproduct->getId()?>','<?php echo $finalproduct->getTypeId();?>')">Add to Cart</button>
+                                    <!--<span id='ajax_loader<?php /*echo $finalproduct->getId()*/?>' style='display:none'><img src='<?php /*echo $this->getSkinUrl('images/opc-ajax-loader.gif')*/?>'/></span>-->
+                                <?php else:
+                                    echo $this->__('Out of stock');
+                                endif; ?>
+                            </td>
+                        </tr>
+                    <?php
+                }
+                ?>
+                </tbody>
+            <?php }
+    }elseif ($_product->getTypeId() == "grouped"){
+        $associatedProducts = $typeInstance->getAssociatedProducts($_product);
+        if(!empty($associatedProducts)) {?>
+            <tbody>
+            <tr>
+                <th>Name</th>
+                <th class="spof_price">Price</th>
+                <th class="prdimg">Image</th>
+                <th class="stock">Stock</th>
+                <th class="spof_select_qty">Quantity</th>
+                <th class="vrntSKU">SKU</th>
+                <th></th>
+            </tr><?php
+            foreach ($associatedProducts as $finalproduct) {
+                ?>
+                <tr class="variant items">
+                    <td><?php echo $finalproduct->getName();?></td>
+                    <td><?php echo $this->getPriceHtml($finalproduct, true); ?></td>
+                    <td class="item prdimg">
+                        <?php $_imgSize = 50; ?>
+                        <img id="product-collection-image-<?php echo $finalproduct->getId(); ?>"
+                             src="<?php echo $this->helper('catalog/image')->init($finalproduct, 'small_image')->keepFrame(false)->resize($_imgSize); ?>"
+                             alt="<?php echo $this->stripTags($this->getImageLabel($finalproduct, 'small_image'), null, true) ?>"/>
+
+                    </td>
+                    <td class="stock"><?php echo $finalproduct->getStockItem()->getQty() * 1; ?></td>
+                    <td>
+                        <?php if($finalproduct->isSaleable()):?>
+                            <div class="quantity buttons_added">
+                                <input type="button" value="-" class="minus"><input type="text" step="1" min="1" max id="quantity_<?php echo $finalproduct->getId();?>" class="input-text qty text quantity_<?php echo $finalproduct->getId();?>" name="quantity" value="1" title="Qty" ><input type="button" value="+" class="plus">
+                            </div>
+                        <?php endif;?>
+                    </td>
+                    <td class="vrntSKU"><?php echo $finalproduct->getSku(); ?></td>
+                    <td>
+                        <?php if ($finalproduct->isSaleable()): ?>
+                            <button class="cart_btn" id= "show_<?php echo $finalproduct->getId()?>" onclick="setLocationAjax('<?php echo $this->getAddToCartUrl($finalproduct) ?>','<?php echo $finalproduct->getId()?>','<?php echo $finalproduct->getTypeId();?>')">Add to Cart</button>
+                            <!--<span id='ajax_loader<?php /*echo $finalproduct->getId()*/?>' style='display:none'><img src='<?php /*echo $this->getSkinUrl('images/opc-ajax-loader.gif')*/?>'/></span>-->
+                        <?php else:
+                            echo $this->__('Out of stock');
+                        endif; ?>
+                    </td>
+                </tr>
+                <?php
+            }
+            ?>
+            </tbody>
+        <?php }
+    }
+}?>
+

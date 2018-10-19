@@ -1,0 +1,71 @@
+<div class="content-header">
+    <h3 class="icon-head head-products"><?php echo $this->getHeader() ?></h3>
+    <p class="content-buttons form-buttons"><?php echo $this->getBackButtonHtml() ?>
+    <?php echo $this->getCancelButtonHtml() ?>
+    <?php if($this->getProductId()): ?>
+        <?php echo $this->getDeleteButtonHtml() ?>
+        <?php if($this->getProductSetId() && $this->getIsConfigured()): ?>
+            <?php echo $this->getDuplicateButtonHtml() ?>
+        <?php endif; ?>
+    <?php endif; ?>
+   
+    <?php echo $this->getSaveButtonHtml() ?>
+    <?php echo $this->getSaveAndEditButtonHtml() ?>
+
+    </p>
+</div>
+<form action="<?php echo $this->getSaveUrl() ?>" method="post" id="product_edit_form" enctype="multipart/form-data" class="salesrep-edit-form">
+    <?php echo $this->getBlockHtml('formkey')?>
+    <div style="display:none"></div>
+</form>
+
+
+
+<div class="sr-modal fade" id="iwd-modal-salesrep" tabindex="-1" role="dialog" aria-hidden="false">
+    <div class="sr-modal-dialog">
+        <div class="sr-modal-content">
+            <div class="sr-modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="sr-modal-title"><?php echo __('Update Product Rate')?></h4>
+            </div>
+
+            <div class="sr-modal-body">
+                <form id="product-rate-form">
+
+                </form>
+            </div>
+            <div class="sr-modal-footer">
+                <button type="button" class="btn-link" data-dismiss="modal"><?php echo $this->__('Close')?></button>
+                <button type="button" class="btn-link" id="save-product-rate"data-dismiss="modal"><?php echo $this->__('Save')?></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var saveAjaxUrlProduct = '<?php echo $this->getSaveAjaxUrlProduct();?>';
+    var saveAjaxUrlCustomer = '<?php echo $this->getSaveAjaxUrlCustomer();?>';
+    var detailsRateUrl = '<?php echo $this->getProductRateUrl();?>';
+   	var saveRetailsRateUrl = '<?php echo $this->getSaveRetailsRateUrl();?>';
+    var editForm = new varienForm('product_edit_form', '<?php echo $this->getSaveUrl() ?>');
+    
+    function saveAndContinueEdit(urlTemplate) {
+    	$('product_edit_form').action = urlTemplate;                        
+    	editForm = new varienForm('product_edit_form', urlTemplate);
+    	editForm._submit();
+    }
+    varienGrid.prototype.rowMouseClick = function(){};
+    
+    Event.observe(window, 'load', function() {
+        var objName = '<?php echo $this->getSelectedTabId() ?>';
+        if (objName) {
+            obj = $(objName);
+            //IE fix (bubbling event model)
+            product_info_tabsJsTabs.setSkipDisplayFirstTab();
+            product_info_tabsJsTabs.showTabContent(obj);
+        }
+        Product.AttributesBridge.setTabsObject(product_info_tabsJsTabs);
+    });
+//]]>
+</script>

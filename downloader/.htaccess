@@ -1,0 +1,17 @@
+AuthType Basic
+AuthName "Private zone. Only for administrator!"
+AuthUserFile  /home/zeitbike/public_html/.htpasswd
+require valid-user
+
+
+<IfModule mod_deflate.c>
+
+    RemoveOutputFilter DEFLATE
+    RemoveOutputFilter GZIP
+
+</IfModule>
+
+<Files ~ "\.(cfg|ini|xml)$">
+    order allow,deny
+    deny from all
+</Files> 

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout> 
+ <adminhtml_system_config_edit>
+  <reference name="head">
+   <action method="addJs" ifconfig="iwdpopup/general/newsenabled"><file>iwd/newspopup/colorpicker/jscolor.js</file></action>
+   <action method="addJs" ifconfig="iwdpopup/general/newsenabled"><file>iwd/newspopup/newspopup_admin.js</file></action>
+   <action method="addCss" ifconfig="iwdpopup/general/newsenabled"><name>iwd/newspopup/newspopup.css</name></action>
+  </reference>
+ </adminhtml_system_config_edit>
+</layout>

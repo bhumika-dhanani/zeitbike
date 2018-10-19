@@ -1,0 +1,229 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <iwdall>
+            <label>IWD Extensions</label>
+            <sort_order>210</sort_order>
+            <class>iwd-block</class>
+        </iwdall>
+    </tabs>
+    <sections>
+        <salesrep translate="label" module="salesrep">
+            <label>Sales Representative</label>
+            <tab>iwdall</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>228</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>0</show_in_website>
+            <show_in_store>0</show_in_store>
+            <groups>
+                <global translate="label">
+                    <label>Global</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>5</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <expanded>0</expanded>
+                    <fields>
+                        <info>
+                            <label>Version</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <frontend_model>salesrep/system_config_form_fieldset_extensions</frontend_model>
+                        </info>
+                    </fields>
+                </global>
+
+                <order translate="label">
+                    <label>Orders and Representatives</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <expanded>0</expanded>
+                    <fields>
+                        <representative translate="label">
+                            <label>Show Field in Order Grid?</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </representative>
+                        <limit translate="label">
+                            <label>Don't Show for Specified Users</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>salesrep/source_users</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </limit>
+
+
+                        <disable_edit translate="label">
+                            <label>Disable Ability to Change Sales Rep</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>salesrep/source_disabled</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </disable_edit>
+
+                        <order_status translate="label">
+                            <label>Order Status</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>salesrep/source_order</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </order_status>
+
+                        <skip_restrict translate="label">
+                            <label>Restrict Editing to Specific User Role</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>salesrep/source_roles</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>The selected user role will be able to: see orders, invoices that are assigned to
+                                all sales reps, able to re-assign orders
+                            </comment>
+                        </skip_restrict>
+
+
+                    </fields>
+                </order>
+
+
+                <create_order translate="label">
+                    <label>Orders Created in Magento Admin</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>30</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <expanded>1</expanded>
+                    <fields>
+
+                        <allow translate="label">
+                            <label>Assign Sales Rep When Creating Order?</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </allow>
+
+
+                        <type translate="label">
+                            <label>Manually or Automatically Assign?</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>salesrep/system_config_source_type</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </type>
+
+                        <!--<autoassign_customer_back translate="label">-->
+                            <!--<label>Customer rep?</label>-->
+                            <!--<frontend_type>select</frontend_type>-->
+                            <!--<source_model>adminhtml/system_config_source_yesno</source_model>-->
+                            <!--<sort_order>30</sort_order>-->
+                            <!--<show_in_default>1</show_in_default>-->
+                            <!--<show_in_website>0</show_in_website>-->
+                            <!--<show_in_store>0</show_in_store>-->
+                        <!--</autoassign_customer_back>-->
+
+                    </fields>
+                </create_order>
+
+                <create_order_front translate="label">
+                    <label>Orders Created by Customers</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>40</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <expanded>1</expanded>
+                    <fields>
+                        <autoassign>
+                            <label>Assign Sales Rep When Order is Placed?</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>Assigns a sales rep to the order if all of the products in the order are associated
+                                with that sales rep
+                            </comment>
+                        </autoassign>
+
+                        <autoassign_customer>
+                            <label>Assign Sales Rep by Customers</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>Automatically assigns the sales rep assigned to that customer's account</comment>
+                        </autoassign_customer>
+
+                        <autoassign_special>
+                            <label>Assign order to special representative</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>salesrep/source_users</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>Assign representative to order when it is created by a customer</comment>
+                        </autoassign_special>
+                    </fields>
+                </create_order_front>
+
+
+                <email>
+                    <label>Email Options</label>
+                    <sort_order>70</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+
+                        <autoassign_template translate="label">
+                            <label>Email Template to Notify Sales Rep</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_email_template</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>Select the template used to notify sales reps once an order has been assigned to
+                                them.
+                            </comment>
+                        </autoassign_template>
+
+
+                    </fields>
+                </email>
+
+            </groups>
+
+
+        </salesrep>
+    </sections>
+</config>

@@ -1,0 +1,22 @@
+@CHARSET "UTF-8";
+@media screen and (max-width: 980px) {
+	.b2b-wrapper .register-page .left-column, 
+	.b2b-wrapper .register-page .right-column{width:336px}
+	.label-770{margin-left: 0 !important;margin-top: 10px;}
+	.checkbox-long .label-770{margin-top: 16px;}
+	.b2b-wrapper .register-page .checkbox-box{width: 260px;}
+	.input-box-770{ margin-top: 49px;}
+	.input-box-770-2{margin-bottom: 14px !important;}
+	.b2b-wrapper .register-page .checkbox-box.checkbox-long{width: 100%;}
+	.b2b-wrapper .register-page .limit-to-column{float: right;width: 441px;}
+}
+
+
+@media screen and (max-width: 767px) {
+	.b2b-wrapper .register-page .left-column, 
+	.b2b-wrapper .register-page .right-column{float:none !important;width:100%}
+	.b2b-wrapper .register-page .checkbox-box{width:100%}
+	.b2b-label-480{margin-left: 0 !important;margin-top: 0 !important;}
+	.b2b-wrapper .register-page .limit-to-column{float: none;width: 430px;margin-bottom:25px}
+	.b2b-wrapper .register-page .limit-to-column input[type="text"]{width: 355px;}
+}

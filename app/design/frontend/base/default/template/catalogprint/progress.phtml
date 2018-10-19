@@ -1,0 +1,47 @@
+<?php 
+/**
+ * Magedelight
+ * Copyright (C) 2014  Magedelight <info@magedelight.com>
+ *
+ * NOTICE OF LICENSE
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see http://opensource.org/licenses/gpl-3.0.html.
+ *
+ * @category   Ktpl
+ * @package    Ktpl_Catalogprint
+ * @copyright  Copyright (c) 2014 Mage Delight (http://www.magedelight.com/)
+ * @license    http://opensource.org/licenses/gpl-3.0.html GNU General Public License, version 3 (GPL-3.0)
+ * @author     Magedelight <info@magedelight.com>
+ */
+?>
+<?php 
+    $categoryId = $this->getRequest()->getParam('category');
+    if(strstr($categoryId,",") !== false){
+        $rootIds = Mage::helper('catalogprint')->getRootCategoryIds();
+        $categoryId = $rootIds[0];
+    }  
+?>
+<div class="progress-area-containse">
+    <div id="progress-count">0%</div>  
+</div>
+<div class="meter animate">
+    <span id="progress" style="width: 1%"><span></span></span>
+	<div id="link" style="margin-top: 20px;text-align:center;"><?php echo Mage::helper('catalogprint')->__('Wait catalog is preparing.'); ?></div>
+</div>
+
+<script>
+    $md(function() {
+		$md('#progress').progressBar({'url':'<?php echo $this->getUrl('catalog-print/index/getProgress',array('_secure' => Mage::app()->getFrontController()->getRequest()->isSecure())).'?category='.$categoryId ?>','waitLabel':'<?php echo Mage::helper('catalogprint')->__('Click Here To Download Catalog') ?>','pdf_generate_url':'<?php echo (Mage::registry('pdf_generate_url')) ? Mage::registry('pdf_generate_url') : 'no-url' ?>'});
+    });
+</script>

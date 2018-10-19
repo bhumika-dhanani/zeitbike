@@ -1,0 +1,58 @@
+<?php 
+/**
+ * Magedelight
+ * Copyright (C) 2014  Magedelight <info@magedelight.com>
+ *
+ * NOTICE OF LICENSE
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see http://opensource.org/licenses/gpl-3.0.html.
+ *
+ * @category   Ktpl
+ * @package    Ktpl_Catalogprint
+ * @copyright  Copyright (c) 2014 Mage Delight (http://www.magedelight.com/)
+ * @license    http://opensource.org/licenses/gpl-3.0.html GNU General Public License, version 3 (GPL-3.0)
+ * @author     Magedelight <info@magedelight.com>
+ */
+?>
+<?php 
+    $printButtonHtml = $this->getLayout()->createBlock('adminhtml/widget_button')
+                            ->setData(array(
+                                'label'=>Mage::helper('catalogprint')->__('Print Catalog'),
+                                'onclick'=>'sendPrintRequest();',
+                                'class' =>'save'
+                            ))->toHtml();
+?>
+<div class="content-header">
+    <table cellspacing="0">
+        <tbody>
+        <td style="width:50%;"><h3 class="icon-head head-report-sales-sales"><?php echo $this->__('PDF Catalog Print') ?></h3></td>
+        <td class="form-buttons"><?php echo $printButtonHtml ?></td>
+        </tbody>
+    </table>
+</div>
+<div><?php echo $this->getChildHtml('store_switcher') ?></div>
+<div>
+    <table width="100%" cellspacing="0">
+        <tbody>
+            <tr>
+                <td style="background:none; padding:0;width:350px;" class="side-col">
+                    <?php echo $this->getChildHtml('catalogprint.categories') ?>
+                </td>
+                <td class="main-col" style="padding-left: 28px;">
+                    <?php echo $this->getChildHtml('catalogprint.options') ?>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

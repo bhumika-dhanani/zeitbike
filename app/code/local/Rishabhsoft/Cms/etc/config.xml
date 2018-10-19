@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Rishabhsoft_Cms>
+            <version>0.0.1</version>
+        </Rishabhsoft_Cms>
+    </modules>
+
+    <frontend>
+        <routers>
+            <cms>
+                <use>standard</use>
+                <args>
+                    <modules>
+                        <rishabhcms before="Mage_Cms">Rishabhsoft_Cms</rishabhcms>
+                    </modules>
+                </args>
+            </cms>
+        </routers>
+    </frontend>
+</config>

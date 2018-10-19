@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <IWD_BirthdayCoupon>
+            <version>1.0.0.1</version>
+        </IWD_BirthdayCoupon>
+    </modules>
+
+    <admin>
+        <routers>
+            <iwd_coupon>
+                <use>admin</use>
+                <args>
+                    <module>IWD_BirthdayCoupon</module>
+                    <frontName>iwd_coupon</frontName>
+                </args>
+            </iwd_coupon>
+        </routers>
+    </admin>
+
+    <global>
+        <models>
+            <iwd_coupon>
+                <class>IWD_BirthdayCoupon_Model</class>
+                <resourceModel>iwd_coupon_mysql4</resourceModel>
+            </iwd_coupon>
+            <iwd_coupon_mysql4>
+                <class>IWD_BirthdayCoupon_Model_Mysql4</class>
+                <entities>
+                    <customercoupon>
+                        <table>iwd_customer_coupon</table>
+                    </customercoupon>
+                </entities>
+            </iwd_coupon_mysql4>
+        </models>
+
+        <resources>
+            <iwd_coupon_setup>
+                <setup>
+                    <module>IWD_BirthdayCoupon</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </iwd_coupon_setup>
+            <iwd_coupon_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </iwd_coupon_write>
+            <iwd_coupon_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </iwd_coupon_read>
+        </resources>
+
+        <helpers>
+            <iwd_coupon>
+                <class>IWD_BirthdayCoupon_Helper</class>
+            </iwd_coupon>
+        </helpers>
+
+        <blocks>
+            <iwd_coupon>
+                <class>IWD_BirthdayCoupon_Block</class>
+            </iwd_coupon>
+        </blocks>
+
+        <template>
+            <email>
+                <iwd_coupon_birthday_coupon_template_with_coupon translate="label" module="iwd_coupon">
+                    <label>Happy Birthday (with coupon)</label>
+                    <file>coupon/birthday_coupon.html</file>
+                    <type>html</type>
+                </iwd_coupon_birthday_coupon_template_with_coupon>
+                <iwd_coupon_birthday_coupon_template_none_coupon translate="label" module="iwd_coupon">
+                    <label>Happy Birthday (none coupon)</label>
+                    <file>coupon/birthday_coupon_none.html</file>
+                    <type>html</type>
+                </iwd_coupon_birthday_coupon_template_none_coupon>
+
+                <iwd_coupon_newsletter_subscribe_template_with_coupon translate="label" module="iwd_coupon">
+                    <label>Newsletter Subscribe (with coupon)</label>
+                    <file>coupon/newsletter_subscribe_coupon.html</file>
+                    <type>html</type>
+                </iwd_coupon_newsletter_subscribe_template_with_coupon>
+                <iwd_coupon_newsletter_subscribe_template_none_coupon translate="label" module="iwd_coupon">
+                    <label>Newsletter Subscribe (none coupon)</label>
+                    <file>coupon/newsletter_subscribe_coupon_none.html</file>
+                    <type>html</type>
+                </iwd_coupon_newsletter_subscribe_template_none_coupon>
+
+                <iwd_coupon_first_purchase_template_with_coupon translate="label" module="iwd_coupon">
+                    <label>First purchase (with coupon)</label>
+                    <file>coupon/first_purchase_coupon.html</file>
+                    <type>html</type>
+                </iwd_coupon_first_purchase_template_with_coupon>
+                <iwd_coupon_first_purchase_template_none_coupon translate="label" module="iwd_coupon">
+                    <label>First purchase (none coupon)</label>
+                    <file>coupon/first_purchase_coupon_none.html</file>
+                    <type>html</type>
+                </iwd_coupon_first_purchase_template_none_coupon>
+
+                <iwd_coupon_good_customer_template_with_coupon translate="label" module="iwd_coupon">
+                    <label>Valued customer (with coupon)</label>
+                    <file>coupon/good_customer_coupon.html</file>
+                    <type>html</type>
+                </iwd_coupon_good_customer_template_with_coupon>
+                <iwd_coupon_good_customer_template_none_coupon translate="label" module="iwd_coupon">
+                    <label>Valued customer (none coupon)</label>
+                    <file>coupon/good_customer_coupon_none.html</file>
+                    <type>html</type>
+                </iwd_coupon_good_customer_template_none_coupon>
+
+                <iwd_coupon_new_registration_template_with_coupon translate="label" module="iwd_coupon">
+                    <label>New registration (with coupon)</label>
+                    <file>coupon/new_registration_coupon.html</file>
+                    <type>html</type>
+                </iwd_coupon_new_registration_template_with_coupon>
+                <iwd_coupon_new_registration_template_none_coupon translate="label" module="iwd_coupon">
+                    <label>New registration (none coupon)</label>
+                    <file>coupon/new_registration_coupon_none.html</file>
+                    <type>html</type>
+                </iwd_coupon_new_registration_template_none_coupon>
+            </email>
+        </template>
+
+        <events>
+            <newsletter_subscriber_save_after>
+                <observers>
+                    <iwd_coupon_newsletter_subscrinber>
+                        <class>iwd_coupon/observer</class>
+                        <method>newsletterSubscriberChange</method>
+                    </iwd_coupon_newsletter_subscrinber>
+                </observers>
+            </newsletter_subscriber_save_after>
+            <sales_order_place_after>
+                <observers>
+                    <iwd_coupon_order_place>
+                        <class>iwd_coupon/observer</class>
+                        <method>orderPlace</method>
+                    </iwd_coupon_order_place>
+                </observers>
+            </sales_order_place_after>
+
+            <!--customer_register_success: perversion for magento version 1.4 and 1.5-->
+            <customer_save_before>
+                <observers>
+                    <iwd_coupon_customer_save>
+                        <class>iwd_coupon/observer</class>
+                        <method>customerSaveBefore</method>
+                    </iwd_coupon_customer_save>
+                </observers>
+            </customer_save_before>
+            <customer_save_after>
+                <observers>
+                    <iwd_coupon_customer_save>
+                        <class>iwd_coupon/observer</class>
+                        <method>customerSaveAfter</method>
+                    </iwd_coupon_customer_save>
+                </observers>
+            </customer_save_after>
+            <!-- magento version 1.6, 1.7 ...
+            <customer_register_success>
+                <observers>
+                    <iwd_coupon_register_success>
+                        <class>iwd_coupon/observer</class>
+                        <method>customerRegister</method>
+                    </iwd_coupon_register_success>
+                </observers>
+            </customer_register_success>
+            -->
+        </events>
+        <salesrule>
+            <coupon>
+                <separator>-</separator>
+                <charset>
+                    <alphanum>ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789</alphanum>
+                    <alpha>ABCDEFGHIJKLMNOPQRSTUVWXYZ</alpha>
+                    <num>0123456789</num>
+                </charset>
+            </coupon>
+        </salesrule>
+    </global>
+
+    <adminhtml>
+        <translate>
+            <modules>
+                <IWD_BirthdayCoupon>
+                    <files>
+                        <default>IWD_BirthdayCoupon.csv</default>
+                    </files>
+                </IWD_BirthdayCoupon>
+            </modules>
+        </translate>
+
+        <layout>
+            <updates>
+                <iwd_coupon>
+                    <file>iwd_coupon.xml</file>
+                </iwd_coupon>
+            </updates>
+        </layout>
+
+        <events>
+            <controller_action_predispatch>
+                <observers>
+                    <coupon_check_related>
+                        <type>singleton</type>
+                        <class>iwd_coupon/observer</class>
+                        <method>checkRequiredModules</method>
+                    </coupon_check_related>
+                </observers>
+            </controller_action_predispatch>
+        </events>
+    </adminhtml>
+
+    <frontend>
+        <layout>
+            <updates>
+                <iwd_coupon>
+                    <file>iwd_coupon.xml</file>
+                </iwd_coupon>
+            </updates>
+        </layout>
+    </frontend>
+
+    <default>
+        <iwd_coupon>
+            <genaral>
+                <customer_groups>0,1</customer_groups>
+            </genaral>
+            <good_customer>
+                <enabled>0</enabled>
+                <expire>5</expire>
+                <email_identity>general</email_identity>
+                <spend_more_than>1000</spend_more_than>
+                <permanent_discounts>1</permanent_discounts>
+                <coupon_code>none</coupon_code>
+                <template_with_coupon>iwd_coupon_good_customer_template_with_coupon</template_with_coupon>
+                <template_none_coupon>iwd_coupon_good_customer_template_none_coupon</template_none_coupon>
+            </good_customer>
+            <birthday_coupon>
+                <enabled>0</enabled>
+                <sent_before>0</sent_before>
+                <expire>5</expire>
+                <email_identity>general</email_identity>
+                <coupon_code>none</coupon_code>
+                <template_with_coupon>iwd_coupon_birthday_coupon_template_with_coupon</template_with_coupon>
+                <template_none_coupon>iwd_coupon_birthday_coupon_template_none_coupon</template_none_coupon>
+            </birthday_coupon>
+            <newsletter_subscribe>
+                <enabled>0</enabled>
+                <expire>5</expire>
+                <email_identity>general</email_identity>
+                <coupon_code>none</coupon_code>
+                <template_with_coupon>iwd_coupon_newsletter_subscribe_template_with_coupon</template_with_coupon>
+                <template_none_coupon>iwd_coupon_newsletter_subscribe_template_none_coupon</template_none_coupon>
+            </newsletter_subscribe>
+            <first_purchase>
+                <enabled>0</enabled>
+                <expire>5</expire>
+                <email_identity>general</email_identity>
+                <coupon_code>none</coupon_code>
+                <template_with_coupon>iwd_coupon_first_purchase_template_with_coupon</template_with_coupon>
+                <template_none_coupon>iwd_coupon_first_purchase_template_none_coupon</template_none_coupon>
+            </first_purchase>
+            <new_registration>
+                <enabled>0</enabled>
+                <expire>5</expire>
+                <email_identity>general</email_identity>
+                <coupon_code>none</coupon_code>
+                <template_with_coupon>iwd_coupon_new_registration_template_with_coupon</template_with_coupon>
+                <template_none_coupon>iwd_coupon_new_registration_template_none_coupon</template_none_coupon>
+            </new_registration>
+        </iwd_coupon>
+    </default>
+
+    <crontab>
+        <jobs>
+            <iwd_send_coupons>
+                <!-- each 1 am -->
+                <schedule><cron_expr>0 1 * * *</cron_expr></schedule>
+                <!-- every minute -->
+                <!--<schedule><cron_expr>*/1 * * * *</cron_expr></schedule>-->
+                <run>
+                    <model>iwd_coupon/observer::sendCoupons</model>
+                </run>
+                <!--<store>default</store>-->
+            </iwd_send_coupons>
+        </jobs>
+    </crontab>
+</config>

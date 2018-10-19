@@ -1,0 +1,168 @@
+<?php
+/**
+ * BSS Commerce Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://bsscommerce.com/Bss-Commerce-License.txt
+ *
+ * =================================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This package designed for Magento COMMUNITY edition
+ * BSS Commerce does not guarantee correct work of this extension
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * BSS Commerce does not provide extension support in case of
+ * incorrect edition usage.
+ * =================================================================
+ *
+ * @category   BSS
+ * @package    Bss_FastOrder
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2014-2015 BSS Commerce Co. ( http://bsscommerce.com )
+ * @license    http://bsscommerce.com/Bss-Commerce-License.txt
+ */
+?>
+<?php
+  $helper = Mage::helper('fastorder');
+  if($helper->isEnable() && $helper->getShowLine() > 0) : 
+  $show = $helper->getCustomerGroupShow();
+?>
+
+<?php if($show) : ?>
+  <div id="fastorder">
+    <?php
+      if(Mage::getSingleton('fastorder/session')->getSessionForm() && Mage::helper('fastorder')->getCustomerSession()){
+        echo Mage::getSingleton('fastorder/session')->getSessionForm();
+      }else{
+    ?>
+    <div class="fastorder-page-title">
+      <h1><?php echo $this->__('Fast Order') ?></h1>
+    </div>
+    <form action="<?php echo $this->getUrl('fastorder/ajax/add');?>" method="post" id="fastorder_form" >
+      <table class="fastorder-multiple-form">
+        <tr class="fastorder-row" id="fastorder-0">
+          <th class="fastorder-row-ref">
+            <span><?php echo $this->__('Search') ?></span>
+          </th>
+          <th class="fastorder-row-image">
+            <span><?php echo $this->__('Photo') ?></span>
+          </th>
+          <th class="fastorder-row-name">
+            <span><?php echo $this->__('Product') ?></span>
+          </th>
+          <th class="fastorder-row-qty">
+            <span><?php echo $this->__('Qty') ?></span>
+          </th>
+          <th class="fastorder-row-price">
+            <span><?php echo $this->__('Total Price') ?></span>
+          </th>
+          <th class="fastorder-row-edit">
+            <span><?php echo $this->__('Edit') ?></span>
+          </th>
+          <th class="fastorder-row-add">
+            <span><?php echo $this->__('Action') ?></span>
+          </th>
+        </tr>
+        <?php for($i = 1; $i <= $helper->getShowLine();$i++) : ?>
+          <tr class="fastorder-row row-loader-bg" id="fastorder-<?php echo $i; ?>">
+            <td class="fastorder-row-ref">
+              <div class="height-tr">
+                <div class="input-box">
+                  <input type="text" placeholder="<?php echo $this->__('Enter product name or SKU'); ?>" class="input-text" value="" id="fastorder-ref-<?php echo $i; ?>" name="fastorder-ref-<?php echo $i; ?>" autocomplete="off"/>
+                  <button value="<?php echo $this->__('OK'); ?>" id="fastorder-<?php echo $i; ?>-search" class="button btn-ok" title="<?php echo $this->__('OK'); ?>" type="button"><span><span><?php echo $this->__('OK'); ?></span></span></button>
+                </div>
+                <div class="fastorder_autocomplete" id="fastorder_autocomplete_<?php echo $i; ?>"><ul></ul></div>
+              </div>
+            </td>
+            <td class="fastorder-row-image fastorder-img">&nbsp;</td>
+            <td class="fastorder-row-name">&nbsp;</td>
+            <td class="fastorder-row-qty">
+              <input type="text" min="0" maxlength="12" class="input-text qty validate-greater-than-zero" title="<?php echo $this->__('Qty'); ?>" size="4" value="1" name="fastorder-qty[]" />
+              <input type="hidden" class="sku" value="" name="sku[]" />
+              <input type="hidden" class="typeid" name="typeid[]" value="">
+              <!-- tierprice -->
+              <div class="price_group" style="display: none;"></div>
+              <!-- end tierprice -->
+            </td>
+            <td class="fastorder-row-price">
+              <span class="price"></span>
+            </td>
+            <td class="fastorder-row-edit">
+              <button value="<?php echo $this->__('Edit'); ?>" id="fastorder-edit-<?php echo $i; ?>" class="button disabled" title="<?php echo $this->__('Edit'); ?>" type="button" onclick="editConfigurable(this)"><span><?php echo $this->__('Edit'); ?></span></button>
+            </td>
+            <td class="fastorder-row-add">
+              <button value="<?php echo $this->__('OK'); ?>" id="fastorder-add-<?php echo $i; ?>" class="button btn-ok disabled" title="<?php echo $this->__('OK'); ?>" type="button"><span><span><?php echo $this->__('Reset'); ?></span></span></button>
+            </td>
+          </tr>
+        <?php endfor; ?>
+      </table>
+      <div class="price-subtotal">
+        <span class="label-subtotal"><?php echo $this->__('Subtotal:') ?></span>
+        <span class="price-value">00.00</span>
+      </div>
+      <br/>
+      <button class="submit button" type="submit">
+        <span>
+          <span><?php echo $this->__('Add to cart') ?></span>
+        </span>
+      </button>
+    </form>
+    <div class='fastorder-thumbnail-container'></div>
+    <button class='add-rows button' onclick="fastorder_create()"><span><span><?php echo $this->__('Add lines') ?></span></span></button>
+    <form action="<?php echo $this->getUrl('fastorder/ajax/importCsv');?>" id="data" method="post" enctype="multipart/form-data">
+      <input type="file" id="file" name="file" />
+      <button class="button import-csv" title='Import CSV'><span><span><?php echo $this->__('Import CSV') ?></span></span></button>
+      <a href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'bss/fastorder/import_items_to_cart.csv';?>" class="download_csv">
+        <span><?php echo $this->__('Download Sample Csv') ?></span>
+      </a>
+    </form>
+    <div class="messages"></div>
+      <?php }?>
+  </div>
+
+  <div style="clear:both"></div>
+  <br>
+  <script type="text/javascript">
+    var close = '<?php echo $this->__("Close") ?>';
+    var errorFomat = '<?php echo $this->__("The file&#039;s format is not correct. Please download sample csv file and try again") ?>';
+    var errorItem = '<?php echo $this->__("Not Items Import.") ?>';
+    var errorProduct = '<?php echo $this->__("Some products are not imported as SKUs do not match or the product (s) do not exist on the site.") ?>';
+    var importSuccess = '<?php echo $this->__("Import Success.") ?>';
+    var popup = '<?php echo $helper->isEnableShortcut();?>';
+    var optionsPrice2 = '';
+    var oldform = jQuery('#fastorder_form').html();
+    var form = jQuery('.fastorder-multiple-form tr#fastorder-1').html();
+    var fastorder_minAutocomplete = <?php echo (int) Mage::getStoreConfig('bss_fastorder/general_settings/min_autocomplete'); ?>;
+    var fastorder_ajax_session_form = '<?php echo $this->getUrl('fastorder/ajax/savesessionform'); ?>';
+    var fastorder_ajax_url = '<?php echo $this->getUrl('fastorder/ajax/index'); ?>';
+    var fastorder_checkout_cart = '<?php echo $this->getUrl('checkout/cart'); ?>';
+    var fastorder_ajax_cart_option = '<?php echo $this->getUrl('fastorder/ajax/option'); ?>';
+    var fastorder_currency = "<?php echo Mage::app()->getLocale()->currency(Mage::app()->getStore()->getCurrentCurrencyCode())->getSymbol();?>";
+    var fastorder_form = new VarienForm('fastorder_form');
+    jQuery('#fastorder_form').submit(function(e) {
+      e.preventDefault();
+      if(!jQuery(this).find('.qty').hasClass('validation-failed'))  {
+        fastorder_submit_form();
+      }
+    });
+    jQuery("form#data").submit(function(e){
+      e.preventDefault();
+      importCsv(e);
+    });
+    jQuery(document).ready(function() {
+      jQuery('#fastorder .import-csv').addClass('disabled');
+      jQuery('#fastorder .import-csv').attr('disabled','disabled');
+      jQuery('#fastorder #file').change(function(){
+        if(jQuery('#fastorder #file').val()){
+          jQuery('#fastorder .import-csv').removeClass('disabled');
+          jQuery('#fastorder .import-csv').removeAttr('disabled');
+        }
+      });
+    });
+  </script>
+<?php endif ?>
+<?php endif ?>

@@ -1,0 +1,41 @@
+@CHARSET "UTF-8";
+.b2b-wrapper .register-page label.class_line {border-bottom: 1px solid #e0e0e0;
+	margin-top: 20px;
+	padding-bottom: 11px;}
+.b2b-wrapper .combo-box .right {margin-top: 0px;}
+/*@media screen and (max-width: 1150px) {*/
+	.b2b-wrapper .register-page .input-box .checkbox-box.checkbox-long {
+		width: 615px;
+	}
+	.b2b-wrapper .register-page .checkbox-box.checkbox-long label.label-all{margin-left: 0;margin-top: 10px;}
+	.b2b-wrapper .register-page .checkbox-box.checkbox-long .limit-to-column {margin-top: 6px;}
+	.b2b-wrapper .register-page .checkbox-box.checkbox-long .limit-to-column input[type="text"] {float:left;}
+/*}*/
+@media screen and (max-width: 980px) {
+	.b2b-wrapper .register-page .input-box .checkbox-box.checkbox-long {
+		width: 423px;
+	}
+	.b2b-wrapper .register-page .checkbox-box.checkbox-long label.label-all{margin-left: 28px;margin-top: 0px;}
+	.b2b-wrapper .register-page .checkbox-box.checkbox-long label.label-980{margin-left: 0px;margin-top: 10px;}
+	.b2b-wrapper .register-page .checkbox-box.checkbox-long .limit-to-column {margin-top: 6px;}
+	.b2b-wrapper .register-page .checkbox-box.checkbox-long .limit-to-column input[type="text"] {float:left;}
+	.b2b-wrapper .register-page .left-column,
+	.b2b-wrapper .register-page .right-column{width:336px}
+	.label-770{margin-left: 0 !important;margin-top: 10px;}
+	.checkbox-long .label-770{margin-top: 16px;}
+	.b2b-wrapper .register-page .checkbox-box{width: 260px;}
+	.input-box-770{ margin-top: 49px;}
+	.input-box-770-2{margin-bottom: 14px !important;}
+	.b2b-wrapper .register-page .checkbox-box.checkbox-long{width: 100%;}
+	/*.b2b-wrapper .register-page .limit-to-column{width: 545px;}*/
+}
+
+
+@media screen and (max-width: 767px) {
+	.b2b-wrapper .register-page .left-column, 
+	.b2b-wrapper .register-page .right-column{float:none !important;width:100%}
+	.b2b-wrapper .register-page .checkbox-box{width:100%}
+	.b2b-label-480{margin-left: 0 !important;margin-top: 0 !important;}
+	.b2b-wrapper .register-page .limit-to-column{float: none;width: 430px;margin-bottom:25px}
+	.b2b-wrapper .register-page .limit-to-column input[type="text"]{width: 355px;}
+}

@@ -1,0 +1,59 @@
+<?php $_helper = $this->helper('catalog/output');?>
+<div class="dashboard">
+	<div class="page-title">
+		<h1><?php echo $this->__('My Out of Stock Subscriptions') ?></h1>
+	</div>
+<?php echo $this->getMessagesBlock()->getGroupedHtml()?>
+<?php $_collection = $this->getCollection();?>
+<?php if ($_collection->getSize()>0):?>
+   <table class="data-table" id="stocknotification-table">
+   		 <col width="1" />
+         <col />
+         <col width="1" />
+         <col width="1" />
+		<thead>
+			<tr>
+				<th><?php echo $this->__('Image') ?></th>
+				<th><?php echo $this->__('Product') ?></th>
+				<th><?php echo $this->__('Subscribed on') ?></th>
+				<th>&nbsp;</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php foreach($_collection as $_item):?>
+			<?php $_product  = $this->getProduct($_item);?>
+			<?php $productInfo =  $this->getProductName($_item)?>
+				<tr>
+					<td>
+						<a href="<?php echo $productInfo->getUrl()?>">
+							<img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(75); ?>" width="75" height="75" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+						</a>
+					</td>
+					<td>
+						<?php $productInfo =  $this->getProductName($_item)?>
+						<h3 class="product-name"><a href="<?php echo $productInfo->getUrl()?>"><?php echo $productInfo->getName()?></a></h3>
+					</td>
+					<td><?php echo $this->getFormatedDate($_item->getCreatefdAt()) ?></td>
+					<td>
+						<a href="<?php echo $this->getItemRemoveUrl($_item) ?>" title="<?php echo $this->__('Remove Item') ?>" onclick="return confirmRemoveItem();" class="btn-remove btn-remove2"><?php echo $this->__('Remove item')?></a>
+					</td>
+				</tr>
+			<?php endforeach;?>
+
+		</tbody>
+	</table>
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+	function confirmRemoveItem() {
+	    return confirm('<?php echo $this->__('Are you sure you want to remove this product from your subscriptions?') ?>');
+	}
+	decorateTable('stocknotification-table');
+//]]>	
+</script>
+<?php else: ?>
+        <p class="empty"><?php echo $this->__('You have no subscriptions.') ?></p>
+<?php endif ?>
+</div>

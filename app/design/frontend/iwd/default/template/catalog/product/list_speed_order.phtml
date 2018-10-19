@@ -1,0 +1,162 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Product list template
+ *
+ * @see Mage_Catalog_Block_Product_List
+ */
+/* @var $this Mage_Catalog_Block_Product_List */
+?>
+<?php
+$login = Mage::getSingleton( 'customer/session' )->isLoggedIn();
+if($login) {
+$groupId = Mage::getSingleton('customer/session')->getCustomerGroupId();
+if ($groupId == 2) {
+    $_productCollection = $this->getLoadedProductCollection();
+    $_helper = $this->helper('catalog/output');
+
+    ?>
+    <div class="category-products">
+        <div class="speedorder-paging">
+            <?php echo $this->getToolbarHtml() ?>
+        </div>
+        <?php // List mode
+        ?>
+
+        <?php $_iterator = 0; ?>
+        <table style="width:100%" id="products-list" class="products-list">
+            <thead>
+            <tr>
+
+                <th id="prdname" class="thhover">Product Name</th>
+                <th class="prdimg">Image</th>
+                <th id="prdprice" class="thhover">Price</th>
+                <th id="stock">Stock</th>
+                <th id="spofquantity">Quantity</th>
+                <th id="prdsku" class="thhover">SKU</th>
+                <th></th>
+            </tr>
+    </thead>
+    <tbody>
+    <?php if (!$_productCollection->count()): ?>
+        <tr class="note-msg">
+            <td colspan="7"><?php echo $this->__('There are no products matching the selection.') ?></td>
+        </tr>
+    <?php else: ?>
+
+        <?php foreach ($_productCollection as $_product): ?>
+            <tr class="item<?php if (++$_iterator == sizeof($_productCollection)): ?> last<?php endif; ?>">
+                <td><a href="javascript:void(0)"
+                       class="cd-popup-trigger"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?></a>
+                </td>
+                <td class="item prdimg">
+                    <?php $_imgSize = 100; ?>
+                    <img id="product-collection-image-<?php echo $_product->getId(); ?>"
+                         src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->keepFrame(false)->resize($_imgSize); ?>"
+                         alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>"/>
+                </td>
+                <td class="pricetd"><?php echo $this->getPriceHtml($_product, true) ?></td>
+                <td>
+                    <?php
+                    $stock = Mage::getModel('cataloginventory/stock_item')->loadByProduct($_product);
+                    if (!$_product->canConfigure() && $_product->isSaleable()):
+                        echo $stock->getQty() * 1;
+                    endif;
+                    ?>
+                </td>
+                <td>
+                    <?php if (!$_product->canConfigure() && $_product->isSaleable()): ?>
+                        <div class="quantity buttons_added">
+                            <input type="button" value="-" class="minus"><input type="text" step="1" min="1"
+                                                                                id="quantity_<?php echo $_product->getId(); ?>"
+                                                                                max
+                                                                                class="input-text qty text quantity_<?php echo $_product->getId(); ?>"
+                                                                                name="quantity" value="1"
+                                                                                title="Qty"><input type="button"
+                                                                                                   value="+"
+                                                                                                   class="plus">
+                        </div>
+                    <?php endif; ?>
+                </td>
+
+                <td class="prdsSKU"><?php echo $_product->getSku(); ?></td>
+                <td>
+
+                    <?php if (!$_product->canConfigure() && $_product->isSaleable()): ?>
+                        <button class="cart_btn" id="show_<?php echo $_product->getId() ?>"
+                                onclick="setLocationAjax('<?php echo $this->getAddToCartUrl($_product) ?>','<?php echo $_product->getId() ?>','<?php echo $_product->getTypeId(); ?>')">
+                            Add to Cart
+                        </button>
+                        <!--<span id='ajax_loader<?php /*echo $_product->getId()*/ ?>' style='display:none'><img src='<?php /*echo $this->getSkinUrl('images/opc-ajax-loader.gif')*/ ?>'/></span>-->
+
+                    <?php elseif ($_product->getStockItem() && $_product->getStockItem()->getIsInStock()): ?>
+                        <button class="cart_btn" id="show_<?php echo $_product->getId() ?>"
+                                data-id="show_<?php echo $_product->getId() ?>"
+                                onclick="setLocationAjax('<?php echo Mage::getUrl('checkout/cart/add') ?>','<?php echo $_product->getId() ?>','<?php echo $_product->getTypeId(); ?>')">
+                            Show Options
+                        </button>
+                    <?php else: ?>
+                        <p class="action availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span>
+                        </p>
+                    <?php endif; ?>
+                </td>
+            </tr>
+
+
+        <?php endforeach; ?>
+
+    <?php endif; ?>
+    </tbody>
+    </table>
+    <script type="text/javascript">decorateList('products-list', 'none-recursive')</script>
+
+
+    <div class="toolbar-bottom speedorder-paging">
+        <?php echo $this->getToolbarHtml() ?>
+    </div>
+    </div>
+    <?php
+// Provides a block where additional page components may be attached, primarily good for in-page JavaScript
+    if ($this->getChild('after')) {
+        $_afterChildren = $this->getChild('after')->getSortedChildren();
+        foreach ($_afterChildren as $_afterChildName) {
+            $_afterChild = $this->getChild('after')->getChild($_afterChildName);
+            //set product collection on after blocks
+            $_afterChild->setProductCollection($_productCollection);
+            echo $_afterChild->toHtml();
+        }
+    }
+}}else{?>
+    <div class="wholesale-speedorder-deny">
+        <div class="page-title"><h1>Ooops, sorry!</h1></div>
+        <dl>
+            <dt><?php echo "This page is just for our dealers! Thank you for visiting ZEITBIKE's Speed Order page. <br/>If you are a dealer, please <a href='".Mage::helper('b2b')->getDashboardUrlLogin()."'>log into</a> the page or register with ZEITBIKE. We are happy to serve you well.";?></dt>
+        </dl>
+    </div>
+<?php }
+?>

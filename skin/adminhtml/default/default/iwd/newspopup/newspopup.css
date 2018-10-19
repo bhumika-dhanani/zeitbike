@@ -1,0 +1,2 @@
+.closed label {background:url("../../images/sort-arrow-down.png") no-repeat scroll right 3px  rgba(0, 0, 0, 0)}
+.opened label {background:url("../../images/sort-arrow-up.png") no-repeat scroll right 3px  rgba(0, 0, 0, 0)}

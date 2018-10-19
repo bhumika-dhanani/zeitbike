@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category   Mage
+ * @package    Mage_Core
+ * @copyright  Copyright (c) 2008 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
+ * @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+-->
+<config>
+  <global>
+    <install>
+      <date><![CDATA[Mon, 01 Sep 2014 10:07:51 +0000]]></date>
+    </install>
+    <crypt>
+      <key><![CDATA[fd4a8fc845c5d74779c1d9a60b1800ee]]></key>
+    </crypt>
+    <disable_local_modules>false</disable_local_modules>
+    <resources>
+      <db>
+        <table_prefix><![CDATA[]]></table_prefix>
+      </db>
+      <default_setup>
+        <connection>
+          <host><![CDATA[localhost]]></host>
+          <username><![CDATA[zeitbike_iwd_zei]]></username>
+          <password><![CDATA[GarbBulletPixieOrdeal60]]></password>
+          <dbname><![CDATA[zeitbike_iwd_zeitbike]]></dbname>
+          <initStatements><![CDATA[SET NAMES utf8]]></initStatements>
+          <model><![CDATA[mysql4]]></model>
+          <type><![CDATA[pdo_mysql]]></type>
+          <pdoType><![CDATA[]]></pdoType>
+          <active>1</active>
+        </connection>
+      </default_setup>
+    </resources>
+    <session_save><![CDATA[memcache]]></session_save>
+    <session_save_path><![CDATA[unix:///var/tmp/memcached.zeitbike.zeitbike.com_sessions.sock?persistent=1&weight=2&timeout=10&retry_interval=10]]></session_save_path>
+    <session_cache_limiter><![CDATA[]]></session_cache_limiter>
+    <cache>
+      <backend_options>
+        <server><![CDATA[/var/tmp/redis-multi_zeitbike.zeitbike.com_cache.sock]]></server>
+        <port><![CDATA[0]]></port>
+        <persistent><![CDATA[]]></persistent>
+        <database><![CDATA[0]]></database>
+        <password><![CDATA[]]></password>
+        <connect_retries><![CDATA[1]]></connect_retries>
+        <read_timeout><![CDATA[10]]></read_timeout>
+        <automatic_cleaning_factor><![CDATA[0]]></automatic_cleaning_factor>
+        <compress_data><![CDATA[1]]></compress_data>
+        <compress_tags><![CDATA[1]]></compress_tags>
+        <compress_threshold><![CDATA[20480]]></compress_threshold>
+        <compression_lib><![CDATA[gzip]]></compression_lib>
+        <use_lua><![CDATA[0]]></use_lua>
+      </backend_options>
+      <backend><![CDATA[Cm_Cache_Backend_Redis]]></backend>
+    </cache>
+  </global>
+  <admin>
+    <routers>
+      <adminhtml>
+        <args>
+          <frontName><![CDATA[shop_zeitbike]]></frontName>
+        </args>
+      </adminhtml>
+    </routers>
+  </admin>
+</config>

@@ -1,0 +1,5 @@
+<?php $cms_block_name = $this->getLayout()->createBlock('cms/block')->setBlockId('homepage_text_block')->toHtml();?>
+<?php if(!isset($cms_block_name)) return;?>
+<div class="block-container text-block">
+	<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('homepage_text_block')->toHtml()?>
+</div>

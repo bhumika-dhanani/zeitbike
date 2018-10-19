@@ -1,0 +1,59 @@
+<script type="text/javascript">
+    jQueryIWD(document).ready(function(){
+        jQueryIWD("#viewAllProduct").click(function(){
+            var base_url = "<?php echo Mage::getBaseUrl(); ?>portal/list/sort/";
+            jQueryIWD.ajax({
+                type: 'POST',
+                url: base_url,
+                data: 'name=&category_id=&sku=&qty=&price=&attribute=sku&sort=asc&includePages=1',
+                success: function(data){
+                }
+            });
+        })
+    })
+</script>
+<?php
+    $_helper = Mage::helper('b2b');
+?>
+<?php echo $this->getChildHtml('b2b.subheader');?>
+<div class="b2b-dashboard">
+        <div class="b2b-dashboard-container b2b-overflow">
+            <div class="left place-to-order">
+                <h3><?php echo $this->__('Three Ways To order')?></h3>
+                
+                <div class="b2b-steps">
+                    <div class="item">
+                        <div class="step-number"><span>1</span></div>
+                        <h4><?php echo $this->__('Quick Order')?></h4>
+                        <p><?php echo $this->__('Simply search for a product by name and SKU.')?></p>
+                        <a href="<?php echo $_helper->getQuickOrderUrl()?>"><?php echo $this->__('Start quick ordering')?></a>
+                    </div>
+                    
+                    <div class="item">
+                        <div class="step-number"><span>2</span></div>
+                        <h4><?php echo $this->__('Previously Ordered Items')?></h4>
+                        <p><?php echo $this->__('Easily reorder specific product from previous orders.')?></p>
+                        <a href="<?php echo $_helper->getReorderUrl()?>"><?php echo $this->__('Reorder products')?></a>
+                    </div>
+                    
+                    <div class="item">
+                        <div class="step-number"><span>3</span></div>
+                        <h4><?php echo $this->__('View All Products')?></h4>
+                        <p><?php echo $this->__('Browse all products in grid view with product thumbnails.')?></p>
+                        <a id="viewAllProduct" href="<?php echo $_helper->getOrderAllUrl()?>"><?php echo $this->__('Shop all products')?></a>
+                    </div>    
+                </div>
+                
+            </div>
+            
+            <div class="right download-center">
+                <h3><?php echo $this->__('Download center')?></h3>
+                <p><?php echo $this->__('Get access to the latest resources available for products and download sales tools to help store conversion.')?></p>
+                <a href="<?php echo Mage::helper('b2b')->getDownloadCenterUrl();?>"><?php echo $this->__('IMAGES & PRODUCTS FILES')?></a>
+                <div class="clear"></div>
+                <a href="<?php echo Mage::helper('b2b')->getDownloadCenterUrl(true);?>"><?php echo $this->__('MARKETING MATERIALS & BROCHURES')?></a>
+                
+            </div>
+        </div>
+    
+</div>

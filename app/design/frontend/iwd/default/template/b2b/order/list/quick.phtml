@@ -1,0 +1,18 @@
+<?php 
+    $_collectionList = $this->getItems();
+    $_size= $this->getFullSize();
+    $_helper = $this->helper('catalog/output');
+    $_helperb2b = $this->helper('b2b');
+?>
+<div class="b2b-selected-items <?php if (($_collectionList==false || $_collectionList->Count() == 0) || $_size==0 ):?>hidden<?php endif;?>">
+        <div class="b2b-table-scroll">
+            <div class="div-table">
+                <?php echo $this->getHeadHtml();?>
+                <?php echo $this->getBodyHtml();?>
+            </div>           
+        </div>
+        
+        <div class="table-footer">
+                <a class="right" href="" id="b2b-back-queue"><?php echo $this->__('Back to top')?></a>
+        </div>
+</div>

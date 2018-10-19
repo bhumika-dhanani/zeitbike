@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<config>
+
+	<acl>
+		<resources>
+			<admin>
+				<children>
+
+
+					<system>
+						<children>
+
+							<config>
+								<children>
+									<b2b translate="title" module="b2b">
+										<title>IWD B2B</title>
+										<sort_order>60</sort_order>
+									</b2b>
+								</children>
+							</config>
+						</children>
+					</system>
+
+					<sales>
+						<children>
+								<b2b translate="title" module="b2b">
+									<title>B2B</title>					
+									<sort_order>60</sort_order>
+									<children>
+						
+						
+										<categories translate="title" module="b2b">
+											<title>Manage Categories</title>
+											<sort_order>10</sort_order>
+											
+										</categories>
+										
+										<types translate="title" module="b2b">
+											<title>Manage File Types</title>
+											<sort_order>20</sort_order>
+											
+										</types>
+										
+										<files translate="title" module="b2b">
+											<title>Manage Company Files</title>
+											<sort_order>30</sort_order>
+											
+										</files>
+										
+										<message translate="title" module="b2b">
+											<title>Manage Customer Message</title>
+											<sort_order>40</sort_order>
+											
+										</message>
+									</children>
+								</b2b>
+						</children>
+					</sales>
+				</children>
+			</admin>
+		</resources>
+	</acl>
+	
+	<menu>
+		<sales>			
+			<children>
+				<b2b translate="title" module="b2b">
+					<title>B2B</title>					
+					<sort_order>1</sort_order>
+					<children>
+						
+						
+						<categories translate="title" module="b2b">
+							<title>Manage Categories</title>
+							<sort_order>10</sort_order>
+							<action>adminhtml/b2b_category/edit</action>
+						</categories>
+						
+						<types translate="title" module="b2b">
+							<title>Manage File Types</title>
+							<sort_order>20</sort_order>
+							<action>adminhtml/b2b_type/edit</action>
+						</types>
+						
+						<files translate="title" module="b2b">
+							<title>Manage Company Files</title>
+							<sort_order>30</sort_order>
+							<action>adminhtml/b2b_files/index</action>
+						</files>
+						
+						<message translate="title" module="b2b">
+							<title>Manage Customer Message</title>
+							<sort_order>40</sort_order>
+							<action>adminhtml/b2b_message/index</action>
+						</message>
+						
+					</children>		
+				</b2b>
+			</children>
+		</sales>
+	</menu>
+
+</config>

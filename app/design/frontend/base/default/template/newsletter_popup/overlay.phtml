@@ -1,0 +1,74 @@
+<?php $helper = Mage::helper('iwdpopup');?>
+<?php if( $helper->isEnabled()):?>
+	<?php if((!Mage::getStoreConfig('iwdpopup/device/newsmobile', Mage::app()->getStore()) && $helper->isMobile()) ||
+			 (!Mage::getStoreConfig('iwdpopup/device/newstablet', Mage::app()->getStore()) && $helper->isTablet()) ||
+			 (!$helper->isMobile() && !$helper->isTablet())):
+		?>
+		<div id="popup-newssubscribe" class="modal <?if ($helper->isMobileStyle()):?> mobile-style <?endif;?>"  aria-labelledby="myModalLabel" aria-hidden="false" role="dialog">
+		<div class="modal-dialog" >
+
+		<div class="modal-content">
+			<div class="modal-header">
+	        	<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>	        
+	      	</div>
+			<div class="modal-body">
+				<div class="news_content">
+				 	<div class = 'news_popup'>
+					    <div class="news_contaiter">
+						    <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('iwd_newsletter_top')->toHtml()?>
+						    <form method="post" id="newsletter-validate-data" >
+						        <div class="block-content">
+						            <div class="input-box">
+						               <input type="text" name="email" id="newsletter_input" title="<?php echo $this->__('Enter Email Address') ?>" class="input-text required-entry validate-email newsletter-input"  placeholder="Enter Email Address"/>
+						            </div>
+						            <button type="button" onclick="iwdpopup.submit(this)" id="newsletter_submit" title="<?php echo $this->__('Subscribe') ?>" class="button"><span><?php echo $this->__('Subscribe') ?></span></button>
+						            <div class="clearer"></div>
+						        </div>
+						    </form>
+						</div>
+					    <div id="newspopup-ajax-load"></div>
+					    <div class="news_contaiter">
+					    	 <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('iwd_newsletter_bottom')->toHtml()?>
+					    	 <?php echo $helper->getSocialIcons()?>
+					     	<div class="clearer"></div>
+						</div>
+
+					</div>
+					<div id="popup_message">
+						<span class="success_title message_title"><?php echo $this->__('Good News!')?></span>
+						<span class="error_title message_title"><?php echo $this->__('Opps!')?></span>
+						<span class="message_content"></span>
+                        <div class="buttons_block">
+                            <button class="go_back"><?php echo $this->__('Go back')?></button>
+                            <button class="start_shopping"><span><?php echo $this->__('Start shopping')?></span></button>
+                        </div>
+					</div>
+	 			</div>
+	 		</div>
+ 		</div>
+            <div class="bg_fonts">
+                <div class ="preloader">
+                    <div class="ajax-loader_popup">
+                        <div id="floatingCirclesG">
+                            <div class="f_circleG" id="frotateG_01"></div>
+                            <div class="f_circleG" id="frotateG_02"></div>
+                            <div class="f_circleG" id="frotateG_03"></div>
+                            <div class="f_circleG" id="frotateG_04"></div>
+                            <div class="f_circleG" id="frotateG_05"></div>
+                            <div class="f_circleG" id="frotateG_06"></div>
+                            <div class="f_circleG" id="frotateG_07"></div>
+                            <div class="f_circleG" id="frotateG_08"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+ 		</div>
+ 		</div>
+ 		<script type="text/javascript">
+		//<![CDATA[
+ 			var iwdpopup = new VarienForm('newsletter-validate-data', true);
+ 			var iwdNewspopupConfig = '<?php echo $helper->getJsonConfig()?>';
+			//]]>
+		</script>	
+	<?php endif;?>
+<?php endif;?>

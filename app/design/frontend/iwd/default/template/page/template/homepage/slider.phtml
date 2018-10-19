@@ -1,0 +1,16 @@
+
+<?php //$cms_block = 'homepage_slider';?>
+<?php ////$cms_block_name = $this->getCmsBlock()?>
+<?php //if(isset($cms_block))
+//	$cms_block = $cms_block_name;
+//	?>
+<?php  $slider =  $this->getLayout()->createBlock('cms/block')->setBlockId('homepage_slider')->toHtml()?>
+<?php if($slider):?>
+	<div id="homepage_slider" class="owl-carousel">
+		<?php echo $slider;?>
+	</div>
+
+<?php endif;?>
+<?php echo $this->getChildHtml('topContainer'); ?>
+
+

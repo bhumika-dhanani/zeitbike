@@ -1,0 +1,27 @@
+<?php $collection = Mage::getModel('b2b/type')->getCollection();?>
+<?php $items =  $collection->toArray();?>
+<div class="entity-edit" id="matage-options-panel">
+	<div class="entry-edit-head">
+		<h4 class="icon-head head-edit-form fieldset-legend"><?php echo Mage::helper('catalog')->__('Manage Types') ?></h4>
+	</div>
+	<div class="box">
+		<div class="hor-scroll">
+			<table class="dynamic-grid" cellspacing="0" cellpadding="0" style="width: 50%">
+				<tr id="attribute-options-table">
+					<th>Name</th>
+					<th><button class="scalable add" type="button" id="add_new_option_button"><span><span><span>Add Type</span></span></span></button></th>
+				</tr>
+				<tr class="option-row" style="display:none">
+					<td><input type="text" class="input-text required-option" value="" name="" style="width:90%"></td>					
+					<td class="a-left">
+					<button style="" onclick="" class="scalable delete delete-option"type="button" title="Delete" id=""><span><span><span>Delete</span></span></span></button>
+					</td>
+				</tr>
+			</table>
+		</div>		
+	</div>
+</div>
+<script>
+
+var collection = '<?php echo json_encode($items);?>'
+</script>

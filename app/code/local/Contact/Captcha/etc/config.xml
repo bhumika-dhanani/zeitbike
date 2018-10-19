@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Contact_Captcha>
+            <version>0.1.0</version>
+        </Contact_Captcha>
+    </modules>
+    <default>
+        <captcha>
+            <frontend>
+                <areas>
+                    <contact_page_captcha>
+                        <label>Contact Page</label>
+                    </contact_page_captcha>
+                    <wholesale_register_page_captcha>
+                        <label>Wholesale register Page</label>
+                    </wholesale_register_page_captcha>
+                </areas>
+            </frontend>
+        </captcha>
+    </default>
+    <global>
+        <models>
+            <contact_captcha>
+                <class>Contact_Captcha_Model</class>
+            </contact_captcha>
+        </models>
+        <events>
+            <controller_action_predispatch_contacts_index_post>
+                <observers>
+                    <captcha>
+                        <type>model</type>
+                        <class>contact_captcha/observer</class>
+                        <method>checkContactPage</method>
+                    </captcha>
+                </observers>
+            </controller_action_predispatch_contacts_index_post>
+            <controller_action_predispatch_b2b_account_registerPost>
+                <observers>
+                    <captcha>
+                        <type>model</type>
+                        <class>contact_captcha/observer</class>
+                        <method>checkWholesalePage</method>
+                    </captcha>
+                </observers>
+            </controller_action_predispatch_b2b_account_registerPost>
+        </events>
+    </global>
+</config>

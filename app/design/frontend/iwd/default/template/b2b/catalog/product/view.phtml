@@ -1,0 +1,40 @@
+<?php $_helper = $this->helper('catalog/output'); ?>
+<?php $_product = $this->getProduct(); ?>
+<?php $typeProduct = $_product->getTypeId();?>
+<div class="b2b-dialog-title">
+            <h5><?php echo $_product->getName()?></h5>
+</div>
+<script type="text/javascript">
+    var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
+</script>
+<form class="<?php echo $typeProduct;?>" action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form_modal" <?php if($_product->getOptions()): ?>enctype="multipart/form-data"<?php endif; ?>>
+	<div class="no-display">
+		<input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
+		<input type="hidden" name="related_product" id="related-products-field" value="" />
+	</div>
+        
+	<?php echo $this->getChildHtml('product_options_wrapper');?>
+	<?php echo $this->getLayout()->createBlock('b2b/catalog_product_view_message')->setData('product', $_product)->toHtml()?>
+    
+    <div class="clear"></div>
+	<div class="b2b-modal-action">		
+	       <p class="required">* <?php echo $this->__('Required Fields')?></p>
+	       <div class="clear"></div>
+	        <a href="" class="left btn-small" data-dismiss="modal"><?php echo $this->__('Continue Shopping')?></a>
+	        
+	        <button class="right button btn-large" type="submit"><?php echo $this->__('Add')?></button>
+	        
+	        <div class="right b2b-option-available">
+	          <?php if ($typeProduct=='configurable'):?><span class="hidden">Available: <i id="b2b-current-stock"></i></span><?php endif;?>
+	          <?php if ($typeProduct=='simple' || $typeProduct=='downloadable'):?><span>Available: <i id="b2b-current-stock"><?php echo (int)$_product->getStockItem()->getQty();?></i></span><?php endif;?>
+	          <?php if (!in_array($typeProduct, array('grouped'))):?><input type="text" name="qty" /><?php endif?>
+	        </div>
+	        
+			
+    </div>
+</form>
+
+<script>
+IWD.Stock.config  = '<?php echo Mage::helper('b2b/stock')->getJsonConfig($_product);?>';
+IWD.Stock.applyMethod();
+</script>

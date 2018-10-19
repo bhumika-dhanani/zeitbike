@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<layout>
+    <iwd_auto_related_products_head_handle>
+        <reference name="head">
+            <action method="addCss"><stylesheet>css/iwd/autorelatedproducts/slider.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/iwd/autorelatedproducts/style_generated.css</stylesheet></action>
+            <action method="addItem"><type>skin_js</type><name>js/iwd/autorelatedproducts/slider.js</name></action>
+        </reference>
+        <reference name="content">
+            <block type="iwd_autorelatedproducts/frontend_slide" name="iwd.auto.related.products.slider" after="-" template="iwd/autorelatedproducts/jsinit.phtml"/>
+        </reference>
+    </iwd_auto_related_products_head_handle>
+
+    <default>
+        <update handle="iwd_auto_related_products_head_handle"/>
+    </default>
+</layout>

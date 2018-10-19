@@ -1,0 +1,96 @@
+<?xml version="1.0" ?>
+<config>
+	<menu>
+		<report>
+			<children>
+				<salesrep translate="title" module="salesrep">
+					<title>Sales Representative</title>
+					<sort_order>15</sort_order>
+					<children>
+						<orders>
+							<title>Orders</title>
+							<sort_order>15</sort_order>
+							<action>adminhtml/iwd_salesrep_reports_orders</action>
+						</orders>
+						
+						<product>
+							<title>Product</title>
+							<sort_order>25</sort_order>
+							<action>adminhtml/iwd_salesrep_reports_products</action>
+						</product>
+					</children>
+				</salesrep>
+			</children>
+		</report>
+		<sales>
+			<children>
+				<users translate="title" module="salesrep">
+					<title>Sales Representative</title>
+					<action>adminhtml/iwd_salesrep_users/index</action>
+					<sort_order>210</sort_order>
+				</users>
+			</children>
+		</sales>
+		<system>
+			<children>
+				<iwdall>
+					<children>
+						<salesrep>
+							<title>Sales Representative</title>
+							<action>adminhtml/system_config/edit/section/salesrep</action>
+						</salesrep>
+					</children>
+				</iwdall>
+			</children>
+		</system>
+	</menu>
+	<acl>
+        <resources>
+            <admin>
+                <children>
+                
+					<sales>
+						<children>
+							<users>
+								<title>Sales Representative</title>
+								<sort_order>70</sort_order>
+							</users>
+						</children>
+					</sales>
+					<report>
+						<children>
+							<salesrep>
+									<title>Sales Representative Reports</title>
+									<sort_order>70</sort_order>
+									<children>
+										<orders>
+											<title>Orders</title>
+											<sort_order>70</sort_order>
+										</orders>
+										<product>
+											<title>Products</title>
+											<sort_order>70</sort_order>
+										</product>
+									</children>
+							</salesrep>
+						</children>
+					</report>
+                    
+                    <system>
+						<children>
+							<config>
+								<children>
+									<salesrep translate="title" module="salesrep">
+										<title>Sales Representative</title>
+										<sort_order>70</sort_order>
+									</salesrep>
+								</children>
+							</config>
+						</children>
+					</system>
+                    
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

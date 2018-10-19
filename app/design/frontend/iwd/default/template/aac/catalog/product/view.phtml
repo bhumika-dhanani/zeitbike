@@ -1,0 +1,57 @@
+<?php $_helper = $this->helper('catalog/output'); ?>
+<?php $_product = $this->getProduct(); ?>
+<?php $typeProduct = $_product->getTypeId();?>
+<?php $edit = $this->getData('edit');?>
+<div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
+<h3><?php echo $_product->getName()?></h3> 
+<script type="text/javascript">
+    var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
+</script>
+<form class="<?php echo $typeProduct;?>" action="<?php if(!$edit):?><?php echo $this->getSubmitUrl($_product) ?><?php else:?><?php echo $this->getSubmitUrl($_product) ?><?php endif;?>" method="post" id="product_addtocart_form_modal" <?php if($_product->getOptions()): ?>enctype="multipart/form-data"<?php endif; ?>>
+	<div class="no-display">
+		<input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
+		<input type="hidden" name="related_product" id="related-products-field" value="" />
+	</div>
+        
+	
+    <?php echo $this->getChildHtml('alert_urls') ?>
+    <?php echo $this->getChildHtml('product_type_data') ?>
+    
+    <?php echo $this->getTierPriceHtml() ?>
+    <?php echo $this->getChildHtml('extrahint') ?>
+	
+   <?php echo $this->getChildHtml('other');?>
+   
+    <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+                <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
+    <?php endif;?>
+    
+    
+    <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+            <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
+    <?php endif;?>
+   
+   <?php echo $this->getChildHtml('bundle_prices') ?>
+   
+   
+    
+	<div class="modal-addtocart es-action">
+		<?php if ($typeProduct=='configurable' || $typeProduct=='downloadable' || $typeProduct=='giftcard' || $typeProduct=='simple'):?>
+		<div class="left qty-block">		
+			<input type="text" name="qty" class="ajax-qty-input left" value="<?php echo $this->getProductDefaultQty() * 1 ?>"/>
+			<div class="right qty-slider">
+				<a class="inc"></a>
+				<a class="dec"></a>
+			</div>
+		</div>
+		<?php endif;?>
+		<?php if(!$edit):?>
+			<button class="button btn-add-to-cart" type="submit"><span><span><?php echo $this->__('Add to Cart')?></span></span></button>
+		<?php else:?>
+			<button class="button btn-add-to-cart" type="submit"><span><span><?php echo $this->__('Update Product')?></span></span></button>
+		<?php endif;?>
+	</div>
+</form>
+<script>
+	IWD.AjaxCart.Decorator.decorateQty();
+</script>

@@ -1,0 +1,314 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<IWD_B2B>
+			<version>1.0.2</version>
+			<edition>CE</edition>
+		</IWD_B2B>
+	</modules>
+
+	<global>
+
+		<helpers>
+			<b2b>
+				<class>IWD_B2B_Helper</class>
+			</b2b>
+		</helpers>
+		
+		<blocks>
+			<b2b>
+				<class>IWD_B2B_Block</class>
+			</b2b>
+
+            <bundle>
+                <rewrite>
+                    <catalog_product_view_type_bundle_option_select>IWD_B2B_Block_Catalog_Product_View_Type_Bundle_Option_Select</catalog_product_view_type_bundle_option_select>
+                    <catalog_product_view_type_bundle_option_radio>IWD_B2B_Block_Catalog_Product_View_Type_Bundle_Option_Radio</catalog_product_view_type_bundle_option_radio>
+                    <catalog_product_view_type_bundle_option_multi>IWD_B2B_Block_Catalog_Product_View_Type_Bundle_Option_Multi</catalog_product_view_type_bundle_option_multi>
+                    <catalog_product_view_type_bundle_option_checkbox>IWD_B2B_Block_Catalog_Product_View_Type_Bundle_Option_Checkbox</catalog_product_view_type_bundle_option_checkbox>
+                </rewrite>
+            </bundle>
+            <catalog>
+            	<rewrite>
+            		<product_view_type_configurable>IWD_B2B_Block_Catalog_Product_View_Type_Configurable</product_view_type_configurable>
+            	</rewrite>
+            </catalog>
+			<core>
+				<rewrite>
+					<template>IWD_B2B_Block_System_Config_Form_Fieldset_System</template>
+				</rewrite>
+			</core>
+			<adminhtml>
+				<rewrite>
+					<template>IWD_B2B_Block_Adminhtml_Message_Files</template>
+				</rewrite>
+			</adminhtml>
+		</blocks>
+		
+		<models>
+			<b2b>
+				<class>IWD_B2B_Model</class>
+				<resourceModel>b2b_resource</resourceModel>
+			</b2b>
+			<checkout>
+			    <rewrite>
+			        <type_onepage>IWD_B2B_Model_Checkout_Onepage</type_onepage>
+			    </rewrite>
+			</checkout>
+			<sales>
+			    <rewrite>
+			        <order>IWD_B2B_Model_Sales_Order</order>
+			    </rewrite>
+			</sales>
+			
+			<b2b_resource>
+				<class>IWD_B2B_Model_Resource</class>
+				<entities>
+                	<customer>
+                    	<table>iwd_b2b_customer_info</table>
+                	</customer>
+                	<category>
+                    	<table>iwd_b2b_category</table>
+                	</category>
+                	<type>
+                    	<table>iwd_b2b_type</table>
+                	</type>
+                	
+                	<message>
+                    	<table>iwd_b2b_message</table>
+                	</message>
+                	<file>
+                    	<table>iwd_b2b_file</table>
+                	</file>
+                	<file_product>
+                		<table>iwd_b2b_file_product</table>
+                	</file_product>
+            	</entities>
+        	</b2b_resource>
+		</models>
+		
+		<resources>
+			<iwd_b2b_setup>
+				<setup>
+					<module>IWD_B2B</module>
+					<class>IWD_B2B_Model_Resource_Setup</class>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</iwd_b2b_setup>
+
+			<b2b_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</b2b_write>
+
+			<b2b_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</b2b_read>
+		</resources>
+		
+		
+		<events>
+		    <checkout_controller_onepage_save_shipping_method>
+		        <observers>
+		            <b2b_save_date>
+		                <type>singleton</type>
+		                <class>b2b/observer</class>
+		                <method>saveDesiredDeliveryTime</method>
+		            </b2b_save_date>
+		        </observers>
+		    </checkout_controller_onepage_save_shipping_method>
+		    
+		    <sales_convert_order_to_quote>
+			    <observers>
+			        <copy_delivery_date>
+			            <type>singleton</type>
+			            <class>b2b/observer</class>
+			            <method>copyDesiredDeliveryTimeToQuote</method>                        
+			        </copy_delivery_date>
+			    </observers>
+			</sales_convert_order_to_quote>
+		</events>
+		
+		<template>
+            <email>
+                <b2b_emails_recieved_template translate="label" module="b2b">
+                    <label>New Application(store owner)</label>
+                    <file>b2b/new_application_received.html</file>
+                    <type>html</type>
+                </b2b_emails_recieved_template>
+                <b2b_emails_customer_recieved_template translate="label" module="b2b">
+                    <label>Confirmation Application(for user)</label>
+                    <file>b2b/new_application_received_customer.html</file>
+                    <type>html</type>
+                </b2b_emails_customer_recieved_template>
+                <b2b_emails_customer_approved translate="label" module="b2b">
+                    <label>Application Approved</label>
+                    <file>b2b/application_approved.html</file>
+                    <type>html</type>
+                </b2b_emails_customer_approved>
+            </email>
+        </template>
+        
+        
+        <fieldsets>
+		    <sales_convert_quote_address>
+		        <delivery_date>
+		            <to_order>*</to_order>
+		        </delivery_date>
+		    </sales_convert_quote_address>
+		</fieldsets>
+		
+	</global>
+
+	<frontend>
+		<routers>
+			<b2b>
+				<use>standard</use>
+				<args>
+					<module>IWD_B2B</module>
+					<frontName>portal</frontName>
+				</args>
+			</b2b>
+		</routers>
+		<translate>
+			<modules>
+				<IWD_B2B>
+					<files>
+						<default>IWD_B2B.csv</default>
+					</files>
+				</IWD_B2B>
+			</modules>
+		</translate>
+		<layout>
+			<updates>
+				<b2b>
+					<file>b2b.xml</file>
+				</b2b>
+			</updates>
+		</layout>
+		
+		<events>
+			<customer_register_success>
+                <observers>
+                    <persistent>
+                        <class>b2b/observer</class>
+                        <method>registerSuccess</method>
+                    </persistent>
+                </observers>
+            </customer_register_success>
+			
+			<controller_action_postdispatch_catalog_product_view>
+				<observers>
+					<b2b_cart_add_product_complete>
+						<type>singleton</type>
+						<class>b2b/observer</class>
+						<method>productView</method>
+					</b2b_cart_add_product_complete>
+				</observers>
+			</controller_action_postdispatch_catalog_product_view>
+			
+			<controller_action_layout_load_before>
+				<observers>
+					<b2b_controller_action_layout_load_before>
+						<type>singleton</type>
+						<class>b2b/observer</class>
+						<method>checkB2B</method>
+					</b2b_controller_action_layout_load_before>
+				</observers>
+			</controller_action_layout_load_before>
+			
+		</events>
+		
+	</frontend>
+	
+	<admin>
+		<routers>
+			<adminhtml>
+				<args>
+					<modules>
+						<b2b before="Mage_Adminhtml">IWD_B2B_Adminhtml</b2b>
+					</modules>
+				</args>
+			</adminhtml>
+		</routers>
+	</admin>
+	
+	<adminhtml>
+
+		<layout>
+			<updates>
+				<b2b>
+					<file>b2b.xml</file>
+				</b2b>
+			</updates>
+		</layout>
+
+		<translate>
+			<modules>
+				<b2b>
+					<files>
+						<default>IWD_B2B.csv</default>
+					</files>
+				</b2b>
+			</modules>
+		</translate>
+		
+		<events>
+			<adminhtml_customer_prepare_save>
+                <observers>
+                    <persistent>
+                        <class>b2b/observer</class>
+                        <method>prepareSaveCustomer</method>
+                    </persistent>
+                </observers>
+            </adminhtml_customer_prepare_save>
+            
+            <adminhtml_customer_save_after>
+                <observers>
+                    <persistent>
+                        <class>b2b/observer</class>
+                        <method>saveCustomerAfter</method>
+                    </persistent>
+                </observers>
+            </adminhtml_customer_save_after>
+            
+            
+		</events>
+		
+
+	</adminhtml>
+
+	<default>
+		<b2b>
+			<order>
+				<date>1</date>
+			</order>	
+			<access>
+				<message>Sorry, you are not permitted to access this area of the website.</message>
+			</access>
+			<login_form>
+				<text1>WHOLESALE LOGIN</text1>
+				<text2><![CDATA[Not a wholesaler? <a href="/customer/account/login">Login Here</a>]]></text2>
+				<text3>Interested in becoming a wholesaler?</text3>
+				<text4>REGISTER</text4>
+			</login_form>
+			<register_form>
+				<success>Please Fill Success Message</success>
+				<redirect>portal/account/register</redirect>
+			</register_form>
+			<store>
+				<type>1</type>
+			</store>
+			<product>
+				<only_special>1</only_special>
+			</product>
+		</b2b>
+	
+	</default>
+
+</config>

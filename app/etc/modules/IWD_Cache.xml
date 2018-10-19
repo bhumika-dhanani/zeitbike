@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <IWD_Cache>
+      <active>true</active>
+      <codePool>community</codePool>
+      <version>1.0.1</version>
+    </IWD_Cache>
+  </modules>
+</config>

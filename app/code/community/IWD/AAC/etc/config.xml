@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<IWD_AAC>
+			<version>1.1.2</version>
+		</IWD_AAC>
+	</modules>
+
+	<frontend>
+
+		<routers>
+			<aac>
+				<use>standard</use>
+				<args>
+					<module>IWD_AAC</module>
+					<frontName>aac</frontName>
+				</args>
+			</aac>
+		</routers>
+
+		<layout>
+			<updates>
+				<aac>
+					<file>iwd_ajaxcart.xml</file>
+				</aac>
+			</updates>
+		</layout>
+
+		<translate>
+			<modules>
+				<IWD_AAC>
+					<files>
+						<default>IWD_Ajax_Cart.csv</default>
+					</files>
+				</IWD_AAC>
+			</modules>
+		</translate>
+
+		<events>
+
+			<!-- AJAX CART -->
+			<checkout_cart_add_product_complete>
+				<observers>
+					<aac_cart_add_product_complete>
+						<type>singleton</type>
+						<class>aac/observer</class>
+						<method>checkoutCartAddProductComplete</method>
+					</aac_cart_add_product_complete>
+				</observers>
+			</checkout_cart_add_product_complete>
+
+			<controller_action_postdispatch_catalog_product_view>
+				<observers>
+					<aac_cart_add_product_complete>
+						<type>singleton</type>
+						<class>aac/observer</class>
+						<method>productView</method>
+					</aac_cart_add_product_complete>
+				</observers>
+			</controller_action_postdispatch_catalog_product_view>
+			
+			<controller_action_postdispatch_checkout_cart_updateItemOptions>
+				<observers>
+					<controller_action_postdispatch_checkout_cart_updateItemOptions_aac>
+						<type>singleton</type>
+						<class>aac/observer</class>
+						<method>productupdate</method>
+					</controller_action_postdispatch_checkout_cart_updateItemOptions_aac>
+				</observers>
+			</controller_action_postdispatch_checkout_cart_updateItemOptions>
+			
+			
+			<controller_action_postdispatch_checkout_cart_configure>
+				<observers>
+					<controller_action_postdispatch_checkout_cart_configure_aac>
+						<type>singleton</type>
+						<class>aac/observer</class>
+						<method>productConfigure</method>
+					</controller_action_postdispatch_checkout_cart_configure_aac>
+				</observers>
+			</controller_action_postdispatch_checkout_cart_configure>
+			
+			
+			<http_response_send_before>
+                <observers>
+                    <aac_http_response_send_before>
+                        <type>singleton</type>
+                        <class>aac/observer</class>
+                        <method>sendResponseBefore</method>
+                    </aac_http_response_send_before>
+                </observers>
+            </http_response_send_before>
+
+		</events>
+
+	</frontend>
+
+
+	<global>
+		<models>
+			<aac>
+				<class>IWD_AAC_Model</class>
+				<resourceModel>aac_resource</resourceModel>
+			</aac>
+		</models>
+
+		<resources>
+			<aac_setup>
+				<setup>
+					<module>IWD_AAC</module>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</aac_setup>
+			<aac_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</aac_write>
+
+			<aac_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</aac_read>
+
+
+
+		</resources>
+
+		<helpers>
+			<aac>
+				<class>IWD_AAC_Helper</class>
+			</aac>
+		</helpers>
+
+		<blocks>
+
+			<aac>
+				<class>IWD_AAC_Block</class>
+			</aac>
+
+		</blocks>
+	</global>
+
+	<default>
+		<aac>
+			<dev>
+				<background>#00909e</background>
+				<foreground>#FFFFFF</foreground>
+			</dev>
+		</aac>
+	</default>
+</config>

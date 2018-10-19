@@ -1,0 +1,9 @@
+<?php $_customer = Mage::getSingleton('customer/session')->getCustomer();?>
+<?php $_customerData = Mage::getSingleton('b2b/customer')->load($_customer->getId(), 'customer_id');?>
+<div class="b2b-sub-header">
+    <h5><?php echo $_customerData->getStoreName()?></h5>
+        <div class="b2b-overflow">
+            <h4 class="left">WELCOME <strong><?php echo Mage::getSingleton('customer/session')->getCustomer()->getName()?></strong>  <a href="" class="b2b-logout b2b-signout-modal">(LOGOUT)</a></h4>
+            <a href="<?php echo Mage::getBaseUrl('link', true)?>" class="b2b-to-store right"><?php echo $this->__('SHOP ENTIRE STORE')?></a>
+        </div>
+</div>

@@ -1,0 +1,70 @@
+<?php
+/**
+ * Magedelight
+ * Copyright (C) 2014  Magedelight <info@magedelight.com>
+ *
+ * NOTICE OF LICENSE
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see http://opensource.org/licenses/gpl-3.0.html.
+ *
+ * @category   Ktpl
+ * @package    Ktpl_Catalogprint
+ * @copyright  Copyright (c) 2014 Mage Delight (http://www.magedelight.com/)
+ * @license    http://opensource.org/licenses/gpl-3.0.html GNU General Public License, version 3 (GPL-3.0)
+ * @author     Magedelight <info@magedelight.com>
+ */
+?>
+<?php $helper = Mage::helper("catalogprint"); ?>
+<?php if(Mage::getStoreConfig('catalogprint/general/enable_frontend') == '1'): ?>
+<?php
+$currentCategory = Mage::registry('current_category');
+$displayPrint = $currentCategory->getData('display_print');
+?>
+<?php if($helper->isAllowGroups() && (in_array($displayPrint,array('1')) || !in_array($displayPrint,array('0','1')))): ?>
+
+<?php if(count($currentCategory->getProductCollection()) > 0): ?>
+<a class="print-ctg" href="#" style="float: right;">
+    <?php echo $helper->__('Print Catalog')?>
+</a>
+<script type="text/javascript">
+	//initialize assembly popups
+        $md(document).ready(function($){
+            var fConfig = new Object();
+            fConfig.layout_options = [
+                                        "<?php echo $helper->__('Print PDF Catalog Layout View') ?>",
+                                        "<?php echo $helper->__('Grid Layout') ?>",
+                                        "<?php echo $helper->__('List Layout') ?>"
+                                     ];
+            
+            fConfig.pdf_options = [
+                                        "<?php echo $helper->__('Print PDF Catalog Options') ?>",
+                                        "<?php echo $helper->__('Product Categories/Sub Categories Headings') ?>",
+                                        "<?php echo $helper->__('Title/cover page') ?>",
+                                        "<?php echo $helper->__('Table of Contents with page numbers') ?>",
+                                        "<?php echo $helper->__('Document index by Product SKU in ascending order.') ?>",
+                                        "<?php echo $helper->__('Document index by Product Name in alphabetical sorted ascending order.') ?>"
+                                     ];
+            $('.print-ctg').pdfoptFancybox({
+                        title       : '<?php echo $helper->__('Catalog Print Option') ?>',
+			printUrl    : '<?php echo $this->getUrl('catalog-print',array('_secure' => Mage::app()->getFrontController()->getRequest()->isSecure())) ?>?category=<?php echo $currentCategory->getId();?>',
+                        printConfig : fConfig,
+                        printBtnLabel : '<?php echo $helper->__('Print Catalog') ?>',
+                        customerGroup : '<?php echo Mage::getSingleton('customer/session')->getCustomerGroupId() ?>',
+		});
+        });
+        
+</script>
+<?php endif; ?>
+<?php endif; ?>
+<?php endif; ?>

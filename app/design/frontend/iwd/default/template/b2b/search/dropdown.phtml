@@ -1,0 +1,34 @@
+<?php $_helper = $this->helper('catalog/output'); ?>
+<?php $_collection = $this->getCollection();?>
+<div class="quick-search-result">
+    <div class="b2b-search-loader"></div>
+    <?php if ($_collection->Count()>0):?>
+	<div class="quick-search-wrapper">
+	    <?php $i=0; foreach ($_collection as $_product):?>
+		<div class="item-result" data-product="<?php echo $_product->getId()?>">
+			<div class="item-result-wrapper <?php if ($i==0):?>first<?php endif?>">
+				<div class="image-item">
+					<img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(75); ?>" width="75" height="75" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+				</div>
+				<div class="desc-item">
+					<h3><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h3>
+					<?php 
+					   $shortDescription = $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description');
+					   $shortDescription = strip_tags($shortDescription);
+					   $shortDescription = Mage::helper('core/string')->truncate($shortDescription, 156,'...');
+					?>
+					<p><?php echo $shortDescription;?></p>
+				</div>
+				<div class="price-item">
+				    <?php $_product->setData('price_view', 1)?>
+					<?php echo $this->getPriceHtml($_product, true) ?>
+				</div>
+			</div>
+		</div>
+		<?php ++$i;?>
+		<?php endforeach;?>
+	</div>
+	<?php else:?>
+	   <p class="empty-result"><?php echo $this->__('No product matches with this query.')?></p>
+	<?php endif;?>
+</div>

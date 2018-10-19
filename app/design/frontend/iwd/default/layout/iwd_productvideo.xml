@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+    <default>
+
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><name>js/iwd/productvideo/edit.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/iwd/productvideo/video.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/iwd/productvideo/dev/video.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/iwd/productvideo/view.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/iwd/productvideo/zoom.js</name></action>
+        </reference>
+    </default>
+    <catalog_product_view>
+        <reference name="product.info">
+            <block type="iwd_productvideo/frontend_media" name="product.info.media" as="media">
+                <block type="iwd_productvideo/frontend_thumbnails" name="iwd.productvideo.media.thumbnails" template="iwd/productvideo/thumbnails.phtml"/>
+            </block>
+        </reference>
+    </catalog_product_view>
+</layout>

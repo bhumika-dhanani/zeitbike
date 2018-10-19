@@ -1,0 +1,349 @@
+.modal-open {
+	overflow: hidden;
+}
+
+.b2b-modal {
+	display: none;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1050;
+	-webkit-overflow-scrolling: touch;
+	outline: 0;
+	text-align: left;
+}
+
+.b2b-modal * {
+	/*font-family: 'Open Sans', sans-serif !important;*/
+	margin: 0;
+	padding: 0;
+	line-height: 1.25em;
+	text-decoration: none;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	text-decoration: none
+}
+
+.b2b-modal.fade .b2b-modal-dialog {
+	-webkit-transform: translate3d(0, -25%, 0);
+	transform: translate3d(0, -25%, 0);
+	-webkit-transition: -webkit-transform 0.3s ease-out;
+	-moz-transition: -moz-transform 0.3s ease-out;
+	-o-transition: -o-transform 0.3s ease-out;
+	transition: transform 0.3s ease-out;
+}
+
+.b2b-modal.in .b2b-modal-dialog {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+.modal-open .b2b-modal {
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.b2b-modal-dialog {
+	position: relative;
+	width: auto;
+	margin: 10px;
+}
+
+.b2b-modal-content {
+	position: relative;
+	background-color: #ffffff;
+	border: 3px solid #ededed;
+	background-clip: padding-box;
+	outline: 0;
+}
+
+.modal-backdrop {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1040;
+	background-color: #000000;
+}
+
+.modal-backdrop.fade {
+	opacity: 0;
+	filter: alpha(opacity =     0);
+}
+
+.modal-backdrop.in {
+	opacity: 0.5;
+	filter: alpha(opacity =     50);
+}
+
+.b2b-modal-body {
+	position: relative;
+	padding: 46px 51px;
+}
+
+.modal-scrollbar-measure {
+	position: absolute;
+	top: -9999px;
+	width: 50px;
+	height: 50px;
+	overflow: scroll;
+}
+
+.b2b-modal a.close {
+	background: url("images/close-popup.png") no-repeat scroll 0 0
+		transparent;
+	display: block;
+	height: 30px;
+	position: absolute;
+	right: -33px;
+	top: -3px;
+	width: 30px;
+	cursor: pointer;
+}
+
+.b2b-modal .b2b-dialog-title {
+	border-bottom: 2px solid #443636;
+	border-bottom: 2px solid #443636;
+	margin-bottom: 22px;
+	padding-bottom: 21px
+}
+
+.b2b-modal .b2b-dialog-title h5 {
+	color: #000000;
+	font-size: 32px;
+	font-weight: normal;
+	line-height: 41px;
+	margin: 0;
+	padding: 0;
+	text-transform: uppercase;
+}
+
+.b2b-modal .box-input {
+	
+}
+
+.b2b-modal .box-input:first-child {
+	margin-bottom: 21px;
+}
+.b2b-modal .box-input label{display: block !important;}
+.b2b-modal .box-input label {
+	color: #2a2a2a;
+	display: block;
+	font-size: 16px;
+	font-weight: bold;
+	margin: 0 0 8px;
+	padding: 0;
+}
+
+.b2b-modal .box-input label em {
+	color: #09dd9a;
+	font-weight: normal;
+}
+
+.b2b-modal .box-input input {
+	box-shadow: none !important;
+	border: 1px solid #e0e0e0 !important;
+	height: 40px;
+	width: 371px;
+	padding: 0;
+	color: #000000;
+	font-size: 16px;
+	padding-left: 13px;
+	padding-right: 13px;
+	font-weight: normal;
+}
+
+.b2b-modal .b2b-dialog-note {
+	margin-bottom: 23px;
+	margin-top: 9px;
+}
+
+.b2b-modal .b2b-dialog-note a {
+	color: #ec87ad;
+	font-size: 14px;
+}
+
+.b2b-modal .b2b-dialog-note a:hover {
+	color: #000000
+}
+
+.b2b-modal .b2b-dialog-note p {
+	color: #09dd9a;
+	font-size: 12px;
+}
+
+.b2b-modal .b2b-dialog-action {
+	border-bottom: 2px solid #443636;
+	padding-bottom: 25px;
+	margin-bottom: 21px;
+}
+
+.b2b-modal .b2b-dialog-action p {
+	color: #000000;
+	font-size: 14px;
+	font-weight: normal;
+	margin-top: 23px;
+}
+
+.b2b-modal .b2b-dialog-action p a {
+	color: #ec87ad;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.b2b-modal .b2b-dialog-action a.btn-login {
+	cursor: pointer;
+	background: #fff;
+	color: #7e7e7e;
+	font-size: 28px;
+	font-weight: normal;
+	text-transform: uppercase;
+	line-height: 1;
+	padding: 8px 21px;
+	border:1px solid #7e7e7e;font-family: 'Yanone Kaffeesatz', sans-serif !important; 
+}
+
+.b2b-modal .b2b-dialog-action a.btn-login:hover {
+	background: #3d3d3d;
+	color: #fff;
+	border-color: #070707;
+
+}
+
+.b2b-modal .register {
+	text-align: center
+}
+
+.b2b-modal .register h6 {
+	font-family: Roboto;
+	color: #000000;
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 25px;
+}
+
+.b2b-modal .register a {
+	font-family: 'Yanone Kaffeesatz', sans-serif !important; 
+	color: #ec87ad;
+	font-size: 28px;
+	font-weight: normal;
+	text-transform: uppercase;
+	line-height: 1;
+	padding: 8px 23px;
+	display: inline-block;
+	margin: 0 auto;
+	border:1px solid #ec87ad;
+}
+
+.b2b-modal .register a:hover {
+	background-color: #ec87ad;
+	color: #fff;
+	border-color: #c64a79;
+}
+
+.b2b-modal input:focus,.b2b-modal select:focus,.b2b-modal textarea:focus
+	{
+	background-color: #fff;
+}
+
+.b2b-ajax-loader {
+	background: url("images/loader.png") no-repeat scroll center center
+		rgba(0, 0, 0, 0.65);
+	height: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 8001;
+	display: none
+}
+
+.b2b-modal input:focus,.b2b-modal select:focus,.b2b-modal textarea:focus
+	{
+	background-color: #fff;
+}
+
+.b2b-modal .validation-advice {
+	background-position: 0 0;
+	padding-left: 15px;
+	position: absolute;
+}
+
+.b2b-product-dialog .b2b-modal-body {
+	padding: 39px 51px 46px
+}
+
+.b2b-product-dialog .b2b-dialog-title {
+	padding-bottom: 43px;
+	margin-bottom: 36px;
+}
+
+@media ( min-width : 480px) {
+	.b2b-modal-dialog {
+		width: 480px;
+		margin: 30px auto;
+		z-index: 1060;
+	}
+	#b2b-ajaxcart-modal  .b2b-modal-dialog {
+		width: 750px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	#b2b-ajaxcart-modal {
+		width: 430px;
+		margin: 30px auto;
+		z-index: 1060;
+	}
+	
+	#b2b-ajaxcart-modal .b2b-modal-body {
+		padding: 48px 25px !important
+	}
+	#b2b-ajaxcart-modal .b2b-modal-dialog {
+		width: 430px;
+	}
+	
+	
+	#b2b-view-modal {
+		width: 430px;
+		margin: 30px auto;
+		z-index: 1060;
+	}
+	#b2b-view-modal .b2b-modal-body {
+		padding: 27px 25px !important
+	}
+	#b2b-view-modal .b2b-modal-dialog {
+		width: 430px;
+	}
+	
+	
+	
+}
+
+.hide {
+	display: none !important;
+}
+
+.show {
+	display: block !important;
+}
+
+.invisible {
+	visibility: hidden;
+}
+
+.hidden {
+	display: none !important;
+	visibility: hidden !important;
+}
+
+.affix {
+	position: fixed;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}

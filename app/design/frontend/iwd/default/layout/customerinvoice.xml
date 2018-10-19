@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <customer_account>
+        <reference name="customer_account_navigation">
+            <block type="customerinvoice/accountlink" name="customerinvoice.accountlink" as="customerinvoice_accountlink">
+                <action method="addLink"></action>
+            </block>
+        </reference>
+    </customer_account>
+     <customerinvoice_index_list>
+        <update handle="customer_account"/>
+        <reference name="my.account.wrapper">
+            <block type="customerinvoice/invoicelist" name="customerinvoice.invoicelist" template="customerinvoice/invoicelist.phtml">
+                <block type="core/text_list" name="customerinvoice.info" as="customerinvoice_info" translate="label">
+                    <label>Order Invoice  Info</label>
+                </block>
+            </block>
+            <block type="customer/account_dashboard" name="customer.account.link.back" template="customer/account/link/back.phtml"/>
+        </reference>
+    </customerinvoice_index_list>
+</layout>

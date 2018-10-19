@@ -1,0 +1,53 @@
+<?php $productId = Mage::app()->getRequest()->getParam('product', false);?>
+<?php $_product = Mage::getModel('catalog/product')->load($productId);?>
+<?php
+    $_helper = $this->helper('catalog/output');
+?>
+
+<div class="b2b-product-preview">
+     <div class="b2b-media left">
+            <?php if ($_product->getImage() != 'no_selection' && $_product->getImage()): ?>
+                <p class="product-image product-image-zoom">
+                    <?php
+                        $_img = '<img id="b2b-image" src="'. $this->helper('catalog/image')->init($_product, 'image')->resize(312, 458).'" alt="'.$this->htmlEscape($this->getImageLabel()).'" title="'.$this->htmlEscape($this->getImageLabel()).'" />';
+                        echo $_helper->productAttribute($_product, $_img, 'image');
+                    ?>
+                </p>
+            <?php else: ?>
+                <p class="product-image">
+                    <?php
+                        $_img = '<img src="'.$this->helper('catalog/image')->init($_product, 'image')->resize(312).'" alt="'.$this->htmlEscape($this->getImageLabel()).'" title="'.$this->htmlEscape($this->getImageLabel()).'" />';
+                        echo $_helper->productAttribute($_product, $_img, 'image');
+                    ?>
+                </p>
+            <?php endif; ?>
+            <?php if (count($_product->getMediaGalleryImages($_product)) > 0): ?>
+            <div class="more-views">
+                <div class="b2b-product-slider">    
+                    <ul>
+                    <?php foreach ($_product->getMediaGalleryImages($_product) as $_image): ?>
+                        <li>
+                            <a href="" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>" data-image="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail', $_image->getFile())->resize(312,458); ?>">
+                                <img src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail', $_image->getFile())->resize(60,88); ?>" width="60" height="88" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" />
+                           </a>
+                        </li>
+                    <?php endforeach; ?>
+                    </ul>
+                </div>
+                <?php if (count($_product->getMediaGalleryImages($_product)) > 4): ?>
+                <a class="b2b-jcarousel-prev" href="#">Prev</a>
+                <a class="b2b-jcarousel-next" href="#">Next</a>
+                <?php endif;?>
+            </div>
+            
+            <script>IWD.Decorator.initThumbnailSlider();</script>
+            <?php endif; ?>
+    </div>
+    <div class="b2b-product-description right">
+    
+            <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
+            <div class="std"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
+            <a href="" class="btn-continue" data-dismiss="modal"><?php echo $this->__('CONTINUE SHOPPING')?></a>
+    </div>
+    <div class="clear"></div>
+</div>

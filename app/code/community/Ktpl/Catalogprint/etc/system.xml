@@ -1,0 +1,501 @@
+<config>
+    <!--
+/**
+ * Magedelight
+ * Copyright (C) 2014  Magedelight <info@magedelight.com>
+ *
+ * NOTICE OF LICENSE
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see http://opensource.org/licenses/gpl-3.0.html.
+ *
+ * @category   Ktpl
+ * @package    Ktpl_Catalogprint
+ * @copyright  Copyright (c) 2014 Mage Delight (http://www.magedelight.com/)
+ * @license    http://opensource.org/licenses/gpl-3.0.html GNU General Public License, version 3 (GPL-3.0)
+ * @author     Magedelight <info@magedelight.com>
+ */
+-->
+<tabs>
+        <magedelight translate="label" module="catalogprint">
+            <label>Mage Delight</label>
+            <sort_order>100</sort_order>
+        </magedelight>
+    </tabs> 
+    <sections>
+        <catalogprint translate="label" module="catalogprint">
+            <label>Catalog Print Settings</label>
+            <tab>magedelight</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>10</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <license translate="label">
+                    <label>License Configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>49</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <serial_key translate="label">
+                            <label>Serial Key</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Enter the serial key that you received at time of purchase.]]></comment>
+                        </serial_key>
+                        <activation_key translate="label">
+                            <label>Activation Key</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Enter the activation key that you received at time of purchase.]]></comment>
+                        </activation_key>
+                    </fields>
+                </license>
+                <general translate="label">
+                    <label>General</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>50</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enable_frontend>
+                            <label>Enable On Frontend</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[This option will enable catalogprint on every category pages of frontend.]]></comment>
+                        </enable_frontend>
+                        <enable_backend>
+                            <label>Enable On Backend</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[This option will enable catalogprint on every category edit section of backend.]]></comment>
+                        </enable_backend>
+                        <coverbackground translate="label">
+                            <label>Cover Page Background</label>
+                            <frontend_type>image</frontend_type>
+                            <sort_order>3</sort_order>
+                            <backend_model>catalogprint/system_config_backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">theme</upload_dir>
+                            <base_url type="media" scope_info="1">theme</base_url>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Allowed image types jpeg, jpg or png]]></comment>
+                        </coverbackground>
+                        <covertitle translate="label">
+                            <label>Display Title On Cover Page</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[This option will enable Title on cover.]]></comment>
+                        </covertitle>
+                        <coverpage_font_color translate="label">
+                            <label>Cover Page Font Color</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>color</validate>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Add color code like #000000.]]></comment>
+                        </coverpage_font_color>
+                        <product_attributes translate="label">
+                            <label>Include Product Attributes</label>
+		            <frontend_type>multiselect</frontend_type>
+                            <frontend_model>catalogprint/adminhtml_attribute</frontend_model>
+                            <!--<backend_model>adminhtml/system_config_backend_serialized_array</backend_model>-->
+                            <source_model>catalogprint/system_config_source_product_attributes</source_model>
+							<sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <can_be_empty>1</can_be_empty>
+                        </product_attributes>
+                        <pdf_footer_text translate="label">
+                            <label>Footer Text</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </pdf_footer_text>
+                        <enable_date translate="label">
+                            <label>Display Date</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable_date>
+                        <enable_customergroups translate="label">
+                            <label>Allow Customer Groups</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>catalogprint/system_config_source_groups</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <can_be_empty>1</can_be_empty>
+                        </enable_customergroups>
+                        <products_display translate="label">
+                            <label>Products Display</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>catalogprint/system_config_source_display</source_model>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </products_display>
+                        <display_group_price translate="label">
+                            <label>Display Customer Group Price</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>12</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </display_group_price>
+                    </fields>
+                </general>
+                <fonts translate="label">
+                    <label>Fonts</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>51</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <custom_font translate="label">
+                            <label>Upload Fonts</label>
+                            <frontend_type>file</frontend_type>
+                            <sort_order>1</sort_order>
+                            <backend_model>catalogprint/system_config_backend_fonts</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="0">md-catalog-print</upload_dir>
+                            <base_url type="media" scope_info="0">md-catalog-print</base_url>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Allowed only ttf file type.]]></comment>
+                        </custom_font>
+                        <regular_font translate="label">
+                            <label>Regular font</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>catalogprint/system_config_source_uploaded_fonts</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            
+                        </regular_font>
+                        <bold_font translate="label">
+                            <label>Bold font</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>catalogprint/system_config_source_uploaded_fonts</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            
+                        </bold_font>
+                        <italic_font translate="label">
+                            <label>Italic font</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>catalogprint/system_config_source_uploaded_fonts</source_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            
+                        </italic_font>
+                        <italicbold_font translate="label">
+                            <label>Italic Bold font</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>catalogprint/system_config_source_uploaded_fonts</source_model>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </italicbold_font>
+                        <title_font translate="label">
+                            <label>Product Title</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>catalogprint/system_config_source_fonts</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Select Font like Regular.]]></comment>
+                        </title_font>
+                        <description_font translate="label">
+                            <label>Product Attribute Value</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>catalogprint/system_config_source_fonts</source_model>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Select Font like Regular.]]></comment>
+                        </description_font>
+                        <label_font translate="label">
+                            <label>Product Attribute Label</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>catalogprint/system_config_source_fonts</source_model>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Select Font like Regular.]]></comment>
+                        </label_font>
+                        
+                    </fields>
+                </fonts>
+                <product_list translate="label">
+                    <label>Product List View</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>52</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <border_color translate="label">
+                            <label>Border color</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <validate>color</validate>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Add color code like #000000.]]></comment>
+                        </border_color>
+                        <height translate="label">
+                            <label>Box Height</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Add height like 150.]]></comment>
+                        </height>
+                        <title_color translate="label">
+                            <label>Product Title color</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <validate>color</validate>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Add color code like #000000.]]></comment>
+                        </title_color>
+                        <value_color translate="label">
+                            <label>Product Attribute Value color</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <validate>color</validate>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Add color code like #000000.]]></comment>
+                        </value_color>
+                        <label_color translate="label">
+                            <label>Product Attribute Label color</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <validate>color</validate>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Add color code like #000000.]]></comment>
+                        </label_color>
+                        <limit_chars translate="label">
+                            <label>Character Limits for Description</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>6</sort_order>
+                            <validate>validate-number</validate>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[This will apply to all the attributes whose input type textarea.]]></comment>
+                        </limit_chars>
+                        <enable_readmore translate="label">
+                            <label>Display Readmore Link</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable_readmore>
+                        <qrcodes translate="label">
+                            <label>Enable QR Codes</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Please reindex the Product QR Code indexer from Index Management, if you enable the QR Code.]]></comment>
+                        </qrcodes>
+                    </fields>
+                </product_list>
+                <product_grid translate="label">
+                    <label>Product Grid View</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>52</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <border_option translate="label">
+                            <label>Grid Border</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Display border or not.]]></comment>
+                        </border_option>
+                        <border_color translate="label">
+                            <label>Grid Border color</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <validate>color</validate>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Add color code like #000000.]]></comment>
+                        </border_color>
+                        <product_count translate="label">
+                            <label>Per Page Products</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>catalogprint/system_config_source_options</source_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </product_count>
+                        <title_color translate="label">
+                            <label>Product Title color</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <validate>color</validate>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Add color code like #000000.]]></comment>
+                        </title_color>
+                        <value_color translate="label">
+                            <label>Product Attribute Value color</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <validate>color</validate>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Add color code like #000000.]]></comment>
+                        </value_color>
+                        <label_color translate="label">
+                            <label>Product Attribute Label color</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <validate>color</validate>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Add color code like #000000.]]></comment>
+                        </label_color>
+                        <limit_chars translate="label">
+                            <label>Character Limits for Description</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>7</sort_order>
+                            <validate>validate-number</validate>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[This will apply to all the attributes whose input type textarea.]]></comment>
+                        </limit_chars>
+                        <enable_readmore translate="label">
+                            <label>Display Readmore Link</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable_readmore>
+                        <qrcodes translate="label">
+                            <label>Enable QR Codes</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Please reindex the Product QR Code indexer from Index Management, if you enable the QR Code.]]></comment>
+                        </qrcodes>
+                    </fields>
+                </product_grid>
+                <indexer_group>
+                    <label>Indexer Configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>92</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enable_cache translate="label">
+                            <label>Use Cached Categories</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </enable_cache>
+                        <index_catalogprint translate="label">
+                            <label></label>
+                            <frontend_type>button</frontend_type>
+                            <sort_order>11</sort_order>
+                            <frontend_model>catalogprint/adminhtml_button</frontend_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </index_catalogprint>
+                    </fields>
+                </indexer_group>
+            </groups>
+        </catalogprint>
+    </sections>
+</config>   

@@ -1,0 +1,54 @@
+<?php         
+    $params = Mage::getModel('customer/session')->getQuickOrderingParams();
+    $filter = new Varien_Object();
+    if ($params!=null){
+        $filter->addData($params);
+    }
+    if ($params['sort']=='asc'){
+        $sort = 'desc';
+    }else{
+        $sort = 'asc';
+    }
+?>
+
+<div class="table-header">
+    <div class="fixed-wrapper">
+        <form id="b2b-filter">
+            <div class="left th-product">
+                <a href="" data-attribute="name" <?php if ($params['attribute']=='name'):?>data-sort="<?php echo $sort?>"<?php else:?>data-sort="asc"<?php endif;?>>
+                <?php echo $this->__('Product')?><?php if ($params['attribute']=='name'):?><i class="fa <?php if($params['sort'] == 'asc') echo 'fa-arrow-down '; else echo 'fa-arrow-up '; echo $params['sort']; ?>"></i><?php endif;?>
+                </a>
+                <div ><input type="text" name="name" value="<?php echo $filter->getName()?>"/></div>
+            </div>
+            <div class="left th-sku">
+                <a href="" data-attribute="sku" <?php if ($params['attribute']=='sku'):?>data-sort="<?php echo $sort?>"<?php else:?>data-sort="asc"<?php endif;?>>
+                <?php echo $this->__('Sku')?><?php if ($params['attribute']=='sku'):?><i class="fa <?php if($params['sort'] == 'asc') echo 'fa-arrow-down '; else echo 'fa-arrow-up '; echo $params['sort']; ?>"></i><?php endif;?>
+                </a>
+                <div ><input type="text" name="sku" value="<?php echo $filter->getSku()?>"/></div>
+            </div>
+            
+            <div class="left th-available">
+                <a data-sort="no-sortable" class="no-sortable">
+                <?php echo $this->__('Available')?><?php if ($params['attribute']=='qty'):?><i class="fa <?php if($params['sort'] == 'asc') echo 'fa-arrow-down '; else echo 'fa-arrow-up '; echo $params['sort']; ?>"></i><?php endif;?>
+                </a>
+                <div ><input type="text" name="qty" value="<?php echo $filter->getQty()?>"/></div>
+            </div>
+            
+            <div class="left th-price">
+                <a href="" data-attribute="price" <?php if ($params['attribute']=='price'):?>data-sort="<?php echo $sort?>"<?php else:?>data-sort="asc"<?php endif;?>>
+                <?php echo $this->__('Price')?><?php if ($params['attribute']=='price'):?><i class="fa <?php if($params['sort'] == 'asc') echo 'fa-arrow-down '; else echo 'fa-arrow-up '; echo $params['sort']; ?>"></i><?php endif;?>
+                </a>
+                <div><input type="text" name="price[from]"  value="<?php echo $filter->getPrice('from')?>"/></div><span>-</span>
+                <div><input type="text" name="price[to]"  value="<?php echo $filter->getPrice('to')?>"/></div>
+            </div>
+            
+            <div class="left th-qty">
+                <a data-sort="no-sortable"  class="no-sortable"><?php echo $this->__('Qty')?></a>
+                <div ><input type="text"/></div><span>-</span><div ><input type="text" /></div>
+            </div>
+        </form>
+        <div class="clear"></div>
+    </div>
+    <div class="b2b-header-shadow"></div>
+</div>
+<div class="botex"></div>

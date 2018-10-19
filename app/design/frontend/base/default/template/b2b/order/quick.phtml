@@ -1,0 +1,22 @@
+<?php echo $this->getChildHtml('b2b.subheader');?>
+<div class="b2b-quick-order">
+    <h3><?php echo $this->__('Quick Ordering');?></h3>
+    <form method="post" autocomplete="off" id="b2b-quick-search-form">
+        <div class="input-wrapper b2b-overflow">
+            <input type="text" name="search" id="quick-search" placeholder="<?php echo $this->__('Enter product name or SKU')?>">
+            <button class="quick-order-search" type="button"></button>
+        </div>  
+        <div class="quick-search-block hidden"  id="quick-search-block">
+            <div class="quick-search-result">
+                <div class="b2b-search-loader"></div>
+            </div>
+        </div>
+    </form>
+    
+    <div id="quick-list-products">
+     <?php echo Mage::app()->getLayout()->createBlock('b2b/order_list_items')->toHtml();?>
+    </div>
+</div>
+<script>
+var pageType="quick";
+</script>

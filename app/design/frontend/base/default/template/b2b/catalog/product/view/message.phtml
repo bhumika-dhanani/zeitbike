@@ -1,0 +1,28 @@
+<?php $_product = $this->_getProduct()?>
+
+<?php 
+    $isBackorder = Mage::helper('b2b')->isBackOrder($_product);
+    $isSaleable = $_product->isSaleable();
+    $messageAttribute = Mage::getStoreConfig('b2b/product/message');
+?>
+
+<?php if ($isBackorder || !$isSaleable):?>    
+    <?php if (!empty($messageAttribute)):?>
+        <?php $message =  $_product->getData($messageAttribute) ?>
+        <?php if (!empty($message)):?>
+        <div class="b2b-product-message">
+            <p><em>*</em><?php echo $message?></p>
+        </div>
+        <?php else:?>
+            <?php // get global message?>
+            <?php $message =  Mage::getStoreConfig('bkordersection/bkordergeneral/globalnote');?>    
+            <?php if (!empty($message)):?>
+            <div class="b2b-product-message">
+                <p><em>*</em><?php echo strip_tags($message)?></p>
+            </div>
+            <?php endif;?>
+        <?php endif;?>
+    <?php endif;?>
+    
+    
+<?php endif;?>

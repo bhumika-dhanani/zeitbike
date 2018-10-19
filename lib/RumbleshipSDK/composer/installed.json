@@ -1,0 +1,95 @@
+[
+    {
+        "name": "rmccue/requests",
+        "version": "v1.7.0",
+        "version_normalized": "1.7.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/rmccue/Requests.git",
+            "reference": "87932f52ffad70504d93f04f15690cf16a089546"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/rmccue/Requests/zipball/87932f52ffad70504d93f04f15690cf16a089546",
+            "reference": "87932f52ffad70504d93f04f15690cf16a089546",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2"
+        },
+        "require-dev": {
+            "requests/test-server": "dev-master"
+        },
+        "time": "2016-10-13T00:11:37+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Requests": "library/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "ISC"
+        ],
+        "authors": [
+            {
+                "name": "Ryan McCue",
+                "homepage": "http://ryanmccue.info"
+            }
+        ],
+        "description": "A HTTP library written in PHP, for human beings.",
+        "homepage": "http://github.com/rmccue/Requests",
+        "keywords": [
+            "curl",
+            "fsockopen",
+            "http",
+            "idna",
+            "ipv6",
+            "iri",
+            "sockets"
+        ]
+    },
+    {
+        "name": "rumbleship/php-gateway-client",
+        "version": "dev-bugfix/autoupdatejwt",
+        "version_normalized": "dev-bugfix/autoupdatejwt",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Rumbleship/php-gateway-client.git",
+            "reference": "3bbdd5fedfa4acdfca60d570b2e4e896208bd613"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Rumbleship/php-gateway-client/zipball/3bbdd5fedfa4acdfca60d570b2e4e896208bd613",
+            "reference": "3bbdd5fedfa4acdfca60d570b2e4e896208bd613",
+            "shasum": ""
+        },
+        "require": {
+            "rmccue/requests": "^1.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^5.7"
+        },
+        "time": "2018-02-05T23:44:22+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Rumbleship\\": "src/",
+                "Rumbleship\\Test\\": "tests/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0"
+        ],
+        "authors": [
+            {
+                "name": "Alex Lockwood",
+                "email": "alex.lockwood@gmail.com"
+            }
+        ],
+        "description": "Api Client Library for Rumbleship Financial"
+    }
+]

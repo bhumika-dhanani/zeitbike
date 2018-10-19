@@ -1,0 +1,20 @@
+<?php $_helper = Mage::helper('catalog/output');?>
+<?php $productCollection = $this->getProductCollectionMain();?>
+<?php if ($productCollection->count()>0):?>
+<?php $i = 1;?>
+	<ul>
+	<?php foreach($productCollection as $key=>$_product):?>
+		<?php if($i < 5):?>
+		<?php $_productLoad = Mage::getModel('catalog/product')->load($_product->getId())?>
+		<li <?php if ($i%2==0):?>class="odd"<?php endif;?>>
+			 <a href="<?php echo $_productLoad->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_productLoad, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_productLoad, 'small_image')->resize(187,265); ?>" width="187" height="265" alt="<?php echo $this->stripTags($this->getImageLabel($_productLoad, 'small_image'), null, true) ?>" />
+			 
+			 </a>
+             <h2 class="product-name"><a href="<?php echo $_productLoad->getProductUrl() ?>" title="<?php echo $this->stripTags($_productLoad->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_productLoad->getName(), 'name') ?></a></h2>
+		</li>
+		<?php $i++;?>
+		<?php endif;?>
+	<?php endforeach;?>
+	</ul>
+<div class="clear"></div>
+<?php endif;?>

@@ -1,0 +1,247 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magedelight
+ * Copyright (C) 2014  Magedelight <info@magedelight.com>
+ *
+ * NOTICE OF LICENSE
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see http://opensource.org/licenses/gpl-3.0.html.
+ *
+ * @category   Ktpl
+ * @package    Ktpl_Catalogprint
+ * @copyright  Copyright (c) 2014 Mage Delight (http://www.magedelight.com/)
+ * @license    http://opensource.org/licenses/gpl-3.0.html GNU General Public License, version 3 (GPL-3.0)
+ * @author     Magedelight <info@magedelight.com>
+ */
+-->
+<config>
+    <modules>
+        <Ktpl_Catalogprint>
+            <version>1.0.1</version>
+        </Ktpl_Catalogprint>
+    </modules>
+
+    <global>
+        <blocks>
+            <catalogprint>
+                <class>Ktpl_Catalogprint_Block</class>
+            </catalogprint>
+        </blocks>
+        <index>
+            <indexer>
+                <catalogprint_qrcodes>
+                    <model>catalogprint/indexer_qrcodes</model>
+                </catalogprint_qrcodes>
+            </indexer>
+        </index>
+        <helpers>
+            <catalogprint>
+                <class>Ktpl_Catalogprint_Helper</class>
+            </catalogprint>
+        </helpers>
+
+        <models>
+            <catalogprint>
+                <class>Ktpl_Catalogprint_Model</class>
+            </catalogprint>
+        </models>
+        <resources>
+            <catalogprint_setup>
+                <setup>
+                    <module>Ktpl_Catalogprint</module>
+                </setup>
+            </catalogprint_setup>
+        </resources>
+        <events>
+            <controller_action_layout_render_before>
+                <observers>
+                    <catalogprint_check_valid>
+                        <type>model</type>
+                        <class>Ktpl_Catalogprint_Helper_Util</class>
+                        <method>checkValid</method>
+                    </catalogprint_check_valid>
+                </observers>
+            </controller_action_layout_render_before>
+        </events>
+    </global>
+    <admin>
+        <routers>
+            <!--<catalogprint>
+                <use>admin</use>
+                <args>
+                    <module>Ktpl_Catalogprint</module>
+                    <frontName>catalogprint</frontName>
+                </args>
+            </catalogprint>-->
+            <adminhtml>
+                <args>
+                    <modules>
+                        <catalogprint after="Mage_Adminhtml">Ktpl_Catalogprint_Adminhtml</catalogprint>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <frontend>
+        <routers>
+            <catalogprint>
+                <use>standard</use>
+                <args>
+                    <module>Ktpl_Catalogprint</module>
+                    <frontName>catalog-print</frontName>
+                </args>
+            </catalogprint>
+        </routers>
+        <layout>
+            <updates>
+                <catalogprint>
+                    <file>catalogprint.xml</file>
+                </catalogprint>
+            </updates>
+        </layout>
+        <translate>
+                    <modules>
+                        <Ktpl_Catalogprint>
+                            <files>
+                                <default>Ktpl_Catalogprint.csv</default>
+                            </files>
+                        </Ktpl_Catalogprint>
+                    </modules>
+                </translate>
+		<events>
+                    <catalogprint_download_send>
+                        <observers>
+                            <delete_junk_files>
+                                <class>catalogprint/observer</class>
+                                <method>emptyDir</method>
+                            </delete_junk_files>
+                        </observers>
+                    </catalogprint_download_send>
+                </events>
+    </frontend>
+    <adminhtml>
+        <!-- add USE in Catalog Print yes/no dropdown into manage attribute's edit section -->
+        <events>
+            <adminhtml_catalog_product_attribute_edit_prepare_form>
+                <observers>
+                    <catalogprint_observer>
+                        <class>catalogprint/observer</class>
+                        <method>addUseInCatalogPrintAttribute</method>
+                    </catalogprint_observer>
+                </observers>
+            </adminhtml_catalog_product_attribute_edit_prepare_form>
+            <catalog_category_save_after>
+                <observers>
+                    <category_products_save>
+                        <class>catalogprint/observer</class>
+                        <method>saveCollectionInCache</method>
+                    </category_products_save>
+                </observers>
+            </catalog_category_save_after>
+            <catalog_category_delete_after>
+                <observers>
+                    <category_products_delete>
+                        <class>catalogprint/observer</class>
+                        <method>removeCollectionInCache</method>
+                    </category_products_delete>
+                </observers>
+            </catalog_category_delete_after>
+        </events>
+        <translate>
+                    <modules>
+                        <Ktpl_Catalogprint>
+                            <files>
+                                <default>Ktpl_Catalogprint.csv</default>
+                            </files>
+                        </Ktpl_Catalogprint>
+                    </modules>
+                </translate>
+        <layout>
+            <updates>
+                <catalogprint>
+                    <file>catalogprint.xml</file>
+                </catalogprint>
+            </updates>
+        </layout>
+        <events>
+            <core_block_abstract_prepare_layout_after>
+                <observers>
+                    <bundleitems_tab>
+                        <type>singleton</type>
+                        <class>catalogprint/observer</class>
+                        <method>injectTabs</method>
+                    </bundleitems_tab>
+                </observers>
+            </core_block_abstract_prepare_layout_after>
+        </events>
+    </adminhtml>
+    <default>   
+        <catalogprint>
+            <general>
+                <enable_frontend>1</enable_frontend>
+                <enable_backend>1</enable_backend>
+                <coverpage_font_color>#000000</coverpage_font_color>
+                <enable_date>1</enable_date>
+                <products_display>childs</products_display>
+                <display_group_price>1</display_group_price>
+            </general>
+            <fonts>
+                <regular_font>/lib/md-catalog-print/Calibri.ttf</regular_font>
+                <bold_font>/lib/md-catalog-print/Calibri_Bold.ttf</bold_font>
+                <italic_font>/lib/md-catalog-print/Calibri_Italic.ttf</italic_font>
+                <italicbold_font>/lib/md-catalog-print/Calibri_Bold_Italic.ttf</italicbold_font>
+                <title_font>regular</title_font>
+                <description_font>regular</description_font>
+                <label_font>italicbold</label_font>
+            </fonts>
+            <product_list>
+                <border_color>#000000</border_color>
+                <title_color>#000000</title_color>
+                <value_color>#000000</value_color>
+                <label_color>#000000</label_color>
+                <limit_chars>0</limit_chars>
+                <enable_readmore>1</enable_readmore>
+                <qrcodes>0</qrcodes>
+            </product_list>
+            <product_grid>
+                <border_option>1</border_option>
+                <border_color>#000000</border_color>
+                <title_color>#000000</title_color>
+                <value_color>#000000</value_color>
+                <label_color>#000000</label_color>
+                <limit_chars>0</limit_chars>
+                <enable_readmore>1</enable_readmore>
+                <qrcodes>0</qrcodes>
+            </product_grid>
+            <indexer_group>
+                <enable_cache>1</enable_cache>
+            </indexer_group>
+        </catalogprint>
+    </default>
+    <crontab>
+        <jobs>
+            <catalogprint_root_catalog>
+                <schedule>
+                    <cron_expr>0 22 * * *</cron_expr>
+
+                    <!-- <cron_expr>0 3 1 * *</cron_expr> -->
+                </schedule>
+                <run>
+                    <model>catalogprint/catalog_rootcatalog::printRootCatalog</model>
+                </run>
+            </catalogprint_root_catalog>
+        </jobs>
+    </crontab>
+</config>

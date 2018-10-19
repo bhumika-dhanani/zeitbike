@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<config>
+
+    <modules>
+        <IWD_DynamicSKURewrite>
+            <version>1.0.0</version>
+        </IWD_DynamicSKURewrite>
+    </modules>
+
+    <global>
+        <models>
+            <sales>
+                <rewrite>
+                    <order_api>IWD_DynamicSKURewrite_Model_Sales_Order_Api</order_api>
+                    <order_api_v2>IWD_DynamicSKURewrite_Model_Sales_Order_Api_V2</order_api_v2>
+                </rewrite>
+            </sales>
+        </models>
+    </global>
+
+</config>

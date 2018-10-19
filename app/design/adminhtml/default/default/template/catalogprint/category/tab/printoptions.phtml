@@ -1,0 +1,94 @@
+<?php 
+/**
+ * Magedelight
+ * Copyright (C) 2014  Magedelight <info@magedelight.com>
+ *
+ * NOTICE OF LICENSE
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see http://opensource.org/licenses/gpl-3.0.html.
+ *
+ * @category   Ktpl
+ * @package    Ktpl_Catalogprint
+ * @copyright  Copyright (c) 2014 Mage Delight (http://www.magedelight.com/)
+ * @license    http://opensource.org/licenses/gpl-3.0.html GNU General Public License, version 3 (GPL-3.0)
+ * @author     Magedelight <info@magedelight.com>
+ */
+?>
+<?php $helper = Mage::helper('catalogprint'); ?>
+<?php $groups = Mage::getModel('customer/group')->getCollection()->toOptionHash() ?>
+<div class="entry-edit">
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $helper->__('Catalog Print Settings') ?></h4>
+        <div class="form-buttons"><?php echo $this->getPrintButtonHtml(); ?></div>
+    </div>
+    <div class="fieldset fieldset-wide" id="printoptions-container">
+        <div class="hor-scroll">
+            <table class="form-list">
+                <tbody>
+                    <tr>
+                        <td class="label"><?php echo $helper->__('Print PDF Catalog Layout View') ?></td>
+                        <td class="value">
+                            <select id="cp_layout" name="catalogprint[layout]" class="select">
+                                <option value="grid"><?php echo $helper->__('Grid Layout') ?></option>
+                                <option value="list"><?php echo $helper->__('List Layout') ?></option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label"><?php echo $helper->__('Select Customer Groups') ?></td>
+                        <td class="value">
+                            
+                            <select id="cp_customer_group_id" name="catalogprint[customer_group_id]" class="select">
+                                <option value=""><?php echo $helper->__('-----Select Group-----') ?></option>
+                                <?php foreach($groups as $value=>$label): ?>
+                                    <option value="<?php echo $value ?>"><?php echo $label ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="left">
+                            <strong><?php echo $helper->__('Print PDF Catalog Options'); ?></strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input checked="checked" type="checkbox" name="catalogprint[heading]" id="cp_heading" value="1" />
+                        <?php echo $helper->__('Product Categories/Sub Categories Headings') ?></td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2"><input checked="checked" type="checkbox" name="catalogprint[cover]" id="cp_cover" value="1" />
+                        <?php echo $helper->__('Title/cover page') ?></td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2"><input checked="checked" type="checkbox" name="catalogprint[contents]" id="cp_contents" value="1" />
+                        <?php echo $helper->__('Table of Contents with page numbers ') ?></td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2"><input checked="checked" type="checkbox" name="catalogprint[mfg_asc]" id="cp_mfg_asc" value="1" />
+                        <?php echo $helper->__('Document index by Product SKU in ascending order.') ?></td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2"><input checked="checked" type="checkbox" name="catalogprint[part_asc]" id="cp_part_asc" value="1" />
+                        <?php echo $helper->__('Document index by Product Name in alphabetical sorted ascending order.') ?></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

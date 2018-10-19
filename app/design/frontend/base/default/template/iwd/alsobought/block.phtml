@@ -1,0 +1,73 @@
+<?php
+$img_width = 210;
+$img_height = 170;
+$custom_add_to_cart = $this->customAddToCartButton();
+?>
+<?php if (count($products) > 0): ?>
+    <div class="block iwd-auto-related-products-block" id="<?php echo uniqid('iwd_auto_related_products_'); ?>">
+        <div class="block-title">
+            <strong class="title"><?php echo $block_title; ?></strong>
+
+            <div class="iwd-control-slider">
+                <div class="iwd-slider-next"></div>
+                <div class="iwd-slider-prev"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="block-content">
+            <ul class="iwd-auto-related-products-slider iwd-also-bought">
+                <?php foreach ($products as $_item) : ?>
+                    <li class="item">
+                        <div class="product not-margin-left">
+                            <div class="iwd-product-image-wrapper" style="max-width:295px;">
+                                <a href="<?php echo $_item->getProductUrl() ?>"
+                                   title="<?php echo $this->htmlEscape($_item->getName()) ?>"
+                                   class="product-image">
+                                    <img
+                                        src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize($img_width, $img_height) ?>"
+                                        width="<?php echo $img_width ?>" height="<?php echo $img_height ?>"
+                                        alt="<?php echo $this->htmlEscape($_item->getName()) ?>"/>
+                                </a>
+
+                                <div
+                                    class="button btn-link iwd-add-to-links <?php if ($custom_add_to_cart): ?>add-to-cart-design<?php endif; ?>">
+                                    <?php $_compareUrl = $this->getAddToCompareUrl($_item); ?>
+                                    <?php if ($this->hasButtonAddToCompare() && $_compareUrl): ?>
+                                        <a href="<?php echo $_compareUrl ?>" class="link-icons link-compare"
+                                           title="<?php echo $this->__('Add to Compare') ?>"></a>
+                                    <?php endif; ?>
+                                    <?php if ($this->helper('wishlist')->isAllow() && $this->hasButtonAddToWishlist()): ?>
+                                        <a href="<?php echo $this->helper('wishlist')->getAddUrl($_item) ?>"
+                                           class="link-icons link-wishlist"
+                                           title="<?php echo $this->__('Add to Wishlist') ?>"></a>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+
+                            <div class="product-details">
+                                <h3 class="product-name">
+                                    <a href="<?php echo $_item->getProductUrl() ?>"><?php echo $this->htmlEscape($_item->getName()) ?></a>
+                                </h3>
+                                <?php echo $this->getPriceHtml($_item, true, '-iwd-auto-related-products') ?>
+
+                                <?php if ($this->hasButtonAddToCart()): ?>
+                                    <?php if ($_item->isSaleable()): ?>
+                                        <button type="button" title="<?php echo $this->__('Add to Cart') ?>"
+                                                class="button btn-cart add-to-cart-button <?php if ($custom_add_to_cart): ?>add-to-cart-design<?php endif; ?>"
+                                                onclick="setLocation('<?php echo $this->getAddToCartUrl($_item) ?>')">
+                                            <span><?php echo $this->__('Add to Cart') ?></span>
+                                        </button>
+                                    <?php else: ?>
+                                        <div
+                                            class="availability out-of-stock"><?php echo $this->__('Out of stock') ?></div>
+                                    <?php endif; ?>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+<?php endif; ?>

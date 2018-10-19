@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <Rishabhsoft_Speedorder>
+            <version>0.1.1</version>
+        </Rishabhsoft_Speedorder>
+    </modules>
+
+    <frontend>
+        <routers>
+            <speedorder>
+                <use>standard</use>
+                <args>
+                    <module>Rishabhsoft_Speedorder</module>
+                    <frontName>speedorder</frontName>
+                </args>
+            </speedorder>
+        </routers>
+        <layout>
+            <updates>
+                <speedorder>
+                    <file>speedorder.xml</file>
+                </speedorder>
+            </updates>
+        </layout>
+    </frontend>
+    <global>
+        <blocks>
+            <speedorder>
+                <class>Rishabhsoft_Speedorder_Block</class>
+            </speedorder>
+        </blocks>
+        <helpers>
+            <speedorder>
+                <class>Rishabhsoft_Speedorder_Helper</class>
+            </speedorder>
+        </helpers>
+    </global>
+
+
+</config>

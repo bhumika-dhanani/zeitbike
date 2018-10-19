@@ -1,0 +1,356 @@
+<?xml version="1.0"?>
+<config>
+	<tabs>
+        <iwdall>
+            <label>IWD Extensions</label>
+            <sort_order>210</sort_order>
+            <class>iwd-block</class>
+        </iwdall>
+    </tabs>
+    
+	<sections>
+		<b2b translate="label" module="b2b">
+			<class>separator-top</class>
+			<label>B2B</label>
+			<tab>iwdall</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>1</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>0</show_in_website>
+			<show_in_store>0</show_in_store>
+
+			<groups>
+
+				<default>
+					<label>Default Configuration</label>
+					<sort_order>10</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>0</show_in_website>
+					<show_in_store>0</show_in_store>
+					<fields>
+
+						<info>
+							<label>Version</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>0</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+							<frontend_model>b2b/system_config_form_fieldset_extensions
+							</frontend_model>
+						</info>
+
+						<status>
+							<label>Enable Module?</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+							<validate>required-entry</validate>
+
+						</status>
+
+
+					</fields>
+				</default>
+				<access>
+					<label>Access</label>
+					<sort_order>16</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>0</show_in_website>
+					<show_in_store>0</show_in_store>
+					<fields>
+						<group>
+							<label>Customer Groups</label>
+							<frontend_type>multiselect</frontend_type>
+							<source_model>b2b/system_config_source_group</source_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+							<validate>required-entry</validate>
+						</group>
+						<message>
+							<label>Message to Show for Inactive/Inaccessible Group</label>
+							<frontend_type>text</frontend_type>							
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+							
+						</message>
+						
+						<redirect>
+							<label>Redirect URl if customer not have access to wholesale site</label>
+							<frontend_type>text</frontend_type>							
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+							
+						</redirect>
+						
+					</fields>
+				</access>
+				<store>
+					<label>Wholesale Store</label>
+					<sort_order>15</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>0</show_in_website>
+					<show_in_store>0</show_in_store>
+					<fields>
+						<type>
+							<label>Type of Store</label>
+							<frontend_type>select</frontend_type>
+							<source_model>b2b/system_config_source_wholesale</source_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+							<validate>required-entry</validate>
+						</type>
+						<store>
+							<label>Current Stores</label>
+							<frontend_type>select</frontend_type>
+							<source_model>b2b/system_config_source_current</source_model>
+							<sort_order>15</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+							<validate>required-entry</validate>
+
+						</store>
+						
+						<name>
+							<label>Name</label>
+							<frontend_type>text</frontend_type>							
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+							
+
+						</name>
+						
+						<code>
+							<label>Code</label>
+							<frontend_type>text</frontend_type>							
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+							
+						</code>
+						
+						<cagegories>
+							<label>Default Category</label>
+							<frontend_type>select</frontend_type>
+							<source_model>b2b/system_config_source_root</source_model>							
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+							
+						</cagegories>
+						
+						
+					</fields>
+				</store>
+
+
+				<login_form>
+					<label>Login Form</label>
+					<sort_order>20</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>0</show_in_website>
+					<show_in_store>0</show_in_store>
+					<fields>
+						
+						<text1 translate="label">
+							<label>Title</label>							
+							<frontend_type>text</frontend_type>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</text1>
+						
+						<text2 translate="label">
+							<label>Message for Non-Wholesaler</label>							
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</text2>
+						
+						<text3 translate="label">
+							<label>Message Above Apply Button</label>							
+							<frontend_type>text</frontend_type>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</text3>
+						
+						<text4 translate="label">
+							<label>Apply / Register Button</label>							
+							<frontend_type>text</frontend_type>
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</text4>
+
+						
+					
+					</fields>
+				</login_form>
+
+				<register_form>
+					<label>Registration Form</label>
+					<sort_order>30</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>0</show_in_website>
+					<show_in_store>0</show_in_store>
+						<fields>
+							<success translate="label">
+								<label>Submission Confirmation Message</label>							
+								<frontend_type>text</frontend_type>
+								<sort_order>10</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>0</show_in_website>
+								<show_in_store>0</show_in_store>
+							</success>
+							
+							<redirect translate="label">
+								<label>Redirect URL After Submission</label>							
+								<frontend_type>text</frontend_type>
+								<sort_order>20</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>0</show_in_website>
+								<show_in_store>0</show_in_store>
+							</redirect>
+							
+							
+						</fields>
+				</register_form>
+				
+				<product>
+					<label>Product</label>
+					<sort_order>40</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>0</show_in_website>
+					<show_in_store>0</show_in_store>
+						<fields>
+							<message>
+									<label>Special Message Attribute</label>							
+									<frontend_type>select</frontend_type>
+									<source_model>b2b/system_config_source_message</source_model>	
+									<sort_order>10</sort_order>
+									<show_in_default>1</show_in_default>
+									<show_in_website>0</show_in_website>
+									<show_in_store>0</show_in_store>
+							</message>
+							<date>
+									<label>Delivery Date Attribute</label>							
+									<frontend_type>select</frontend_type>
+									<source_model>b2b/system_config_source_date</source_model>	
+									<sort_order>10</sort_order>
+									<show_in_default>1</show_in_default>
+									<show_in_website>0</show_in_website>
+									<show_in_store>0</show_in_store>
+							</date>
+							<only_special>
+								<label>Show Only Special Price</label>
+								<frontend_type>select</frontend_type>
+								<source_model>adminhtml/system_config_source_yesno</source_model>
+								<sort_order>30</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>0</show_in_website>
+								<show_in_store>0</show_in_store>
+								<validate>required-entry</validate>
+							</only_special>
+						</fields>	
+				</product>
+				
+				<order>
+					<label>Order</label>
+					<sort_order>41</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>0</show_in_website>
+					<show_in_store>0</show_in_store>
+						<fields>
+							<date>
+								<label>Show Delivary Date?</label>
+								<frontend_type>select</frontend_type>
+								<source_model>adminhtml/system_config_source_yesno</source_model>
+								<sort_order>10</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>0</show_in_website>
+								<show_in_store>0</show_in_store>
+								<validate>required-entry</validate>
+	
+							</date>
+						</fields>	
+				</order>
+				
+				
+				<emails>
+					<label>Email Notifications</label>
+					<sort_order>40</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>0</show_in_website>
+					<show_in_store>0</show_in_store>
+						<fields>
+							<admins translate="label">
+									<label>Store Admins to Notify</label>							
+									<frontend_type>multiselect</frontend_type>
+									<source_model>b2b/system_config_source_admins</source_model>	
+									<sort_order>10</sort_order>
+									<show_in_default>1</show_in_default>
+									<show_in_website>0</show_in_website>
+									<show_in_store>0</show_in_store>
+							</admins>
+							
+							<recieved_template translate="label">
+	                            <label>New Application Email</label>
+	                            <frontend_type>select</frontend_type>
+	                            <source_model>adminhtml/system_config_source_email_template</source_model>
+	                            <sort_order>30</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>0</show_in_website>
+	                            <show_in_store>0</show_in_store>
+	                        </recieved_template>
+	                        
+	                        <customer_recieved_template translate="label">
+	                            <label>Customer Confirmation Email</label>
+	                            <frontend_type>select</frontend_type>
+	                            <source_model>adminhtml/system_config_source_email_template</source_model>
+	                            <sort_order>40</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>0</show_in_website>
+	                            <show_in_store>0</show_in_store>
+	                        </customer_recieved_template>
+	                        
+	                        <customer_approved translate="label">
+	                            <label>Application Approved Email</label>
+	                            <frontend_type>select</frontend_type>
+	                            <source_model>adminhtml/system_config_source_email_template</source_model>
+	                            <sort_order>50</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>0</show_in_website>
+	                            <show_in_store>0</show_in_store>
+	                        </customer_approved>
+							
+						</fields>				 
+				</emails>
+					
+			
+			</groups>
+
+		</b2b>
+	</sections>
+</config>

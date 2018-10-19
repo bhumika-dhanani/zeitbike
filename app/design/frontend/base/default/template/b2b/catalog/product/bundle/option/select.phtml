@@ -1,0 +1,39 @@
+<?php /* @var $this Mage_Bundle_Block_Catalog_Product_View_Type_Bundle_Option_Select */ ?>
+<?php $_option      = $this->getOption(); ?>
+<?php $_selections  = $_option->getSelections(); ?>
+<?php $_default     = $_option->getDefaultSelection(); ?>
+<?php list($_defaultQty, $_canChangeQty) = $this->_getDefaultValues(); ?>
+<?php $_stockHelper     = Mage::helper('b2b/stock'); ?>
+<dt>
+   <label<?php if ($_option->getRequired()) echo ' class="required"' ?>><?php echo $this->htmlEscape($_option->getTitle()) ?><?php if ($_option->getRequired()) echo '<em>*</em>' ?></label>
+</dt>
+<dd<?php if ($_option->decoratedIsLast){?> class="last"<?php }?>>
+    <div>
+        <div class="input-box b2b-product-option">
+        <?php if ($this->_showSingle()): ?>
+            <?php echo $this->getSelectionTitlePrice($_selections[0]) ?>
+            <input type="hidden" name="bundle_option[<?php echo $_option->getId() ?>]" value="<?php echo $_selections[0]->getSelectionId() ?>"/>
+        <?php else:?>
+        
+            <select data-id="<?php echo $_option->getId()?>" onchange="bundle.changeSelection(this)" id="bundle-option-<?php echo $_option->getId() ?>" name="bundle_option[<?php echo $_option->getId() ?>]" class="bundle-option-<?php echo $_option->getId() ?><?php if ($_option->getRequired()) echo ' required-entry' ?> bundle-option-select change-container-classname">
+                <option value=""><?php echo $this->__('Choose a selection...') ?></option>
+            <?php foreach ($_selections as $_selection): ?>            
+                <option data-message="<?php echo $this->getLayout()->createBlock('b2b/catalog_product_view_backorder')->setData('product', $_selection->getId())->toHtml()?>" 
+                data-qty="<?php echo $_stockHelper->prepareQty(null, $_selection)?>" 
+                value="<?php echo $_selection->getSelectionId() ?>"<?php if ($this->_isSelected($_selection)) echo ' selected="selected"' ?><?php if (!$_selection->isSaleable()) echo ' disabled="disabled"' ?>><?php echo $this->getSelectionTitlePrice($_selection, false) ?></option>
+            <?php endforeach; ?>
+            </select>
+        <?php endif; ?>
+            <div class="b2b-product-available-message" id="bdb-av-m-<?php echo $_option->getId()?>"></div>
+            <div class="b2b-product-available" id="bdb-av-<?php echo $_option->getId()?>">
+                <i>Available:</i>  <strong></strong>
+            </div>
+        </div>       
+        <div class="b2b-product-qty">
+            <span class="qty-holder">
+                <input onkeyup="bundle.changeOptionQty(this, event)" onblur="bundle.changeOptionQty(this, event)" <?php if (!$_canChangeQty) echo ' disabled="disabled"' ?> id="bundle-option-<?php echo $_option->getId() ?>-qty-input" class="input-text qty<?php if (!$_canChangeQty) echo ' qty-disabled' ?>" type="text" name="bundle_option_qty[<?php echo $_option->getId() ?>]" value="<?php echo $_defaultQty ?>"/>
+            </span>
+        </div>
+        <div class="clear"></div>
+    </div>
+</dd>

@@ -1,0 +1,40 @@
+<?php 
+	$_helper = Mage::helper('stocknotification');
+	
+	/** skip render template if module is disabled */
+	if (!$_helper->isEnabled()) {
+		return;
+	}
+	
+	$_product = $this->getProduct();
+	
+	/** skip render template if type is disabled */
+	if ($_helper->isSkipProductType($_product)){
+		return;
+	}
+	
+?>
+<?php if (!$_product->isSaleable()):?>
+<div class="stock-notification">
+	<div class="stock-notification-header">
+		<h5><?php echo $this->__('Notify me when this product is in stock:')?></h5>		
+	
+		<div class="input-box">
+<!--				<label class="label">--><?php //echo $this->__('Email:')?><!--</label>-->
+				<input type="text"  placeholder="Enter Email Address" class="input-text" id="email_notification" name="email_notification" />
+				<input type="hidden" name="product_id" id="product_id" value="<?php echo $this->getProduct()->getId()?>" />
+				<button class="button request-notice" type="button"><span><span><?php echo $this->__('Notify Me')?></span></span></button>
+		</div>
+	</div>
+	<div class="stock-notification-message"></div>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+IWD.StockNotification.requestUrl = '<?php echo $_helper->getRequestJsonUrl();?>';
+jQuery(document).ready(function(){
+	IWD.StockNotification.init();
+});
+//]]>
+</script>
+<?php endif;?>

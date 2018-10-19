@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+.stock-notification{background: none repeat scroll 0 0 #F8F7F5; border: 1px solid #C4C1BC;margin: 10px 0 15px;padding:10px;position:relative;float:left;}
+.stock-notification .input-box{margin-bottom: 10px;}
+.stock-notification .input-box .label{ display: inline-block;margin-right: 10px;position: relative;top: 2px;width: 45px;}
+.stock-notification .input-box  select{ width: 249px;}
+.stock-notification .input-box  input{ width: 170px;}
+.stock-notification .stock-notification-header{}
+.stock-notification .close-notification{position: absolute;right: -9px;text-decoration: none;top: -13px;}
+.grouped-items-table .btn-notify{font-size:12px; font-weight:normal; white-space: nowrap;display:block; }
+.grouped-items-table .container-modal{position:relative}
+.grouped-items-table .container-modal .stock-notification{width: 320px;margin:0}
+.grouped-items-table .container-modal .input-box{margin:0}
+.grouped-items-table .modal-notify{display:none;background-color: #FFFFFF;left: -135px;min-width: 310px;padding: 10px;position: absolute;top: 0;border:1px solid #DDDDDD}
+
+

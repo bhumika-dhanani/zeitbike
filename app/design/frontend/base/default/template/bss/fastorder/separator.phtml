@@ -1,0 +1,8 @@
+<?php
+	$config = Mage::app()->getLocale()->getJsPriceFormat();
+	$priceFormat = Mage::helper('core')->jsonEncode($config);
+?>
+<script type="text/javascript">
+	var priceFormat = JSON.parse('<?php echo $priceFormat;?>');
+	var separator = priceFormat.decimalSymbol;
+</script>

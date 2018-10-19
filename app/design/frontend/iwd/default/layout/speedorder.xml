@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<layout>
+    <default>
+    <reference name="top.links">
+        <block type="speedorder/links" name="speedorder_link">
+            <action method="getSpeedorderUrl"></action>
+        </block>
+
+    </reference>
+    </default>
+    <speedorder_ajax_showoption>
+        <reference name="content">
+        <block type="speedorder/list" name="show_optiotns" template="catalog/product/show_speed_order_options.phtml" />
+        </reference>
+    </speedorder_ajax_showoption>
+</layout>

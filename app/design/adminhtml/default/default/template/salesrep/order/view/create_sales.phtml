@@ -1,0 +1,35 @@
+<div id="sales-create-user-form">
+	<?php if ($this->isManual() && $this->isAllow()):?>
+	<?php $current = Mage::getSingleton('admin/session')->getUser()->getId();?>
+	<div id="order-form_salesrep">
+		<div class="entry-edit">
+			<div class="entry-edit-head"><h4 class="icon-head fieldset-legend head-account"><?php echo $this->__('Sales Representative')?></h4></div>
+			<div>
+				<div class="fieldset ">
+					<div class="hor-scroll">
+						<table cellspacing="0" class="form-list">
+							<tbody>
+								<tr>
+									<td class="label"><label for="group_id"><?php echo $this->__('User')?></label></td>
+									<td class="value">
+											<select class="select" name="order[salesrep_user]" id="salesrep_user">
+												<option value=""></option>
+												<?php foreach ($this->getUsers() as $user):?>
+												<option <?php if($current==$user->getId()):?>selected="selected"<?php endif?> value="<?php echo $user->getId()?>"><?php echo $user->getFirstname()?> <?php echo $user->getLastname()?></option>
+												<?php endforeach;?>
+											</select>
+									</td>
+								</tr>
+							
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>			
+		</div>
+	</div>
+	<?php endif?>
+</div>
+<script type="text/javascript">
+	IWD.Salesrep.type='create';	
+</script>

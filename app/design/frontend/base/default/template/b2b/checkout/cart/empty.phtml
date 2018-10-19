@@ -1,0 +1,10 @@
+<div id="b2b-shopping-cart">
+    <div class="b2b-shopping-cart">
+        <h1><?php echo $this->__('Shopping Cart') ?></h1>
+        <div class="cart-empty">
+            <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+            <p><?php echo $this->__('You have no items in your shopping cart.') ?></p>
+            <a href="<?php echo $this->getContinueShoppingUrl()?>"><?php echo $this->__('BACK TO DASHBOARD')?></a>
+        </div>
+    </div>
+</div>

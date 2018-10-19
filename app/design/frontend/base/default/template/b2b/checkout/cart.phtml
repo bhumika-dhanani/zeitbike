@@ -1,0 +1,74 @@
+<div id="b2b-shopping-cart">
+    <div class="b2b-shopping-cart">
+        <h1><?php echo $this->__('Shopping Cart') ?></h1>
+       
+        <div class="div-table">
+                <div class="table-header">
+                        <div class="left th-product"><?php echo $this->__('Product')?></div>                    
+                        <div class="left th-price"><?php echo $this->__('Price')?></div>                    
+                        <div class="left th-qty"><?php echo $this->__('Qty')?></div>                    
+                        <div class="left th-subtotal"><?php echo $this->__('SUBTOTAL')?></div>
+                        <div class="clear"></div>
+                </div>
+                <div class="table-body">
+                    <?php foreach($this->getItems() as $_item): ?>
+                        <?php echo $this->getItemHtml($_item) ?>
+                    <?php endforeach ?>
+                </div>
+        </div>
+       
+       <?php /*?>
+         <form action="<?php echo $this->getUrl('checkout/cart/updatePost') ?>" method="post">
+                <table id="shopping-cart-table" class="data-table cart-table">
+    
+                <?php $mergedCells = ($this->helper('tax')->displayCartBothPrices() ? 2 : 1); ?>
+                    <thead>
+                        <tr>
+                            <th rowspan="<?php echo $mergedCells; ?>">&nbsp;</th>
+                            <th rowspan="<?php echo $mergedCells; ?>"><span class="nobr"><?php echo $this->__('Product Name') ?></span></th>
+                           
+                           
+                            <th class="a-center" colspan="<?php echo $mergedCells; ?>"><span class="nobr"><?php echo $this->__('Unit Price') ?></span></th>
+                            <th rowspan="<?php echo $mergedCells; ?>" class="a-center"><?php echo $this->__('Qty') ?></th>
+                            <th class="a-center" colspan="<?php echo $mergedCells; ?>"><?php echo $this->__('Subtotal') ?></th>
+                            <th rowspan="<?php echo $mergedCells; ?>" class="a-center">&nbsp;</th>
+                        </tr>
+                        <?php if ($this->helper('tax')->displayCartBothPrices()): ?>
+                        <tr>
+                            <th class="a-right"><?php echo $this->helper('tax')->getIncExcTaxLabel(false) ?></th>
+                            <th><?php echo $this->helper('tax')->getIncExcTaxLabel(true) ?></th>
+                            <th class="a-right"><?php echo $this->helper('tax')->getIncExcTaxLabel(false) ?></th>
+                            <th><?php echo $this->helper('tax')->getIncExcTaxLabel(true) ?></th>
+                        </tr>
+                        <?php endif; ?>
+                    </thead>               
+                    <tbody>
+                    <?php foreach($this->getItems() as $_item): ?>
+                        <?php echo $this->getItemHtml($_item) ?>
+                    <?php endforeach ?>
+                    </tbody>
+                </table>
+        </form>
+       <?php */?>
+       
+    </div>
+    
+    <div class="b2b-shopping-cart-action" >
+        <a class="btn-large-gray left"  id="b2b-clear-cart" href="#"><?php echo $this->__('EMPTY CART')?></a>
+        <a href="<?php echo Mage::helper('b2b')->getDashboardUrl()?>" class="btn-large-gray left"><?php echo $this->__('BACK TO DASHBOARD')?></a>
+        <div class="clear"></div>
+         <?php $message  = Mage::helper('b2b')->getCustomerMessage()?>
+         <?php if($message!=false):?>
+         <div class="b2b-cart-message left">           
+            <p><em>*</em><?php echo $message;?></p>            
+        </div>
+        <?php endif;?>
+        <div class="b2b-cart-total right">
+            <?php echo $this->getChildHtml('totals'); ?>
+            <div class="clear"></div>
+            <a class="right btn-checkout" href="<?php echo Mage::helper('checkout/url')->getCheckoutUrl()?>">Checkout</a>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>

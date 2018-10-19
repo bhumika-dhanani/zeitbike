@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <IWD_B2BStoreName>
+            <active>true</active>
+            <codePool>community</codePool>
+        </IWD_B2BStoreName>
+    </modules>
+</config>

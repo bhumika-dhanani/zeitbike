@@ -1,0 +1,115 @@
+@CHARSET "UTF-8";
+/* bundl */
+/*.stock-notification .input-box label:last-child {display: none !important;}*/
+.stock-notification{float:left;margin: 10px 0 10px;position:relative;width: 100%;}
+.stock-notification-header h5 {font-family: "Roboto",sans-serif;font-size: 14px; color:#2a2a2a;}
+
+.stock-notification .stock-notification-header .input-box input:focus {border-color: #ec87ad;}
+.stock-notification .stock-notification-header .input-box {padding: 0px;}
+.stock-notification .stock-notification-header .input-box button {margin-left: 10px;border-color: #ea88ad;line-height: 43px;padding: 0px 17px;}
+.stock-notification .stock-notification-header .input-box button span{}
+.stock-notification .stock-notification-header .input-box button span span{font-size:30px; color: #ea88ad; font-family: "Yanone Kaffeesatz",sans-serif;}
+.stock-notification .stock-notification-header .input-box button:hover span span{ color: #fff;}
+.stock-notification .stock-notification-header .input-box button:hover{ background-color: #ec87ad;border-color: #c64a79;}.stock-notification{float:left;margin: 10px 0 15px;position:relative;width: 100%;}
+.stock-notification .stock-notification-header .input-box button:focus{background-color: #ffa6c7;}
+/* config */
+.stock-notification .config h5 { text-transform: none;padding: 15px 10px 10px;margin-bottom: 5px;}
+.stock-notification .config.input-box {background-color: #f9f9f9;line-height: normal;padding-bottom: 15px !important;}
+.stock-notification .config.input-box .selectpicker{min-height: 35px;}
+.stock-notification-header .bootstrap-select {margin: 0 2.3% 18px !important;width: 95.4% !important;}
+.stock-notification-header .bootstrap-select button.selectpicker.dropdown-toggle{background-color: #fff;margin: 0px;font-family: "Roboto",sans-serif; font-size: 14px; border:1px solid #dedede; line-height: 33px;  padding: 0 15px;text-align: left;}
+.stock-notification-header .bootstrap-select.open button.selectpicker.dropdown-toggle {border-color: #ec87ad;}
+.stock-notification-header .dropdown-menu {border-color: #ec87ad;}
+.stock-notification-header .bootstrap-select button.selectpicker.dropdown-toggle:hover{ border-color: #ec87ad;background-color: #fff;}
+.stock-notification-header .bootstrap-select.btn-group .dropdown-menu li.selected > a {background-color: #bbb !important;}
+.stock-notification-header .bootstrap-select.btn-group .dropdown-menu li:hover > a {background-color: #ddd !important;}
+
+.stock-notification .stock-notification-header .input-box input {height: 44px;line-height: 20px;width: 68% !important;padding-left: 15px; margin:0px 2.3% 13px;border:none;}
+.product-view.simple .stock-notification .stock-notification-header .input-box input {margin: 18px 2.3% 0px 0px; width: 68% !important;}
+.product-view.configurable .stock-notification .stock-notification-header .input-box input {width: 59% !important;margin: 0px 0px 13px 2.3%;height: 45px; border: 1px solid #dedede;padding-left: 10px;}
+.product-view.configurable .stock-notification .stock-notification-header .input-box button:not(.selectpicker) {width: 32%;margin: 10px 0px 13px 2.3%; margin-left: 4.3% !important; }
+.product-view.configurable .stock-notification-header .bootstrap-select {margin: 0 2.3% 9px !important; width: 95.4% !important;}
+.product-view.configurable .stock-notification .bootstrap-select.btn-group .btn .caret {
+    right: 12px;
+    }
+
+.product-view.configurable .stock-notification .btn.selectpicker.btn-default {
+    font-size: 14px;
+    line-height: 14px;
+    padding: 4px 33px 4px 10px;
+    min-height: auto;
+    height: 35px;
+}
+.product-view.configurable .stock-notification-header .bootstrap-select button.selectpicker.dropdown-toggle {
+    line-height: 14px;
+}
+@media only screen and (max-width: 1000px) {
+    .product-view.configurable .stock-notification .stock-notification-header .input-box input#email_notification {box-sizing: border-box;
+        margin: 10px 2.3% 13px;
+        max-width: 100%;
+        width: 95.4% !important;}
+    .product-view.configurable .stock-notification .stock-notification-header .input-box button:not(.selectpicker) {width: 32%;margin:0px 2.3% 13px 2.3%; margin-left: 2.3% !important; }
+    .product-view.configurable .stock-notification-header .bootstrap-select .dropdown-toggle.selectpicker.btn-default {width: 100% !important;box-sizing: border-box;}
+}
+.stock-notification .stock-notification-header .input-box button:not(.selectpicker) {border-color: #ea88ad;line-height: 40px;margin-left: 10px;margin-top: -1px;padding: 0 14px;margin-left: 0 !important; width: 29%; min-width: 50px;}
+.product-view.simple .stock-notification .stock-notification-header .input-box button {margin: 18px 0px;}
+.product-view.simple .stock-notification .stock-notification-header .input-box {padding: 0px 18px;}
+.stock-notification .stock-notification-header .input-box button span{}
+.stock-notification .stock-notification-header .input-box button span span{font-size:30px; color: #ea88ad; font-family: "Yanone Kaffeesatz",sans-serif;}
+.stock-notification .stock-notification-header .input-box button:hover span span{ color: #fff;}
+.stock-notification .stock-notification-header .input-box button:hover{ background-color: #ec87ad;border-color: #c64a79;}
+.stock-notification .stock-notification-header .input-box button:not(.selectpicker):focus{ background-color: #ec87ad !important;border-color: #c64a79; color: #c64a79;}
+.stock-notification .stock-notification-header .input-box button:not(.selectpicker):focus span span{ background-color: #ec87ad !important;border-color: #c64a79; color: #c64a79;}
+
+.stock-notification .input-box{margin-bottom: 5px;background-color: #e3e3e3;}
+.stock-notification .input-box .label{ display: inline-block;margin-right: 10px;position: relative;top: 2px;width: 45px;}
+.stock-notification .input-box  select{ width: 249px;}
+.stock-notification .stock-notification-header{}
+.stock-notification .close-notification{color: #7e7e7e;position: absolute;right: -11px;text-decoration: none;top: -11px;}
+.grouped-items-table .btn-notify{font-size:12px; font-weight:normal; white-space: nowrap;display:block; }
+.grouped-items-table .container-modal{position:relative;text-align:left}
+.grouped-items-table .container-modal .stock-notification{max-width: 340px;margin:0;width: 100%;}
+.grouped-items-table .container-modal .input-box{margin:0}
+.grouped-items-table .modal-notify{display:none;background-color: #e3e3e3;right: 0px;min-width: 375px;padding: 14px 17px 21px;position: absolute;top: 0;-webkit-border-radius: 10px;border-radius: 10px;}
+
+.container-modal .modal-notify .stock-notification-header input,#ajax-cart-modal .modal-notify .stock-notification-header input {width: 100% !important; background-color: #fff;}
+.container-modal .modal-notify .stock-notification-header .input-box button,#ajax-cart-modal .modal-notify .stock-notification-header .input-box button  {width: auto !important;}
+#product_id {margin: 20px 0; width: 100%;}
+.stock-notification-message {height: auto;}
+.modal-notify .stock-notification-message{height:auto !important}
+.modal-notify #email_notification {
+    margin: 0 0 13px;
+}
+.grouped-items-table .stock-notification h3{border: none;color:#070707;font-size:13px; text-transform:uppercase;text-align:left;font-weight:bold;font-family:Roboto; margin-bottom: 7px; padding: 0px;}
+
+
+#ajax-cart-modal .stock-notification-header input {border-color: #dedede;height: 47px !important;line-height: 47px !important;margin-left: 0px !important;width: 70% !important; margin-right: 1%;}
+#ajax-cart-modal .stock-notification .stock-notification-header .input-box button {
+    /*margin-left: 1%;*/
+    text-align: center;
+    width: 29%;
+}
+#ajax-cart-modal .product-options label {
+    color: #070707;
+    font-size: 16px;
+}
+#ajax-cart-modal .product-options dd select {
+    width: 100%;
+    margin: 0px;
+}
+@media only screen and (max-width: 480px) {
+    .grouped-items-table .modal-notify{display:none;background-color: #e3e3e3;right: 0px;min-width: 278px;padding: 14px 17px 21px;position: absolute;top: 0;-webkit-border-radius: 10px;border-radius: 10px;}
+}
+
+    @media only screen and (max-width: 980px) {
+    .product-view.simple .stock-notification .stock-notification-header .input-box input,.container-modal .modal-notify .stock-notification-header input,#ajax-cart-modal .modal-notify .stock-notification-header input {width: 100% !important; background-color: #fff;}
+    .stock-notification .stock-notification-header .input-box button,.container-modal .modal-notify .stock-notification-header .input-box button,#ajax-cart-modal .modal-notify .stock-notification-header .input-box button  {width: auto !important;}
+}
+    @media only screen and (max-width: 700px) {
+    #ajax-cart-modal .stock-notification-header input {
+        width: 60% !important;
+    }
+    #ajax-cart-modal .stock-notification .stock-notification-header .input-box button {
+        width: 40% !important;
+    }
+}

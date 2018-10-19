@@ -1,0 +1,86 @@
+<?php $state = $this->getRepresentative()?>
+<?php $edit = Mage::helper('salesrep')->isEdit($state);
+?>
+<div id="sales-edit-user-form">
+<table>
+<tr>
+	<td class="label" style="padding: 2px !important"><label><strong><?php echo Mage::helper('salesrep')->__('Sales Representative') ?></strong></label></td>
+	<td class="value" style="padding: 2px !important">
+		<?php if ($edit===true):?>
+			<a href="" onclick="loadUsers();return false;"  id="username"><?php echo $state;?></a>
+		<?php endif;?>
+		
+		<?php if ($edit==1 && $edit!==true):?>
+			<?php if ($state!='N/A'):?>
+				<?php echo $state;?>
+			<?php else:?>
+			<a href="" onclick="loadUsers();return false;"  id="username"><?php echo $state;?></a>
+			<?php endif;?>
+		<?php endif;?>
+
+		<?php if ($edit===false):?>			
+				<?php echo $state;?>			
+		<?php endif;?>
+			
+		<div id="choose-users" class="product-configure-popup" style="display:none;">
+		    <form action="" method="post" id="product_composite_configure_form" enctype="multipart/form-data" onsubmit="productConfigure.onConfirmBtn(); return false;" target="product_composite_configure_iframe">
+		        <div class="entry-edit">
+		            <div class="entry-edit-head">
+		                <h4 class="icon-head fieldset-legend"><?php echo Mage::helper('catalog')->__('Sales Representative') ?></h4>
+		            </div>
+		            
+		            <div id="dialog-select-users">
+		            	
+		            </div>
+		            <div class="buttons-set a-right">
+		                <button type="button" class="scalable" onclick="closeDialog();"><span><span><span><?php echo Mage::helper('catalog')->__('Cancel') ?></span></span></span></button>
+		                <button type="button" class="scalable" onclick="saveDialog();"><span><span><span><?php echo Mage::helper('catalog')->__('OK') ?></span></span></span></button>
+		            </div>
+		        </div>
+		    </form>
+		    <div id="product_composite_configure_confirmed" style="display:none;"></div>
+		</div>
+	</td>
+</tr>
+</table>
+</div>
+<style>
+	#choose-users{width:310px !important; margin: 0 0 0 -155px;}
+</style>
+<script type="text/javascript">
+    function loadUsers(){
+        var reloadurl = '<?php echo $this->helper('salesrep')->getJsonUrl();?>';
+        new Ajax.Request(reloadurl, {
+            method: 'post',
+            onComplete: function(transport) {
+                $('choose-users').show();
+                $('dialog-select-users').update(transport.responseText);
+            }
+        });
+    }
+
+    function closeDialog(){
+    	$('choose-users').hide();
+        $('dialog-select-users').update('');
+    }
+
+    function saveDialog(){
+        var reloadurl = '<?php echo $this->helper('salesrep')->getSaveUrl();?>';
+        reloadurl = reloadurl +'?user_id=' + $('userRepresentative').value; 
+        new Ajax.Request(reloadurl, {
+            method: 'post',
+            onComplete: function(transport) {
+                closeDialog();
+                <?php if(Mage::getStoreConfig('salesrep/order/disable_edit') == 1):?>
+                var newEl = jQueryIWD('<span>').text(transport.responseText).insertBefore(jQueryIWD('#username'));
+                setTimeout(function(){
+                    jQueryIWD('#username').remove();
+                }, 100);
+
+                <?php else: ?>
+                $('username').update(transport.responseText);
+                <?php endif; ?>
+            }
+        });
+    }
+</script>

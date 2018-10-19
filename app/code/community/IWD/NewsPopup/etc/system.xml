@@ -1,0 +1,904 @@
+<?xml version="1.0"?>
+<config>
+	<tabs>
+        <iwdall>
+            <label>IWD</label>
+            <sort_order>200</sort_order>
+        </iwdall>
+  	</tabs>
+	<sections>
+	     <iwdpopup translate="label" module="iwdpopup">
+	            <label>Newsletter Popup</label>
+	            <tab>iwdall</tab>
+	            <frontend_type>text</frontend_type>
+	            <sort_order>20</sort_order>
+	            <show_in_default>1</show_in_default>
+	            <show_in_website>1</show_in_website>
+	            <show_in_store>1</show_in_store>
+	    	 <groups>
+	                <general translate="label" module="core">
+	                	
+	                    <label>General</label>
+	                    <frontend_type>text</frontend_type>
+	                    <sort_order>10</sort_order>
+	                    <show_in_default>1</show_in_default>
+	                    <show_in_website>1</show_in_website>
+	                    <show_in_store>1</show_in_store>
+	                    <fields>
+	                    	<info>
+								<label>Version</label>
+								<frontend_type>text</frontend_type>
+								<sort_order>0</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>1</show_in_store>
+								<frontend_model>iwdpopup/system_config_form_fieldset_extensions
+								</frontend_model>
+							</info>
+	                        <newsenabled translate="label" module="core">
+	                            <label>Enabled</label>
+	                            <frontend_type>select</frontend_type>
+	                            <source_model>adminhtml/system_config_source_yesno</source_model>
+	                            <sort_order>1</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </newsenabled>
+	                        <newswidth translate="label" module="cms">
+	                            <label>Popup Width</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>10</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                            <comment>(in pixels)</comment>
+	                        </newswidth>
+	                        <!--  newsheight translate="label" module="cms">
+	                            <label>Popup Height</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>10</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                            <comment>(in pixels)</comment>
+	                        </newsheight-->
+	                         <newstopspace translate="label" module="cms">
+	                            <label>Popup Top Position</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>15</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                            <comment>Distance between top of the screen and popup, in px</comment>
+	                        </newstopspace>
+
+	                        <newsbuttonbg translate="label">
+								<label>Button color</label>
+								<frontend_type>text</frontend_type>	
+								<validate>color</validate>
+								<sort_order>35</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<comment>Button background color</comment>
+							</newsbuttonbg>
+							<newsbuttonhover translate="label">
+								<label>Button hover color</label>
+								<frontend_type>text</frontend_type>	
+								<validate>color</validate>
+								<sort_order>40</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<comment>Button hover</comment>
+							</newsbuttonhover>	
+							<newsbuttontext translate="label">
+								<label>Button text color</label>
+								<frontend_type>text</frontend_type>	
+								<validate>color</validate>
+								<sort_order>45</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<comment>Submit button text color</comment>
+							</newsbuttontext>	
+							<!-- newsiconbg translate="label">
+								<label>Icon background</label>
+								<frontend_type>text</frontend_type>	
+								<validate>color</validate>
+								<sort_order>50</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<comment>Icons background color</comment>
+							</newsiconbg>
+							<newsiconhover translate="label">
+								<label>Icon hover background</label>
+								<frontend_type>text</frontend_type>	
+								<validate>color</validate>
+								<sort_order>60</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<comment>Icons hover background color</comment>
+							</newsiconhover>	
+							<newsicontext translate="label">
+								<label>Icon symbol color</label>
+								<frontend_type>text</frontend_type>	
+								<validate>color</validate>
+								<sort_order>65</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<comment>Icons color</comment>
+							</newsicontext>	
+							<newsicongrid translate="label">
+	                            <label>Icon block width</label>
+	                            <frontend_type>select</frontend_type>
+								<source_model>iwdpopup/system_config_source_design_icon_arrangement</source_model>
+	                            <sort_order>70</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                            <comment>Icons arrangement: 2, 3, 5 icons per row.</comment>
+	                        </newsicongrid-->
+	                        
+	                        <newslink translate="label" module="core">
+	                            <label>Display Newsletter link in footer</label>
+	                            <frontend_type>select</frontend_type>
+	                            <source_model>adminhtml/system_config_source_yesno</source_model>
+	                            <sort_order>20</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </newslink>
+	                        <newslinktext translate="label" module="cms">
+	                            <label>Footer Newsletter link text</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>30</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </newslinktext>
+	                        <newslinkclass translate="label" module="cms">
+	                            <label>Newsletter link class/identifier</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>50</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                            <comment>Please, enter link class name for example '.newsletter' or link identifier for example '#newsletter' for popup launch after link with this class or id 'click'</comment>
+	                        </newslinkclass>
+	                        <newspopupdelay translate="label" module="cms">
+	                            <label>Popup Timing</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>32</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                            <comment>delay in seconds(for example "3") after page load </comment>
+	                        </newspopupdelay>
+                            <multiplesubscriptionguest>
+                                <label>Multiple guest subscription</label>
+                                <frontend_type>select</frontend_type>
+                                <source_model>adminhtml/system_config_source_yesno</source_model>
+                                <sort_order>51</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>1</show_in_store>
+                                <comment>if a GUEST (NOT LOGGED IN) customer is already subscribed to the newsletter and he tries to sign up again it works</comment>
+                            </multiplesubscriptionguest>
+	                    </fields>
+	                  </general>
+	                  <socialicons>
+	                  	<label>Social Icons</label>
+	                    <frontend_type>text</frontend_type>
+	                    <sort_order>20</sort_order>
+	                    <show_in_default>1</show_in_default>
+	                    <show_in_website>1</show_in_website>
+	                    <show_in_store>1</show_in_store>
+	                    <fields>
+	                    	<newsiconstyle translate="label" module="core">
+	                            <label>Use standard icon colors</label>
+	                            <frontend_type>select</frontend_type>
+	                            <source_model>adminhtml/system_config_source_yesno</source_model>
+	                            <sort_order>1</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                            <comment>Use red for Youtube icon, blue for Facebook icon, etc.</comment>
+	                        </newsiconstyle>
+	                    	<facebookenabled translate="label" module="cms">
+	                            <label>Enable Facebook Icon?</label>
+	                            <frontend_type>select</frontend_type>
+	                            <source_model>adminhtml/system_config_source_yesno</source_model>
+	                            <sort_order>2</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </facebookenabled>
+	                    	<facebooklink translate="label" module="cms">
+	                            <label>Facebook Link</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>3</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </facebooklink>
+	                        <facebookbg translate="label" module="cms">
+	                            <label>Facebook Icon Background</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>4</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </facebookbg>
+	                        <facebookicon translate="label" module="cms">
+	                            <label>Facebook Icon Color</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>5</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </facebookicon>
+	                        <facebookbghover translate="label" module="cms">
+	                            <label>Facebook Icon Hover Background</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>6</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </facebookbghover>
+	                        <facebookiconhover translate="label" module="cms">
+	                            <label>Facebook Icon Hover Color</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>7</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </facebookiconhover>
+	                        
+	                        
+	                        
+	                        <twitterenabled translate="label" module="cms">
+	                            <label>Enable Twitter Icon?</label>
+	                            <frontend_type>select</frontend_type>
+	                            <source_model>adminhtml/system_config_source_yesno</source_model>
+	                            <sort_order>8</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </twitterenabled>
+	                        <twitterlink translate="label" module="cms">
+	                            <label>Twitter Link</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>9</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </twitterlink>
+	                        <twitterbg translate="label" module="cms">
+	                            <label>Twitter Icon Background</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>10</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </twitterbg>
+	                        <twittericon translate="label" module="cms">
+	                            <label>Twitter Icon Color</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>11</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </twittericon>
+	                        <twitterbghover translate="label" module="cms">
+	                            <label>Twitter Icon Hover Background</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>12</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </twitterbghover>
+	                        <twittericonhover translate="label" module="cms">
+	                            <label>Twitter Icon Hover Color</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>13</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </twittericonhover>
+	                        
+	                        <linkedinenabled translate="label" module="cms">
+	                            <label>Enable LinkedIn Icon?</label>
+	                            <frontend_type>select</frontend_type>
+	                            <source_model>adminhtml/system_config_source_yesno</source_model>
+	                            <sort_order>14</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </linkedinenabled>
+	                        <linkedinlink translate="label" module="cms">
+	                            <label>LinkedIn Link</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>15</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </linkedinlink>
+	                        <linkedinbg translate="label" module="cms">
+	                            <label>LinkedIn Icon Background</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>16</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </linkedinbg>
+	                        <linkedinicon translate="label" module="cms">
+	                            <label>LinkedIn Icon Color</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>17</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </linkedinicon>
+	                        <linkedinbghover translate="label" module="cms">
+	                            <label>LinkedIn Icon Hover Background</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>18</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </linkedinbghover>
+	                        <linkediniconhover translate="label" module="cms">
+	                            <label>LinkedIn Icon Hover Color</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>19</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </linkediniconhover>
+	                        
+	                        <googleenabled translate="label" module="cms">
+	                            <label>Enable Google Plus Icon?</label>
+	                            <frontend_type>select</frontend_type>
+	                            <source_model>adminhtml/system_config_source_yesno</source_model>
+	                            <sort_order>20</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </googleenabled>
+	                        <googlelink translate="label" module="cms">
+	                            <label>Google Plus Link</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>21</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </googlelink>
+	                        <googlebg translate="label" module="cms">
+	                            <label>Google Plus Icon Background</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>22</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </googlebg>
+	                        <googleicon translate="label" module="cms">
+	                            <label>Google Plus Icon Color</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>23</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </googleicon>
+	                        <googlebghover translate="label" module="cms">
+	                            <label>Google Plus Icon Hover Background</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>24</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </googlebghover>
+	                        <googleiconhover translate="label" module="cms">
+	                            <label>Google Plus Icon Hover Color</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>25</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </googleiconhover>
+	                        
+	                        
+	                        
+	                        
+	                        <youtubeenabled translate="label" module="cms">
+	                            <label>Enable YouTube Icon?</label>
+	                            <frontend_type>select</frontend_type>
+	                            <source_model>adminhtml/system_config_source_yesno</source_model>
+	                            <sort_order>26</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </youtubeenabled>
+	                        <youtubelink translate="label" module="cms">
+	                            <label>YouTube Link</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>27</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </youtubelink>
+	                        <youtubebg translate="label" module="cms">
+	                            <label>YouTube Icon Background</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>28</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </youtubebg>
+	                        <youtubeicon translate="label" module="cms">
+	                            <label>YouTube Icon Color</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>29</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </youtubeicon>
+	                        <youtubebghover translate="label" module="cms">
+	                            <label>YouTube Icon Hover Background</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>30</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                            <comment>YouTube Icon Background</comment>
+	                        </youtubebghover>
+	                        <youtubeiconhover translate="label" module="cms">
+	                            <label>YouTube Icon Hover Color</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>31</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </youtubeiconhover>
+	                        
+	                       
+	                       
+	                        <flickrenabled translate="label" module="cms">
+	                            <label>Enable Flickr Icon?</label>
+	                            <frontend_type>select</frontend_type>
+	                            <source_model>adminhtml/system_config_source_yesno</source_model>
+	                            <sort_order>32</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </flickrenabled>
+	                        <flickrlink translate="label" module="cms">
+	                            <label>Flickr Link</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>33</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </flickrlink>
+	                        <flickrbg translate="label" module="cms">
+	                            <label>Flickr Icon Background</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>34</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </flickrbg>
+	                        <flickricon translate="label" module="cms">
+	                            <label>Flickr Icon Color</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>35</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </flickricon>
+	                        <flickrbghover translate="label" module="cms">
+	                            <label>Flickr Icon Hover Background</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>36</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </flickrbghover>
+	                        <flickriconhover translate="label" module="cms">
+	                            <label>Flickr Icon Hover Color</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>39</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </flickriconhover>
+	                        
+	                        
+	                        
+	                        
+	                        <vimeoenabled translate="label" module="cms">
+	                            <label>Enable Vimeo Icon?</label>
+	                            <frontend_type>select</frontend_type>
+	                            <source_model>adminhtml/system_config_source_yesno</source_model>
+	                            <sort_order>40</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </vimeoenabled>
+	                        <vimeolink translate="label" module="cms">
+	                            <label>Vimeo Link</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>42</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </vimeolink>
+	                        <vimeobg translate="label" module="cms">
+	                            <label>Vimeo Icon Background</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>44</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </vimeobg>
+	                        <vimeoicon translate="label" module="cms">
+	                            <label>Vimeo Icon Color</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>46</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </vimeoicon>
+	                        <vimeobghover translate="label" module="cms">
+	                            <label>Vimeo Icon Hover Background</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>48</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </vimeobghover>
+	                        <vimeoiconhover translate="label" module="cms">
+	                            <label>Vimeo Icon Hover Color</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>50</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </vimeoiconhover>
+	                        
+	                        
+	                        
+	                        <pinterestenabled translate="label" module="cms">
+	                            <label>Enable Pinterest Icon?</label>
+	                            <frontend_type>select</frontend_type>
+	                            <source_model>adminhtml/system_config_source_yesno</source_model>
+	                            <sort_order>52</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </pinterestenabled>
+	                        <pinterestlink translate="label" module="cms">
+	                            <label>Pinterest Link</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>54</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </pinterestlink>
+	                        <pinterestbg translate="label" module="cms">
+	                            <label>Pinterest Icon Background</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>56</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                            <comment>Pinterest Icon Background</comment>
+	                        </pinterestbg>
+	                        <pinteresticon translate="label" module="cms">
+	                            <label>Pinterest Icon Color</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>58</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </pinteresticon>
+	                        <pinterestbghover translate="label" module="cms">
+	                            <label>Pinterest Icon Hover Background</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>60</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                            <comment>Pinterest Icon Background</comment>
+	                        </pinterestbghover>
+	                        <pinteresticonhover translate="label" module="cms">
+	                            <label>Pinterest Icon Hover Color</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>62</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </pinteresticonhover>
+	                        
+	                        
+	                        
+	                        <instagramenabled translate="label" module="cms">
+	                            <label>Enable Instagram Icon?</label>
+	                            <frontend_type>select</frontend_type>
+	                            <source_model>adminhtml/system_config_source_yesno</source_model>
+	                            <sort_order>64</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </instagramenabled>
+	                        <instagramlink translate="label" module="cms">
+	                            <label>Instagram Link</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>66</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </instagramlink>
+	                        <instagrambg translate="label" module="cms">
+	                            <label>Instagram Icon Background</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>68</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </instagrambg>
+	                        <instagramicon translate="label" module="cms">
+	                            <label>Instagram Icon Color</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>70</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </instagramicon>
+	                        <instagrambghover translate="label" module="cms">
+	                            <label>Instagram Icon Hover Background</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>72</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </instagrambghover>
+	                        <instagramiconhover translate="label" module="cms">
+	                            <label>Instagram Icon Hover Color</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>74</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </instagramiconhover>
+	                        
+	                        <foursquareenabled translate="label" module="cms">
+	                            <label>Enable FourSquare Icon?</label>
+	                            <frontend_type>select</frontend_type>
+	                            <source_model>adminhtml/system_config_source_yesno</source_model>
+	                            <sort_order>76</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </foursquareenabled>
+	                        <foursquarelink translate="label" module="cms">
+	                            <label>FourSquare Link</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>78</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </foursquarelink>
+	                        <foursquarebg translate="label" module="cms">
+	                            <label>FourSquare Icon Background</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>80</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </foursquarebg>
+	                        <foursquareicon translate="label" module="cms">
+	                            <label>FourSquare Icon Color</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>82</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </foursquareicon>
+	                        <foursquarebghover translate="label" module="cms">
+	                            <label>FourSquare Icon Hover Background</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>84</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </foursquarebghover>
+	                        <foursquareiconhover translate="label" module="cms">
+	                            <label>FourSquare Icon Hover Color</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>86</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </foursquareiconhover>
+	                        
+	                        <tumblrenabled translate="label" module="cms">
+	                            <label>Enable Tumblr Icon?</label>
+	                            <frontend_type>select</frontend_type>
+	                            <source_model>adminhtml/system_config_source_yesno</source_model>
+	                            <sort_order>88</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </tumblrenabled>
+	                        <tumblrlink translate="label" module="cms">
+	                            <label>Tumblr Link</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>90</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </tumblrlink>
+	                        <tumblrbg translate="label" module="cms">
+	                            <label>Tumblr Icon Background</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>92</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </tumblrbg>
+	                        <tumblricon translate="label" module="cms">
+	                            <label>Tumblr Icon Color</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>94</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </tumblricon>
+	                        <tumblrbghover translate="label" module="cms">
+	                            <label>Tumblr Icon Hover Background</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>96</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </tumblrbghover>
+	                        <tumblriconhover translate="label" module="cms">
+	                            <label>Tumblr Icon Hover Color</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>98</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </tumblriconhover>
+	                        
+	                        <rssenabled translate="label" module="cms">
+	                            <label>Enable RSS Icon?</label>
+	                            <frontend_type>select</frontend_type>
+	                            <source_model>adminhtml/system_config_source_yesno</source_model>
+	                            <sort_order>100</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </rssenabled>
+	                        <rsslink translate="label" module="cms">
+	                            <label>RSS Link</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>102</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </rsslink>
+	                        <rssbg translate="label" module="cms">
+	                            <label>RSS Icon Background</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>104</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </rssbg>
+	                        <rssicon translate="label" module="cms">
+	                            <label>RSS Icon Color</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>106</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </rssicon>
+	                        <rssbghover translate="label" module="cms">
+	                            <label>RSS Icon Hover Background</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>108</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </rssbghover>
+	                        <rssiconhover translate="label" module="cms">
+	                            <label>RSS Icon Hover Color</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>110</sort_order>
+	                            <validate>color</validate>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </rssiconhover>
+	                        
+	                    </fields>
+	                  </socialicons>
+	                  <device translate="label" module="core">
+	                    <label>Mobile/Tablet Support</label>
+	                    <frontend_type>text</frontend_type>
+	                    <sort_order>30</sort_order>
+	                    <show_in_default>1</show_in_default>
+	                    <show_in_website>1</show_in_website>
+	                    <show_in_store>1</show_in_store>
+	                    <fields>
+	                    	<newsmobile translate="label" module="core">
+	                            <label>Disable Popup for Mobile</label>
+	                            <frontend_type>select</frontend_type>
+	                            <source_model>adminhtml/system_config_source_yesno</source_model>
+	                            <sort_order>3</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </newsmobile>
+	                        <newstablet translate="label" module="core">
+	                            <label>Disable Popup for Tablet</label>
+	                            <frontend_type>select</frontend_type>
+	                            <source_model>adminhtml/system_config_source_yesno</source_model>
+	                            <sort_order>6</sort_order>
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                        </newstablet>
+	                    
+	                    </fields>
+	                  </device>
+	           </groups>
+	     </iwdpopup>
+     </sections>
+</config>

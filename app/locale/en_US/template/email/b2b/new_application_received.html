@@ -1,0 +1,261 @@
+<!--@subject New Application has been Received @-->
+<!--@vars
+{"store url=\"\"":"Store Url",
+"var logo_url":"Email Logo Image Url",
+"var logo_alt":"Email Logo Image Alt",
+"store url=\"customer/account/\"":"Customer Account Url",
+"store url=\"customer/account/confirm/\" _query_id=$customer.id _query_key=$customer.confirmation _query_back_url=$back_url":"Confirmation Url",
+"htmlescape var=$customer.password":"Customer password"}
+@-->
+
+<!--@styles
+body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; }
+@-->
+
+<body style="background:#F6F6F6; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; margin:0; padding:0;">
+<div style="background:#F6F6F6; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; margin:0; padding:0;">
+<table cellspacing="0" cellpadding="0" border="0" height="100%" width="100%">
+        <tr>
+            <td align="center" valign="top" style="padding:20px 0 20px 0">
+                <!-- [ header starts here] -->
+                <table bgcolor="FFFFFF" cellspacing="0" cellpadding="10" border="0" width="650" style="border:1px solid #E0E0E0;">
+                    <tr>
+                        <td valign="top">
+                            <a href="{{store url=""}}"><img src="{{var logo_url}}" alt="{{var logo_alt}}" style="margin-bottom:10px;" border="0"/></a>
+                        </td>
+                    </tr>
+                    <!-- [ middle starts here] -->
+                    <tr>
+                        <td valign="top">
+                            <h1 style="font-size:22px; font-weight:normal; line-height:22px; margin:0 0 11px 0;">New application has been received.</h1>
+                            <p style="font-size:12px; line-height:16px; margin:0 0 16px 0;">{{var data.storename}} has submitted a new wholesale application. Please <a href="{{var data.url}}">click here</a> to review and approve this new application.</p>                                                        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table bgcolor="FFFFFF" cellspacing="0" cellpadding="10" border="1" width="650">
+                                <tr>
+                                    <td style="font-weight: bold; font-size: 14px; text-transform: uppercase;" colspan="2">STORE INFO</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Store Name :</td>
+                                    <td style="width:50%">{{var data.storename}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Primary Contact First Name :</td>
+                                    <td style="width:50%">{{var data.firstname}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Primary Contact Last Name :</td>
+                                    <td style="width:50%">{{var data.lastname}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Type of Business :</td>
+                                    <td style="width:50%">{{var data.type_business}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Phone Number :</td>
+                                    <td style="width:50%">{{var data.telephone}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Fax Number :</td>
+                                    <td style="width:50%">{{var data.fax}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Email Address :</td>
+                                    <td style="width:50%">{{var data.email}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Tax ID Number / SSN :</td>
+                                    <td style="width:50%">{{var data.ssn}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Wholesale / Resale Certificate :</td>
+                                    <td style="width:50%">{{var data.certificate}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Primary Classification :</td>
+                                    <td style="width:50%">{{var data.classification}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Your best description :</td>
+                                    <td style="width:50%">{{var data.classification_other}}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: bold; font-size: 14px; text-transform: uppercase;" colspan="2">Shipping address</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Address 1 :</td>
+                                    <td style="width:50%">{{var data.shipping_street1}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Address 2 :</td>
+                                    <td style="width:50%">{{var data.shipping_street2}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">City :</td>
+                                    <td style="width:50%">{{var data.shipping_city}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">State :</td>
+                                    <td style="width:50%">{{var data.shipping_region_id}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Zipcode :</td>
+                                    <td style="width:50%">{{var data.shipping_postcode}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Country :</td>
+                                    <td style="width:50%">{{var data.shipping_country_id}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Number of Locations :</td>
+                                    <td style="width:50%">{{var data.number_location}}</td>
+                                </tr>
+                                <!--<tr>
+                                    <td style="width:50%">FedEx Account Number :</td>
+                                    <td style="width:50%">{{var data.fedex}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">UPS Account Number :</td>
+                                    <td style="width:50%">{{var data.ups}}</td>
+                                </tr>-->
+                                <tr>
+                                    <td colspan="2">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: bold; font-size: 14px; text-transform: uppercase;" colspan="2">Billing address</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Address 1 :</td>
+                                    <td style="width:50%">{{var data.billing_street1}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Address 2 :</td>
+                                    <td style="width:50%">{{var data.billing_street2}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">City :</td>
+                                    <td style="width:50%">{{var data.billing_city}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">State :</td>
+                                    <td style="width:50%">{{var data.billing_region_id}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Zipcode :</td>
+                                    <td style="width:50%">{{var data.billing_postcode}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Country :</td>
+                                    <td style="width:50%">{{var data.billing_country_id}}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: bold; font-size: 14px; text-transform: uppercase;" colspan="2">ADDITIONAL CONTACTS</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Owner / Manager First Name :</td>
+                                    <td style="width:50%">{{var data.owner_firstname}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Owner / Manager Last Name :</td>
+                                    <td style="width:50%">{{var data.owner_lastname}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Phone Number :</td>
+                                    <td style="width:50%">{{var data.owner_telephone}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Fax Number :</td>
+                                    <td style="width:50%">{{var data.owner_fax}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Email Address :</td>
+                                    <td style="width:50%">{{var data.owner_email}}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Buyer First Name :</td>
+                                    <td style="width:50%">{{var data.buyer_firstname}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Buyer Last Name :</td>
+                                    <td style="width:50%">{{var data.buyer_lastname}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Phone Number :</td>
+                                    <td style="width:50%">{{var data.buyer_telephone}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Fax Number :</td>
+                                    <td style="width:50%">{{var data.buyer_fax}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Email Address :</td>
+                                    <td style="width:50%">{{var data.buyer_email}}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Assistant Buyer First Name :</td>
+                                    <td style="width:50%">{{var data.assistant_firstname}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Assistant Buyer Last Name :</td>
+                                    <td style="width:50%">{{var data.assistant_lastname}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Phone Number :</td>
+                                    <td style="width:50%">{{var data.assistant_telephone}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Fax Number :</td>
+                                    <td style="width:50%">{{var data.assistant_fax}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Email Address :</td>
+                                    <td style="width:50%">{{var data.assistant_email}}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Accounts Payable Contact First Name :</td>
+                                    <td style="width:50%">{{var data.accounts_firstname}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Accounts Payable Contact Last Name :</td>
+                                    <td style="width:50%">{{var data.accounts_lastname}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Phone Number :</td>
+                                    <td style="width:50%">{{var data.accounts_telephone}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Fax Number :</td>
+                                    <td style="width:50%">{{var data.accounts_fax}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">Email Address :</td>
+                                    <td style="width:50%">{{var data.accounts_email}}</td>
+                                </tr>
+                        </table></td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#EAEAEA" align="center" style="background:#EAEAEA; text-align:center;"><center><p style="font-size:12px; margin:0;"></strong></p></center></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>

@@ -1,0 +1,152 @@
+<?php 
+   
+    $params = Mage::getModel('customer/session')->getDownloadMarketingParams();
+    $filter = new Varien_Object();
+    if ($params!=null){
+        $filter->addData($params);
+    }
+    if ($params['sort']=='asc'){
+        $sort = 'desc';
+    }else{
+        $sort = 'asc';
+    }
+?>
+<div class="">
+<div class="b2b-table-scroll">
+    <div class="div-table">
+        <div class="table-header ">
+                <div class="fixed-wrapper">
+                    <form id="b2b-filter-download-marketing">
+                        <div class="left b2b-marketing-name">
+                            <a  class="a-left" href="" data-attribute="name" <?php if ($params['attribute']=='name'):?>data-sort="<?php echo $sort?>"<?php else:?>data-sort="asc"<?php endif;?>><?php echo $this->__('Filename')?>
+                            <?php if ($params['attribute']=='name'):?><i class="fa <?php if($params['sort'] == 'asc') echo 'fa-arrow-up'; else echo 'fa-arrow-down '; echo $params['sort']; ?>"></i><?php endif;?></a>
+                            <div><input type="text" name="name" value="<?php echo $filter->getName()?>"/></div>
+                        </div>
+                        
+                        <div class="left b2b-marketing-title">
+                            <a href="" data-attribute="title" <?php if ($params['attribute']=='title'):?>data-sort="<?php echo $sort?>"<?php else:?>data-sort="asc"<?php endif;?>><?php echo $this->__('Title')?>
+                            <?php if ($params['attribute']=='title'):?><i class="fa <?php if($params['sort'] == 'asc') echo 'fa-arrow-up'; else echo 'fa-arrow-down '; echo $params['sort']; ?>"></i><?php endif;?>
+                            </a>
+                            <div ><input type="text" name="title" value="<?php echo $filter->getTitle()?>"/></div>
+                        </div>
+                        
+                        
+                        <div class="left b2b-marketing-category">
+                            <a href="" data-attribute="category_id" <?php if ($params['attribute']=='category_id'):?>data-sort="<?php echo $sort?>"<?php else:?>data-sort="asc"<?php endif;?>><?php echo $this->__('Category')?>
+                            <?php if ($params['attribute']=='category_id'):?><i class="fa <?php if($params['sort'] == 'asc') echo 'fa-arrow-up'; else echo 'fa-arrow-down '; echo $params['sort']; ?>"></i><?php endif;?>
+                            </a>
+                            <div>
+                                <select name="category_id">
+                                    <option value=""></option>
+                                    <?php foreach ($this->getCategories() as $category): ?>
+                                    <option value="<?php echo $category->getId()?>" <?php if ($filter->getCategoryId()==$category->getId()):?>selected="selected"<?php endif;?>><?php echo $category->getName()?></option>
+                                    <?php endforeach;?>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="left b2b-marketing-type">
+                            <a href="" data-attribute="type_id" <?php if ($params['attribute']=='type_id'):?>data-sort="<?php echo $sort?>"<?php else:?>data-sort="asc"<?php endif;?>><?php echo $this->__('TYPE')?>
+                            <?php if ($params['attribute']=='type_id'):?><i class="fa <?php if($params['sort'] == 'asc') echo 'fa-arrow-up'; else echo 'fa-arrow-down '; echo $params['sort']; ?>"></i><?php endif;?>
+                            </a>
+                            <div>
+                                <select name="type_id">
+                                    <option value=""></option>
+                                    <?php foreach ($this->getTypes() as $type): ?>
+                                    <option value="<?php echo $type->getId()?>" <?php if ($filter->getTypeId()==$type->getId()):?>selected="selected"<?php endif;?>><?php echo $type->getName()?></option>
+                                    <?php endforeach;?>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="left b2b-marketing-size">
+                            <a href="" data-attribute="size" <?php if ($params['attribute']=='size'):?>data-sort="<?php echo $sort?>"<?php else:?>data-sort="asc"<?php endif;?>><?php echo $this->__('SIZE')?>
+                            <?php if ($params['attribute']=='size'):?><i class="fa <?php if($params['sort'] == 'asc') echo 'fa-arrow-up'; else echo 'fa-arrow-down '; echo $params['sort']; ?>"></i><?php endif;?>
+                            </a>
+                            <div ><input type="text" name="size" value="<?php echo $filter->getSize()?>"/></div>
+                        </div>
+                        
+                        
+                        <div class="left b2b-marketing-select">
+                            <a class="no-sortable" data-sort="no-sortable"><?php echo $this->__('Select')?></a>
+                            <div ><input type="checkbox" name="name"  class="b2b-checkbox" data-label=""/></div>
+                        </div>
+                        
+                        
+                    </form>
+                    <div class="clear"></div>
+                </div>
+                <div class="b2b-header-shadow"></div>
+            </div>
+            <div class="botex"></div>
+            
+            <div class="table-body">
+                <form id="b2b-marketing-downloads-list">
+                <?php foreach ($this->getCollectionMarketing() as $_item):?>                                              
+                <div class="table-row">
+                    <?php $name = $this->clearName($_item->getName())?>
+                    <div class="left b2b-marketing-name">
+                          <span <?php if (strlen($name)>25):?>data-toggle="tooltip" data-placement="auto" title="<?php echo $name?>"<?php endif?>><?php echo $name?></span>
+                    </div>                    
+                    
+                    
+                    <div class="left b2b-marketing-title">
+                          <?php $truncate =  Mage::helper('core/string')->truncate($_item->getTitle(), 146, '')?>
+                          <?php if (strlen($truncate) < strlen($_item->getTitle())):?>
+                                <div class="b2b-collapse-block"><?php echo $this->escapeHtml($truncate);?><span></span></div>
+                                <div class="b2b-full-block hidden"><?php echo $this->escapeHtml($_item->getTitle())?><span></span></div>
+                          <?php else:?>
+                                <?php echo $this->escapeHtml($_item->getTitle())?>
+                          <?php endif;?>
+                    </div>
+                    
+                     <div class="left b2b-marketing-category">
+                         <?php echo $this->getCategory($_item->getCategoryId())?>
+                    </div>
+                    
+                    <div class="left b2b-marketing-type">
+                         <?php echo $this->getType($_item->getTypeId())?>
+                    </div>
+                    
+                    <div class="left b2b-marketing-size">
+                          <?php echo $_item->getSize()?> MB
+                    </div>
+                    
+                    <div class="left b2b-marketing-select">
+                          <input type="checkbox" name="id[]" class="b2b-checkbox" data-label="" value="<?php echo $_item->getFileId()?>"/>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <?php endforeach;?>
+                </form>
+            </div>
+            <div class="b2b-table-footer b2b-pagination">
+            
+                <div class="left">
+                    <a href="" class="left b2b-prev">left</a>
+                    <input type="text" name="page" value="<?php echo $this->_page?>" class="b2b-page left">
+                    <a href="" class="left b2b-next">right</a>
+                    <span class="b2b-total-pages">of <?php echo $this->_lastPage?> Pages</span>
+                    <div class="clear"></div>
+                </div>
+                <div class="left b2b-total-records">
+                    <span>Total <?php echo $this->_size?> records found</span>
+                </div>
+                
+                
+                <div class="clear"></div>
+            </div>
+    </div>
+    </div>
+</div>
+<script>
+
+
+IWD.Download.currentProductPage = <?php echo $this->_page?>;
+IWD.Download.maxProductPage = <?php echo $this->_lastPage?>;
+$ji(document).ready(function(){
+	$ji('#b2b-download-marketing-tab input.b2b-checkbox').prettyCheckable();
+	IWD.Download.prepareProductPagination();	
+});
+</script>

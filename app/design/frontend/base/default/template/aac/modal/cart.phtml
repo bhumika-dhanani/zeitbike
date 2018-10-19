@@ -1,0 +1,33 @@
+<div class="ajaxcart-modal ajaxcart-effect" id="ajax-cart-modal">
+	<div class="ajaxcart-content">		
+		<a href="" class="ajaxcart-close-dialog"></a>
+		<div id="ajaxcart-wrapper">
+			
+			
+		</div>
+		<div class="ajaxcart-ajax-loader">
+					<div id="floatingCirclesG">
+						<div class="f_circleG" id="frotateG1_01"></div>
+						<div class="f_circleG" id="frotateG1_02"></div>
+						<div class="f_circleG" id="frotateG1_03"></div>
+						<div class="f_circleG" id="frotateG1_04"></div>
+						<div class="f_circleG" id="frotateG1_05"></div>
+						<div class="f_circleG" id="frotateG1_06"></div>
+						<div class="f_circleG" id="frotateG1_07"></div>
+						<div class="f_circleG" id="frotateG1_08"></div>
+					</div>
+		</div>
+	</div>
+</div>
+<div class="ajaxcart-overlay"></div>
+<script>
+	AjaxCartConfig = '<?php echo $this->getJsonConfig()?>'
+</script>
+<style>
+@-moz-keyframes f_fadeG{0%{background-color:<?php echo $this->getBackground()?>}100%{background-color:<?php echo $this->getForeground()?>}}
+@-webkit-keyframes f_fadeG{0%{background-color:<?php echo $this->getBackground()?>}100%{background-color:<?php echo $this->getForeground()?>}}
+@-ms-keyframes f_fadeG{0%{background-color:<?php echo $this->getBackground()?>}100%{background-color:<?php echo $this->getForeground()?>}}
+@-o-keyframes f_fadeG{0%{background-color:<?php echo $this->getBackground()?>}100%{background-color:<?php echo $this->getForeground()?>}}
+@keyframes f_fadeG{0%{background-color:<?php echo $this->getBackground()?>}100%{background-color:<?php echo $this->getForeground()?>}}
+
+</style>

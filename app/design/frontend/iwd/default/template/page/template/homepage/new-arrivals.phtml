@@ -1,0 +1,64 @@
+<?php $collection = $this->getProductCollection()->setPageSize(5);?>
+<?php  $_helper = $this->helper('catalog/output');?>
+<?php if(count($collection)):?>
+<div class="block-container new-arrivals home-block">
+	<div class="title"><?php echo $this->getTitle()?></div>
+  	<?php $is_first = true;?>
+  	<ul>
+  	<?php foreach($collection as $_product):?>
+  		<?php if($is_first):?>
+  			<?php $is_first = false;?>
+  			<li class="main-product item">
+  				<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image">
+                    <?php $_imgWidth = 573;?>
+                    <?php $_imgHeight = 570; ?>
+                    <img id="product-collection-image-<?php echo $_product->getId(); ?>"
+                         src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize($_imgWidth, $_imgHeight); ?>"
+                         alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+	                <span class="product-info inner-block">
+		                 <span class="inner">   
+		                    <span class="details">
+			                    <h2 class="product-name"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h2>
+			                    <?php echo $this->getPriceHtml($_product, true) ?>
+			                     <span class="actions">
+							          <?php if($_product->isSaleable()):?>
+										 <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $_product->getProductUrl() ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+							          <?php else: ?>
+							              <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+							          <?php endif; ?>
+								 </span>
+						     </span>
+	                    </span>
+	                </span>
+                </a>
+  			</li>
+  		<?php else:?>
+  		<li class="item">
+   			 <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image">
+                    <?php $_imgWidth = 288; ?>
+                    <?php $_imgHeight = 285; ?>
+                    <img id="product-collection-image-<?php echo $_product->getId(); ?>"
+                         src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize($_imgWidth, $_imgHeight ); ?>"
+                         alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+                 <span class="product-info inner-block">
+	                 <span class="inner">   
+	                    <span class="details">
+		                    <h2 class="product-name"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h2>
+		                    <?php echo $this->getPriceHtml($_product, true) ?>
+		                     <span class="actions">
+						          <?php if($_product->isSaleable()):?>
+									 <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $_product->getProductUrl() ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+						          <?php else: ?>
+						              <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+						          <?php endif; ?>
+							 </span>
+					     </span>
+                    </span>
+                </span>
+            </a>
+  		</li>
+  		<?php endif;?>
+  	<?php endforeach;?>
+  	</ul>
+</div>
+<?php endif;?>

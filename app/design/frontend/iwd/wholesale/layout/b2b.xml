@@ -1,0 +1,352 @@
+<?xml version="1.0"?>
+<layout>
+	
+	
+	<default>
+
+		<reference name="head">			
+			<action method="addCss"><stylesheet>css/iwd/b2b/styles.css</stylesheet></action>
+			<action method="addCss"><stylesheet>css/iwd/b2b/bootstrap.css</stylesheet></action>	
+			<action method="addCss"><stylesheet>css/iwd/b2b/media/signin.css</stylesheet></action>
+			<action method="addCss"><stylesheet>css/iwd/b2b/media/register.css</stylesheet></action>
+			<action method="addCss"><stylesheet>css/iwd/b2b/media/global.css</stylesheet></action>			
+			<action method="addCss"><stylesheet>css/iwd/b2b/datepicker3.css</stylesheet></action>
+									
+			<action method="addItem"><type>skin_js</type><name>js/iwd/b2b/jquery-1.11.1.min.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/iwd/b2b/bootstrap.min.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/iwd/b2b/bootstrap-datepicker.js</name></action>				
+			<action method="addItem"><type>skin_js</type><name>js/iwd/b2b/application.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/iwd/b2b/plugin/login.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/iwd/b2b/plugin/decorator.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/iwd/b2b/plugin/register.js</name></action>
+		</reference>
+		
+		<reference name="before_body_end">			
+			<block type="b2b/modal" name="signin.modal.dialog" template="b2b/account/modal.phtml"/>			
+			<block type="b2b/modal" name="b2b.view.product.dialog" template="b2b/catalog/product/view-modal.phtml"/>
+			<block type="b2b/footer" name="b2b.sticky.footer"  as="b2b.sticky.footer" template="b2b/page/footer.phtml"/>
+			<block type="b2b/js" name="b2b.config" as="b2b.config" />			
+		</reference>
+
+
+	</default>
+
+	<checkout_cart_index>
+		<remove name="b2b.sticky.footer" />
+	</checkout_cart_index>
+	
+	<checkout_onepage_index>
+		<remove name="b2b.sticky.footer" />
+	</checkout_onepage_index>
+
+	<checkout_multishipping>
+		<remove name="b2b.sticky.footer" />
+	</checkout_multishipping>
+	
+	<onepagecheckout_index_index>
+		<remove name="b2b.sticky.footer" />
+	</onepagecheckout_index_index>
+	
+	<onepagecheckout_index_index>
+		<remove name="b2b.sticky.footer" />
+	</onepagecheckout_index_index>
+	
+	<opc_index_index>
+		<remove name="b2b.sticky.footer" />
+	</opc_index_index>
+	
+
+	<customer_logged_out>      
+        <reference name="top.links">
+            <action method="removeLinkByUrl" module="customer" ifconfig="b2b/default/status"><url helper="customer/getLoginUrl"/></action>
+            <action method="removeLinkByUrl" module="customer" ifconfig="b2b/default/status"><url helper="customer/getAccountUrl"/></action>
+        </reference>
+        
+        <reference name="top.links">
+        	<action method="addLink" translate="label title" module="customer" ifconfig="b2b/default/status"><label>My Account</label><url helper="customer/getAccountUrl"/><title>My Account</title><prepare/><urlParams/><position>10</position><liParams/><aParams>class="b2b-signin-modal"</aParams></action>
+            <action method="addLink" translate="label title" module="customer" ifconfig="b2b/default/status"><label>Log In</label><url helper="customer/getLoginUrl"/><title>Log In</title><prepare/><urlParams/><position>100</position><liParams/><aParams>class="b2b-signin-modal"</aParams></action>
+        </reference>
+        
+    </customer_logged_out>
+    
+
+	<customer_logged_in>
+		 <reference name="top.links">
+            <action method="removeLinkByUrl" module="customer"><url helper="customer/getLogoutUrl"/></action>            
+        </reference>
+	
+        <reference name="top.links">
+            <action method="addLink" translate="label title" module="customer"><label>Log Out</label><url helper="customer/getLogoutUrl"/><title>Log Out</title><prepare/><urlParams/><position>100</position><liParams/><aParams>class="b2b-signout-modal"</aParams></action>
+        </reference>
+    </customer_logged_in>
+    
+    
+    
+    
+    <!--  CHANGE MAIN TEMPLATE -->
+	<b2b_clear_content>
+		<reference name="root">
+			<action method="setTemplate"><template>b2b/page/onecolumn.phtml</template></action>
+		</reference>
+		<reference name="head">
+		
+			<action method="addJs"><script>varien/product.js</script></action>
+            <action method="addJs"><script>varien/configurable.js</script></action>
+			<action method="addItem"><type>skin_js</type><name>js/bundle.js</name></action>
+            <action method="addItem"><type>js_css</type><name>calendar/calendar-win2k-1.css</name><params/><!--<if/><condition>can_load_calendar_js</condition>--></action>
+            <action method="addItem"><type>js</type><name>calendar/calendar.js</name><!--<params/><if/><condition>can_load_calendar_js</condition>--></action>
+            <action method="addItem"><type>js</type><name>calendar/calendar-setup.js</name><!--<params/><if/><condition>can_load_calendar_js</condition>--></action>
+            
+            
+			<action method="addCss"><stylesheet>css/iwd/b2b/styles.css</stylesheet></action>
+			<action method="addCss"><stylesheet>css/iwd/b2b/bootstrap.css</stylesheet></action>
+			<action method="addCss"><stylesheet>css/iwd/b2b/prettyCheckable.css</stylesheet></action>
+			<action method="addCss"><stylesheet>css/iwd/b2b/chosen.css</stylesheet></action>
+			
+			<action method="addCss"><stylesheet>css/iwd/b2b/media/dashboard.css</stylesheet></action>			
+			<action method="addCss"><stylesheet>css/iwd/b2b/media/download.css</stylesheet></action>
+			<action method="addCss"><stylesheet>css/iwd/b2b/media/products.css</stylesheet></action>
+			
+			<action method="addItem"><type>skin_js</type><name>js/iwd/b2b/jquery-1.11.1.min.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/iwd/b2b/bootstrap.min.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/iwd/b2b/jquery.nicescroll.min.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/iwd/b2b/prettyCheckable.min.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/iwd/b2b/chosen.jquery.min.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/iwd/b2b/jquery.jcarousel.min.js</name></action>
+						
+			<action method="addItem"><type>skin_js</type><name>js/iwd/b2b/application.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/iwd/b2b/plugin/login.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/iwd/b2b/plugin/search.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/iwd/b2b/plugin/list.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/iwd/b2b/plugin/filter.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/iwd/b2b/plugin/ajaxcart.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/iwd/b2b/plugin/decorator.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/iwd/b2b/plugin/download.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/iwd/b2b/plugin/stock.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/iwd/b2b/plugin/tooltip.js</name></action>
+			
+		</reference>
+		<reference name="before_body_end">
+			<block type="b2b/footer" name="b2b.sticky.footer"  as="b2b.sticky.footer" template="b2b/page/footer.phtml"/>
+			<block type="b2b/footer" name="b2b.ajaxcart.product"  as="b2b.ajaxcart.product" template="b2b/catalog/product/modal.phtml"/>
+			<block type="b2b/download_modal" name="b2b.download.modal"  as="b2b.download.modal" template="b2b/download/modal.phtml"/>
+			<block type="b2b/js" name="b2b.config" as="b2b.config" />
+		</reference>
+	</b2b_clear_content>
+	
+	<!-- REGISTRATION FORM -->
+	<b2b_account_register>
+		<update handle="b2b_clear_content"/>
+		<reference name="head">
+			<action method="setTitle" translate="title" module="b2b"><title>Wholesale Registration</title></action>
+		</reference>
+		<reference name="content">
+			<block type="b2b/account_register" template="b2b/account/register.phtml" name="account.register" as="b2b.account.register">
+				<block type="hackathon_honeyspam/honeypot" name="honeyspam.honeypot.b2b" as="honeyspam.honeypot.b2b" template="hackathon/honeyspam/honeypot.phtml"/>
+				<block type="core/text_list" name="form.additional.info">
+				<block type="captcha/captcha" name="captcha">
+					<reference name="head">
+						<action method="addJs"><file>mage/captcha.js</file></action>
+					</reference>
+					<action method="setFormId"><formId>wholesale_register_page_captcha</formId></action>
+					<action method="setImgWidth"><width>230</width></action>
+					<action method="setImgHeight"><width>50</width></action>
+				</block>
+				</block>
+				<block type="b2b/account_register" template="b2b/account/register/store-info.phtml" name="account.register.storeinfo" as="account.register.storeinfo" />
+				<block type="b2b/account_register" template="b2b/account/register/shipping.phtml" name="account.register.shipping" as="account.register.shipping" />
+				<block type="b2b/account_register" template="b2b/account/register/billing.phtml" name="account.register.billing" as="account.register.billing" />
+				<block type="b2b/account_register" template="b2b/account/register/additional.phtml" name="account.register.additional" as="account.register.additional" />
+			</block>
+		</reference>	
+		<remove name="b2b.sticky.footer" />
+	</b2b_account_register>
+	
+	<!-- DASHBOARD -->
+	<b2b_dashboard_index>
+		<update handle="b2b_clear_content"/>
+		<reference name="head">
+			<action method="setTitle" translate="title" module="b2b"><title>B2B Dashboard</title></action>
+		</reference>
+		<reference name="content">
+			<block type="b2b/dashboard" template="b2b/dashboard.phtml" name="b2b.dashboard" as="b2b.dashboard">
+				<block type="b2b/dashboard" template="b2b/page/sub-header.phtml" name="b2b.subheader" as="b2b.subheader" />
+			</block>
+		</reference>	
+	</b2b_dashboard_index>
+	
+	<!-- Quick Order -->
+	<b2b_order_quick>
+		<update handle="b2b_clear_content"/>
+		<reference name="head">
+			<action method="setTitle" translate="title" module="b2b"><title>Quick Order</title></action>
+		</reference>
+		<reference name="content">
+			<block type="b2b/order_quick" template="b2b/order/quick.phtml" name="b2b.order.quick" as="b2b.order.quick">
+				<block type="b2b/dashboard" template="b2b/page/sub-header.phtml" name="b2b.subheader" as="b2b.subheader" />
+			</block>
+			
+			<block type="b2b/checkout_cart" name="b2b.checkout.cart" as="b2b.checkout.cart">
+				<action method="addItemRender"><type>simple</type><block>checkout/cart_item_renderer</block><template>b2b/checkout/cart/item/default.phtml</template></action>
+                <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>b2b/checkout/cart/item/default.phtml</template></action>
+                <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>b2b/checkout/cart/item/default.phtml</template></action>
+                <action method="addItemRender"><type>bundle</type><block>bundle/checkout_cart_item_renderer</block><template>b2b/checkout/cart/item/default.phtml</template></action>
+                <action method="addItemRender"><type>downloadable</type><block>downloadable/checkout_cart_item_renderer</block><template>b2b/checkout/cart/item/downloadable/default.phtml</template></action>
+                
+                <block type="checkout/cart_totals" name="checkout.cart.totals" as="totals" template="checkout/cart/totals.phtml"/>			
+			</block>
+		</reference>	
+	</b2b_order_quick>
+	
+	
+	<!-- Previously Ordered Items -->
+	<b2b_order_reorder>
+		<update handle="b2b_clear_content"/>
+		<reference name="head">
+			<action method="setTitle" translate="title" module="b2b"><title>Previously Ordered Items</title></action>			
+		</reference>
+		<reference name="content">
+			<block type="b2b/order_quick" template="b2b/order/reorder.phtml" name="b2b.order.requick" as="b2b.order.requick">
+				<block type="b2b/dashboard" template="b2b/page/sub-header.phtml" name="b2b.subheader" as="b2b.subheader" />
+			</block>
+			
+			<block type="b2b/checkout_cart" name="b2b.checkout.cart" as="b2b.checkout.cart">
+				<action method="addItemRender"><type>simple</type><block>checkout/cart_item_renderer</block><template>b2b/checkout/cart/item/default.phtml</template></action>
+                <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>b2b/checkout/cart/item/default.phtml</template></action>
+                <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>b2b/checkout/cart/item/default.phtml</template></action>
+                <action method="addItemRender"><type>bundle</type><block>bundle/checkout_cart_item_renderer</block><template>b2b/checkout/cart/item/default.phtml</template></action>
+                <action method="addItemRender"><type>downloadable</type><block>downloadable/checkout_cart_item_renderer</block><template>b2b/checkout/cart/item/downloadable/default.phtml</template></action>
+                <block type="checkout/cart_totals" name="checkout.cart.totals" as="totals" template="checkout/cart/totals.phtml"/>			
+			</block>
+		</reference>	
+	</b2b_order_reorder>
+	
+	
+	
+	<!-- View All Products -->
+	<b2b_order_products>
+		<update handle="b2b_clear_content"/>
+		<reference name="head">
+			<action method="setTitle" translate="title" module="b2b"><title>View All Products</title></action>
+			<action method="addItem"><type>skin_js</type><name>js/iwd/b2b/bootstrap-datepicker.js</name></action>
+			<action method="addCss"><stylesheet>css/iwd/b2b/datepicker3.css</stylesheet></action>
+			
+			
+		</reference>
+		<reference name="content">
+			<block type="b2b/order_quick" template="b2b/order/products.phtml" name="b2b.order.products" as="b2b.order.products">
+				<block type="b2b/dashboard" template="b2b/page/sub-header.phtml" name="b2b.subheader" as="b2b.subheader" />
+			</block>
+			
+			<block type="b2b/checkout_cart" name="b2b.checkout.cart" as="b2b.checkout.cart">
+				<action method="addItemRender"><type>simple</type><block>checkout/cart_item_renderer</block><template>b2b/checkout/cart/item/default.phtml</template></action>
+                <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>b2b/checkout/cart/item/default.phtml</template></action>
+                <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>b2b/checkout/cart/item/default.phtml</template></action>
+                <action method="addItemRender"><type>bundle</type><block>bundle/checkout_cart_item_renderer</block><template>b2b/checkout/cart/item/default.phtml</template></action>
+                <action method="addItemRender"><type>downloadable</type><block>downloadable/checkout_cart_item_renderer</block><template>b2b/checkout/cart/item/downloadable/default.phtml</template></action>
+                <block type="checkout/cart_totals" name="checkout.cart.totals" as="totals" template="checkout/cart/totals.phtml"/>			
+			</block>
+		</reference>	
+	</b2b_order_products>
+	
+	
+	
+	
+	<!--  SEARCH AT QUICK ORDER -->
+	<b2b_search_quick>
+			        
+        <remove name="right"/>
+        <remove name="left"/>
+        
+        <block type="b2b/search_dropdown" name="root" output="toHtml" template="b2b/search/dropdown.phtml">
+        	<action method="addPriceBlockType"><type>bundle</type><block>bundle/catalog_product_price</block><template>bundle/catalog/product/price.phtml</template></action>
+        </block>
+	</b2b_search_quick>
+	
+	<SHOPPING_CART_AJAX>
+			<block type="b2b/checkout_cart" name="root" output="toHtml">
+				<action method="addItemRender"><type>simple</type><block>checkout/cart_item_renderer</block><template>b2b/checkout/cart/item/default.phtml</template></action>
+                <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>b2b/checkout/cart/item/default.phtml</template></action>
+                <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>b2b/checkout/cart/item/default.phtml</template></action>
+                <action method="addItemRender"><type>bundle</type><block>bundle/checkout_cart_item_renderer</block><template>b2b/checkout/cart/item/default.phtml</template></action>
+                <action method="addItemRender"><type>downloadable</type><block>downloadable/checkout_cart_item_renderer</block><template>b2b/checkout/cart/item/downloadable/default.phtml</template></action>
+                <block type="checkout/cart_totals" name="checkout.cart.totals" as="totals" template="checkout/cart/totals.phtml"/>			
+			</block>	
+	</SHOPPING_CART_AJAX>
+	
+	
+	<!--  DOWNLOAD CENTER -->
+	<b2b_download_index>
+			<update handle="b2b_clear_content"/>
+			<reference name="head">
+				<action method="setTitle" translate="title" module="b2b"><title>Download Center</title></action>
+			</reference>
+			<reference name="content">
+				<block type="b2b/dashboard" template="b2b/page/sub-header.phtml" name="b2b.subheader" as="b2b.subheader" />
+				<block type="b2b/download" template="b2b/download/container.phtml" name="b2b.download" as="b2b.download">
+					<block type="b2b/download_list" template="b2b/download/product.phtml" name="b2b.download.product" as="b2b.download.product" />
+					<block type="b2b/download_list" template="b2b/download/marketing.phtml" name="b2b.download.marketing" as="b2b.download.marketing" />
+				</block>
+			</reference> 
+	</b2b_download_index>
+	
+	<b2b_product_preview>
+		
+		<remove name="right"/>
+        <remove name="left"/>
+		
+        <block type="b2b/catalog_product_view_preview" name="root" output="toHtml">                
+			<!-- block type="catalog/product_view_media" name="product.info.media" as="media" template="catalog/product/view/media.phtml"/ -->
+        </block>
+        
+	
+	</b2b_product_preview>
+	
+	
+	
+	<!--  SHIPPING DATE LOGIC - DEFAULT OPC-->
+	
+	<checkout_onepage_index>
+        <reference name="checkout.onepage.shipping_method.available">
+            <action method="setTemplate">
+                <template>b2b/checkout/onepage/shipping_method/available.phtml</template>
+            </action>
+            <block type="checkout/onepage_shipping_method_available" template="checkout/onepage/shipping_method/available.phtml" name="b2b.checkout.onepage.shipping_method.available" />
+            <block type="b2b/checkout_onepage_deliverydate" name="b2b.deliverydate" />
+            
+        </reference>        
+    </checkout_onepage_index>
+    <checkout_onepage_shippingmethod>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>b2b/checkout/onepage/shipping_method/available.phtml</template>
+            </action>
+            <block type="checkout/onepage_shipping_method_available" template="checkout/onepage/shipping_method/available.phtml" name="b2b.checkout.onepage.shipping_method.available" />
+            <block type="b2b/checkout_onepage_deliverydate" name="b2b.deliverydate" />
+        </reference>
+    </checkout_onepage_shippingmethod>
+    
+    <!--  SHIPPING DELIVARY DAY TO ACCOUNT -->
+    <sales_order_view>
+	    <reference name="my.account.wrapper">
+	        <block type="b2b/account_deliverydate" after="sales.order.info"></block>
+	    </reference>
+	</sales_order_view>
+	<sales_order_invoice>
+	    <reference name="my.account.wrapper">
+	         <block type="b2b/account_deliverydate" after="sales.order.info"></block>
+	    </reference>    
+	</sales_order_invoice>
+	<sales_order_shipment>
+	    <reference name="my.account.wrapper">
+	         <block type="b2b/account_deliverydate" after="sales.order.info"></block>
+	    </reference>    
+	</sales_order_shipment>
+	<sales_order_creditmemo>
+	    <reference name="my.account.wrapper">
+	         <block type="b2b/account_deliverydate" after="sales.order.info"></block>
+	    </reference>    
+	</sales_order_creditmemo>
+	
+	
+</layout>

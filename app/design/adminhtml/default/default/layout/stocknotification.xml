@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<layout>
+	<adminhtml_stocknotification_list_index>
+		<reference name="content">
+			<block type="stocknotification/adminhtml_list" name="list.subscribers" />
+		</reference>
+	</adminhtml_stocknotification_list_index>
+
+
+	<adminhtml_catalog_product_edit>
+		<reference name="product_tabs">
+			<action method="addTab">
+				<name>stocknotification_items</name>
+				<block>stocknotification/adminhtml_catalog_product_edit_tab_stocknotification</block>
+			</action>
+		</reference>
+	</adminhtml_catalog_product_edit>
+	
+    
+    <adminhtml_stocknotification_product_list>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="stocknotification/adminhtml_catalog_product_edit_tab_stocknotification_items" name="catalog.product.edit.tab.stocknotification"/>
+            <!-- block type="adminhtml/widget_grid_serializer" name="stocknotification_grid_serializer">
+                <reference name="stocknotification_grid_serializer">
+                    <action method="initSerializerBlock">
+                        <grid_block_name>catalog.product.edit.tab.stocknotification</grid_block_name>
+                        <data_callback>getSelectedCrossSellProducts</data_callback>
+                        <hidden_input_name>links[crosssell]</hidden_input_name>
+                        <reload_param_name>products_crosssell</reload_param_name>
+                    </action>
+                    <action method="addColumnInputName">
+                        <input_name>position</input_name>
+                    </action>
+                </reference>
+            </block -->
+        </block>
+    </adminhtml_stocknotification_product_list>
+
+    <adminhtml_stocknotification_product_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="stocknotification/adminhtml_catalog_product_edit_tab_stocknotification_items" name="catalog.product.edit.tab.stocknotification"/>
+        </block>
+    </adminhtml_stocknotification_product_grid>
+	
+
+</layout>

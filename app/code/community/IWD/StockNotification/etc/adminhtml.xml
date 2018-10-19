@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<config>
+
+	<menu>
+		<system>
+			<children>
+				<iwdall>
+					<title>IWD Extensions</title>
+					<sort_order>0</sort_order>
+					<children>
+						<stocknotification translate="title" module="stocknotification">
+							<title>Out of stock notification</title>
+							<sort_order>20</sort_order>
+							<action>adminhtml/stocknotification_list/index</action>
+						</stocknotification>
+					</children>
+				</iwdall>
+			</children>
+		</system>
+	</menu>
+
+			
+
+
+	<acl>
+		<resources>
+			<admin>
+				<children>
+
+
+					<system>
+						<children>
+						
+							 <iwdall translate="title">
+                                        <children>
+                                            <stocknotification translate="title" module="stocknotification">
+												<title>IWD Out of Stock Notification</title>
+												<sort_order>60</sort_order>
+											</stocknotification>
+                                        </children>
+                            </iwdall>
+						
+						
+							<config>
+								<children>
+									<stocknotification translate="title" module="stocknotification">
+										<title>IWD Out of Stock Notification</title>
+										<sort_order>60</sort_order>
+									</stocknotification>
+								</children>
+							</config>
+						</children>
+					</system>
+
+
+				</children>
+			</admin>
+		</resources>
+	</acl>
+
+</config>

@@ -1,0 +1,24 @@
+<?xml version="1.0"  encoding="utf-8"?>
+<layout version="1.0.0">
+	<default>
+		<reference name="head">
+			<!-- scroll -->
+			<action method="addJs"><script>iwd/newspopup/perfect-scrollbar.min.js</script></action>
+
+
+			<action method="addItem" ifconfig="iwdpopup/general/newsenabled"><type>skin_css</type><name>css/iwd/newspopup/newsletter.css</name></action>
+			<action method="addItem" ifconfig="iwdpopup/general/newsenabled"><type>skin_css</type><name>css/iwd/newspopup/newspopup_generated.css</name></action>
+
+			<action method="addItem" ifconfig="iwdpopup/general/newsenabled"><type>skin_css</type><name>css/iwd/newspopup/font-awesome.min.css</name></action>
+			<!--<action method="addItem" ifconfig="iwdpopup/general/newsenabled"><type>skin_js</type><name>js/iwd/newspopup/bootstrap.min.js</name></action>-->
+			<action method="addItem" ifconfig="iwdpopup/general/newsenabled"><type>skin_js</type><name>js/iwd/newspopup/newspopup.js</name></action>
+		</reference>
+		<reference name="before_body_end">
+			<block type="iwdpopup/popup" name="newspopup" after="-" ></block>
+		</reference>
+		<reference name="footer">
+			<block type="page/html" name="newspopup.link" after="-" template="newsletter_popup/footer_link.phtml"></block>
+		</reference>
+	</default>
+
+</layout>

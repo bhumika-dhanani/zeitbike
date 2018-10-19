@@ -1,0 +1,58 @@
+<?php $collection = $this->getCollection(); ?>
+    <div class="page-title">
+        <h1><?php echo $this->__('My Collection') ?></h1>
+    </div>
+<?php echo $this->getPagerHtml(); ?>
+<?php if($collection->getSize()): ?>
+    <table class="data-table" id="my-custom-table">
+        <col width="1" />
+        <col width="1" />
+        <col />
+        <col width="1" />
+        <col width="1" />
+        <col width="1" />
+        <thead>
+        <tr>
+            <th><?php echo $this->__('Name #') ?></th>
+            <th><?php echo $this->__('Image') ?></th>
+            <th><span class="nobr"><?php echo $this->__('Price') ?></span></th>
+            <th><span class="nobr"><?php echo $this->__('Quantity') ?></span></th>
+            <th><span class="nobr"><?php echo $this->__('SKU') ?></span></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php $_odd = ''; ?>
+        <?php foreach ($collection as $_product):
+        $typeArray = array("configurable","bundle","grouped");
+        ?>
+            <tr>
+                <td><?php echo $_product->getName() ?></td>
+                <td><span class="nobr"><img src="<?php echo Mage::helper('catalog/image')->init($_product, 'small_image')->resize(100,100); ?>" /></td>
+                <td><span class="nobr"><?php echo $_product->getPrice(); ?></span></td>
+                <td>
+                    <?php if(!$_product->canConfigure() && $_product->isSaleable()){ ?>
+                        <input type="number" name="quantity" step="1" min="1" max="" value="1" size="4" />
+                    <?php } ?>
+                </td>
+                <td><?php echo $_product->getSku(); ?></td>
+                <td>
+                    <?php if(!$_product->canConfigure() && $_product->isSaleable()): ?>
+                        <button type="button" name="add-to-cart">Add to cart</button>
+
+                    <?php elseif($_product->getStockItem() && $_product->getStockItem()->getIsInStock()): ?>
+                        <button type="button" name="show-options">Show Options</button>
+                    <?php else: ?>
+                        <?php echo $this->__('Out of stock') ?>
+                    <?php endif; ?>
+
+                </td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+    <script type="text/javascript">decorateTable('my-custom-table');</script>
+    <?php echo $this->getPagerHtml(); ?>
+<?php else: ?>
+    <p><?php echo $this->__('The collection is empty.'); ?></p>
+<?php endif ?>

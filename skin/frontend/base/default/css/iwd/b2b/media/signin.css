@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+@media screen and (max-width: 479px) {
+	#b2b-signin-modal .b2b-modal-dialog {
+		width: 320px;
+		margin: 30px auto;z-index:1060;
+	}
+	
+	#b2b-signin-modal  a.close{right: 0;top: 0;}
+	#b2b-signin-modal .b2b-dialog-title h5{font-size: 28px;}
+	#b2b-signin-modal .b2b-modal-body{padding: 40px 26px 53px}
+	#b2b-signin-modal .box-input input{width: 261px;}
+	#b2b-signin-modal .b2b-dialog-action p{margin-top: 62px;}
+	#b2b-signin-modal .b2b-dialog-action a.btn-login{margin: 0;position: absolute;right: 0;}
+	#b2b-signin-modal .b2b-dialog-action{position:relative} 
+	#b2b-signin-modal .b2b-logout-form h4{font-size: 15px;}
+}

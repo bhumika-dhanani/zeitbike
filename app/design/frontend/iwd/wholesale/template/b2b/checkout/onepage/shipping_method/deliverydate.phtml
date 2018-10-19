@@ -1,0 +1,15 @@
+<?php if (Mage::helper('b2b')->isDeliveryDateEnable()):?>
+<ul id="delivery-dates" class="form-list">
+    <li>
+        <label for="shipping-deliverydate"><?php echo $this->__('Desired Delivery Date') ?></label>
+        <div class="input-box dalivary-container">
+           <input type="text" name="delivery_date" id="delivery_date"/>
+        </div>
+    </li>
+</ul>
+<script>
+$ji(document).ready(function(){
+	$ji('.dalivary-container input').datepicker({});
+}); 
+</script>
+<?php endif;?>

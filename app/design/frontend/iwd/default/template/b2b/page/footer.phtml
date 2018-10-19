@@ -1,0 +1,37 @@
+<?php $dashobard = '';?>
+<?php $viewcart = '';?>
+<?php $checkout = '';?> 
+<?php if (Mage::helper('b2b')->helperIsAvailableFooter()):?>
+
+    <?php if (!Mage::registry('hideDashboardLink')===true):?>
+           <?php $dashobard = '<a href="' . Mage::helper('b2b')->getDashboardUrl() . '" class="left btn-dashboard">' . $this->__('Dashboard') .'</a>';?>
+    <?php endif;?>
+    
+    <?php $_total = Mage::helper('b2b')->getTotal();?>
+
+    <?php if ($_total!=false):?>
+        <?php $checkout = '<a href="' . Mage::helper('checkout/url')->getCheckoutUrl() .'" class="right btn-checkout">' . $this->__('Checkout') . '</a>'?>
+        <?php if (Mage::registry('hideShoppingCartButton')!==true):?>
+            
+            <?php 
+                if (Mage::registry('b2b')===true){
+                    $url = '#b2b-shopping-cart';
+                }else{
+                    $url = Mage::helper('checkout/url')->getCartUrl();
+                }
+            ?>
+            <?php $viewcart = '<a href="' . $url .'" class="left btn-view-cart">' . $this->__('View Cart') . '</a>'?>
+        <?php endif;?>   
+    <?php endif;?>
+
+    
+    <div class="b2b-sticky-footer <?php if (empty($dashobard) && empty($dashobard) && empty($checkout) && $_total==false):?>hidden<?php endif;?>">
+        <div class="b2b-sticky-footer-container">
+            <?php echo $dashobard;?>
+            <?php echo $viewcart?>
+            <?php echo $checkout;?>
+            <div class="right b2b-price-box"><?php echo $_total?></div>       
+        </div>
+    </div>
+    
+<?php endif;?>

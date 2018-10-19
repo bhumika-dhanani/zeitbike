@@ -1,0 +1,12 @@
+<script type="text/javascript">
+    /*jQuery(window).load(function () {*/
+    jQuery(document).ready(function () {
+        IWD.AlsoBought.min_slides = <?php echo $this->getMinSlides() ?>;
+        IWD.AlsoBought.max_slides = <?php echo $this->getMaxSlides() ?>;
+        IWD.AlsoBought.slide_width = <?php echo $this->getSlideWidth() ?>;
+        IWD.AlsoBought.slide_margin = <?php echo $this->getSlideMargin() ?>;
+        IWD.AlsoBought.slide_mode = '<?php echo $this->getSlideMode() ?>';
+        IWD.AlsoBought.infinite_loop = <?php echo $this->getInfiniteLoop() ?>;
+        IWD.AlsoBought.init();
+    });
+</script>

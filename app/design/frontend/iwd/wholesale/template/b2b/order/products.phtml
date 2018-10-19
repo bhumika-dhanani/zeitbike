@@ -1,0 +1,12 @@
+<?php echo $this->getChildHtml('b2b.subheader');?>
+    <div class="b2b-quick-order b2b-reorder-order">
+        <div class="b2b-overflow">
+            <h3><?php echo $this->__('VIEW ALL PRODUCTS');?></h3>
+        </div>
+    <div id="quick-list-products">
+        <?php echo $this->getLayout()->createBlock('b2b/order_list_products')->toHtml();?>
+    </div>
+</div>
+<script>
+var pageType="products";
+</script>

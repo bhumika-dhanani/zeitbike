@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+
+	<default>
+		<reference name="head">
+			<action method="addJs"><script>iwd/b2b/adminhtml/jquery-1.11.1.min.js</script></action>
+			<action method="addJs"><script>iwd/b2b/adminhtml/b2b.js</script></action>
+		</reference>
+	</default>
+
+	<adminhtml_customer_edit>
+		<reference name="customer_edit_tabs">
+			<action method="addTab">
+				<name>customer_edit_tab_wholesale</name>
+				<block>b2b/adminhtml_customer_edit_tab_wholesale</block>
+			</action>
+		</reference>
+	</adminhtml_customer_edit>
+	
+	
+	<adminhtml_customer_edit>
+		<reference name="customer_edit_tabs">
+			<action method="addTab">
+				<name>customer_edit_tab_wholesale</name>
+				<block>b2b/adminhtml_customer_edit_tab_wholesale</block>
+			</action>
+		</reference>
+	</adminhtml_customer_edit>
+
+
+	<adminhtml_b2b_category_edit>
+        <update handle="editor"/>
+        
+       	<reference name="head">
+			<action method="addJs"><script>iwd/b2b/adminhtml/b2b.js</script></action>
+		</reference>
+        
+        <reference name="content">
+           <block type="b2b/adminhtml_category_edit" name="store.edit" />
+        </reference>
+        
+        <reference name="left">
+            <block type="b2b/adminhtml_category_edit_tabs" name="b2b_category_edit_tabs">            
+                <block type="b2b/adminhtml_category_edit_tab_main" name="b2b_category_edit_tab_main" />
+                <action method="addTab"><name>main_section</name><block>b2b_category_edit_tab_main</block></action>                
+            </block>
+        </reference>
+    </adminhtml_b2b_category_edit>
+    
+    
+    <adminhtml_b2b_type_edit>
+        <update handle="editor"/>
+        
+       	<reference name="head">
+			<action method="addJs"><script>iwd/b2b/adminhtml/b2b.js</script></action>
+		</reference>
+        
+        <reference name="content">
+           <block type="b2b/adminhtml_type_edit" name="store.edit" />
+        </reference>
+        
+        <reference name="left">
+            <block type="b2b/adminhtml_type_edit_tabs" name="b2b_type_edit_tabs">            
+                <block type="b2b/adminhtml_type_edit_tab_main" name="b2b_type_edit_tab_main" />
+                <action method="addTab"><name>main_section</name><block>b2b_type_edit_tab_main</block></action>                
+            </block>
+        </reference>
+    </adminhtml_b2b_type_edit>
+    
+    
+    
+    
+    <!--  MESSAGE -->
+	<adminhtml_b2b_message_index>
+        <reference name="content">
+            <block type="b2b/adminhtml_message" name="b2b_customer_message" />
+        </reference>
+    </adminhtml_b2b_message_index>
+    
+    <adminhtml_b2b_message_edit>
+        <update handle="editor"/>
+        <reference name="content">
+            <block type="b2b/adminhtml_message_edit" name="b2b_customer_message_edit"></block>
+        </reference>
+    </adminhtml_b2b_message_edit>
+    
+    
+    
+     <!--  FILES -->
+	<adminhtml_b2b_files_index>
+        <reference name="content">
+            <block type="b2b/adminhtml_files" name="b2b_company_files" />
+        </reference>
+    </adminhtml_b2b_files_index>
+    
+     <adminhtml_b2b_files_edit>
+        <update handle="editor"/>
+        <reference name="content">
+            <block type="b2b/adminhtml_files_edit" name="b2b_company_files_edit"></block>
+        </reference>
+    </adminhtml_b2b_files_edit>
+    
+    <adminhtml_catalog_product_edit>
+    	<reference name="js">
+            <block type="core/template" template="b2b/inline-js.phtml" />
+        </reference>
+    	<reference name="head">    		
+    		 <action method="addJs"><script>iwd/b2b/adminhtml/b2b.js</script></action>
+    		 <action method="addItem"><type>skin_css</type><name>iwd/b2b/font-awesome.min.css</name></action>
+    	</reference>
+		<reference name="product_tabs">
+			<action method="addTab">
+				<name>b2b_files</name>
+				<block>b2b/adminhtml_catalog_product_edit_tab_files</block>
+			</action>
+		</reference>
+	</adminhtml_catalog_product_edit>
+	
+	<adminhtml_b2b_files_list>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="b2b/adminhtml_catalog_product_edit_tab_files_items" name="catalog.product.edit.tab.files"/>
+        </block>
+    </adminhtml_b2b_files_list>
+
+    <adminhtml_b2b_files_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="b2b/adminhtml_catalog_product_edit_tab_files_items" name="catalog.product.edit.tab.files" />
+        </block>
+    </adminhtml_b2b_files_grid>
+    
+    
+    
+    <add_order_grid_column_handle>
+	    <reference name="sales_order.grid">
+	        <action method="addColumnAfter" ifconfig="b2b/order/date">
+	            <columnId>desired_delivery_date</columnId>
+	            <arguments module="Adepta_DeliveryTime" translate="header">
+	                <header>Delivery Date</header>
+	                <index>delivery_date</index>
+	                <type>date</type>
+	                <gmtoffset>0</gmtoffset>
+	            </arguments>
+	            <after>shipping_name</after>
+	        </action>
+	    </reference>
+	</add_order_grid_column_handle>
+	<adminhtml_sales_order_grid>
+	    <update handle="add_order_grid_column_handle" />
+	</adminhtml_sales_order_grid>
+	<adminhtml_sales_order_index>
+	    <update handle="add_order_grid_column_handle" />
+	</adminhtml_sales_order_index>
+    
+    <adminhtml_sales_order_view>
+	    <reference name="order_tab_info">
+	        <action method="setTemplate">
+	            <template>b2b/view_order/tab_info.phtml</template>
+	        </action>
+	    </reference>
+	</adminhtml_sales_order_view>
+
+
+</layout>

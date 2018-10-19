@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <Bss_FastOrder>
+            <active>false</active>
+            <codePool>local</codePool>
+        </Bss_FastOrder>
+    </modules>
+</config>

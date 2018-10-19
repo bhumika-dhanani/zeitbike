@@ -1,0 +1,84 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <IWD_Integracoreb>
+            <version>0.0.2</version>
+        </IWD_Integracoreb>
+    </modules>
+
+    <frontend>
+        <routers>
+            <iwdintegracoreb>
+                <use>standard</use>
+                <args>
+                    <module>IWD_Integracoreb</module>
+                    <frontName>integracoreb</frontName>
+                </args>
+            </iwdintegracoreb>
+        </routers>
+    </frontend>
+    <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <iwdintegracoreb translate="title" module="iwdintegracoreb">
+                                            <title>iwd integracoreb</title>
+                                        </iwdintegracoreb>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+    <global>
+        <models>
+            <iwdintegracoreb>
+                <class>IWD_Integracoreb_Model</class>
+                <resourceModel>iwdintegracoreb_resource</resourceModel>
+            </iwdintegracoreb>
+            <iwdintegracoreb_resource>
+                <entities>
+                    <table_integracoreb>
+                        <table>iwd_integracoreb_orders</table>
+                    </table_integracoreb>
+                    <table_integracoreb_log>
+                        <table>iwd_integracoreb_orders_log</table>
+                    </table_integracoreb_log>
+                    <table_integracoreb_api_log>
+                        <table>iwd_integracoreb_api_log</table>
+                    </table_integracoreb_api_log>
+                </entities>
+            </iwdintegracoreb_resource>
+        </models>
+        <resources>
+            <iwdintegracoreb_setup>
+                <setup>
+                    <module>IWD_Integracoreb</module>
+                </setup>
+            </iwdintegracoreb_setup>
+        </resources>
+        <helpers>
+            <iwdintegracoreb>
+                <class>IWD_Integracoreb_Helper</class>
+            </iwdintegracoreb>
+        </helpers>
+    </global>
+    <crontab>
+        <jobs>
+            <iwdintegracoreb_iwd>
+                <schedule>
+                    <cron_expr>0 * * * *</cron_expr>
+                </schedule>
+                <run><model>iwdintegracoreb/observer::runShipping</model></run>
+            </iwdintegracoreb_iwd>
+        </jobs>
+    </crontab>
+</config>

@@ -1,0 +1,163 @@
+<?php 
+    $_helper = $this->helper('catalog/output');
+    $_helperb2b = $this->helper('b2b');
+    $quoteId = $this->_getCart()->getQuote()->getId();
+    $_collectionSubItem = $this->getSubCollection();    
+?>
+<?php $optionsList = $this->getOptionsForSub($this->getParentItem());?>        
+
+<?php if (count($_collectionSubItem) > 0):?>
+
+    <?php foreach ($_collectionSubItem as $item):?>
+    <?php $parentItem = $this->getParentItem();?>
+    <?php $_product = Mage::getModel('catalog/product')->load($item['product_id'])?>
+        <?php $type = $parentItem->getTypeId();?>
+        <?php if ($type=='configurable'):?>
+            <?php $_options = $this->getOptionList($item);?>
+        <?php elseif($type=="bundle"):?>                                    
+            <?php $_options = false;//$_options = $this->_getBundleOptions($item);?>
+        <?php else:?>
+            <?php $_options = $this->getProductOptions($item);?>
+        <?php endif;?>
+        
+        <?php $_product = Mage::getModel('catalog/product')->load($item->getProductId());?>
+        <?php $info = $this->getQtyInCartOld($_product->getId(), $item);?>
+        <?php $infoCart = $this->getQtyInCart($_product->getId());?>
+       
+        
+        <div class="sub-row <?php if ($_options):?>sub-row-options<?php endif;?>">
+                <div class="left reorder-name">
+                    
+                      <?php if ($_options):?>
+                      <div class="item-options">
+                        <?php foreach ($_options as $_option) : ?>
+                        <div class="row-options">
+                            <?php $_formatedOptionValue = $this->getFormatedOptionValue($_option) ?>
+                            <label><?php echo $this->htmlEscape($_option['label']) ?>:</label>
+                            <span<?php if (isset($_formatedOptionValue['full_view'])): ?> class="truncated"<?php endif; ?>><?php echo $_formatedOptionValue['value'] ?>                                                           
+                            </span>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+                    <?php else:?>
+                    <?php $name = $_helper->productAttribute($_product, $_product->getName() , 'name'); ?>
+                    <h3 <?php if (strlen($name)>55):?>data-toggle="tooltip" data-placement="auto" title="<?php echo $name?>"<?php endif?>><?php echo $name?></h3>
+                    <?php endif?>
+                    
+                </div>
+                <?php $sku =  $_product->getSku()?> 
+                <div class="left reorder-sku" <?php if (strlen($sku)>12):?>data-toggle="tooltip" data-placement="auto" title="<?php echo $sku?>"<?php endif?>>
+                    <?php echo $sku = $_product->getSku()?>
+                </div>
+                
+                <div class="left reorder-previous"></div>
+                
+                <div class="left product-available">
+                            
+                             <?php if($_product->isSaleable()): ?>
+                             <?php if (Mage::helper('b2b')->isBackOrder($_product)):?>
+                                    <?php echo $this->__('Backorder')?>
+                             <?php else:?>
+                                    <?php echo $qty =  (int)$_product->getStockItem()->getQty();?>
+                             <?php endif;?>
+                             <?php else:?>
+                                <?php echo $this->__('Out of Stock')?>
+                             <?php endif;?>
+                          
+                    </div>
+                
+               <div class="left product-price"><?php echo $this->getPriceHtml($_product, true) ?></div>
+               
+               <div class="left reorder-qty">
+                <?php if ($item->getQuoteId()!=$quoteId):?>
+                    <input type="text" value="0" data-status="1" data-item="<?php echo $item->getId()?>" data-quote-id="<?php echo $item->getQuoteId()?>" data-action="add" data-id="<?php echo $parentItem->getId()?>" class="b2b-quick-qty" />
+                <?php else:?>
+                    <?php $parentItem = $this->getQuoteParentItem($item);?> 
+                    <input type="text" value="<?php echo (int)$parentItem?>" data-quote-id="<?php echo $item->getParentItemId()?>" data-action="update" data-id="<?php echo $_product->getId()?>" class="b2b-quick-qty" />
+                <?php endif;?>                                                    
+               </div>
+               <div class="clear"></div>
+            </div>
+        
+    <?php endforeach;?>
+<?php endif?>       
+
+
+
+<?php if ($optionsList!=false):?>
+    <?php foreach ($optionsList as $item):?>
+     <?php $data = new Varien_Object();$data->addData($item)?>
+    <?php $item = $data;?>
+    <?php $parentItem = $this->getParentItem();?>
+    <?php $_product = Mage::getModel('catalog/product')->load($item['product_id'])?>
+        <?php $type = $parentItem->getTypeId();?>
+        <?php if ($type=='configurable'):?>
+            <?php $_options = $this->getOptionList($item);?>
+        <?php elseif($type=="bundle"):?>                                    
+            <?php $_options = false;//$_options = $this->_getBundleOptions($item);?>
+        <?php else:?>
+           
+            <?php $_options = $this->getProductOptionsArray($data);?>
+        <?php endif;?>
+        
+        <?php $_product = Mage::getModel('catalog/product')->load($item->getProductId());?>
+        <?php $info = $this->getQtyInCartOld($_product->getId(), $item);?>
+        <?php $infoCart = $this->getQtyInCart($_product->getId());?>
+       
+        
+        <div class="sub-row <?php if ($_options):?>sub-row-options<?php endif;?>">
+                <div class="left reorder-name">
+                    
+                      <?php if ($_options):?>
+                      <div class="item-options">
+                        <?php foreach ($_options as $_option) : ?>
+                        <div class="row-options">
+                            <?php $_formatedOptionValue = $this->getFormatedOptionValue($_option) ?>
+                            <label><?php echo $this->htmlEscape($_option['label']) ?>:</label>
+                            <?php echo $_formatedOptionValue['value'] ?>                                                           
+                           
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+                    <?php else:?>
+                    <?php $name = $_helper->productAttribute($_product, $_product->getName() , 'name'); ?>
+                    <h3 <?php if (strlen($name)>55):?>data-toggle="tooltip" data-placement="auto" title="<?php echo $name?>"<?php endif?>><?php echo $name?></h3>
+                    <?php endif?>
+                    
+                </div>
+                <?php $sku =  $_product->getSku()?> 
+                <div class="left reorder-sku" <?php if (strlen($sku)>12):?>data-toggle="tooltip" data-placement="auto" title="<?php echo $sku?>"<?php endif?>>
+                    <?php echo $sku = $_product->getSku()?>
+                </div>
+                
+                <div class="left reorder-previous"></div>
+                
+                <div class="left product-available">
+                            
+                             <?php if($_product->isSaleable()): ?>
+                             <?php if (Mage::helper('b2b')->isBackOrder($_product)):?>
+                                    <?php echo $this->__('Backorder')?>
+                             <?php else:?>
+                                    <?php echo $qty =  (int)$_product->getStockItem()->getQty();?>
+                             <?php endif;?>
+                             <?php else:?>
+                                <?php echo $this->__('Out of Stock')?>
+                             <?php endif;?>
+                          
+                    </div>
+                
+               <div class="left product-price"><?php echo $this->getPriceHtml($_product, true) ?></div>
+               
+               <div class="left reorder-qty">
+                <?php if ($item->getQuoteId()!=$quoteId):?>
+                    <input type="text" value="0" data-status="1" data-item="<?php echo $item->getItemId()?>" data-quote-id="<?php echo $item->getQuoteId()?>" data-action="add" data-id="<?php echo $parentItem->getId()?>" class="b2b-quick-qty" />
+                <?php else:?>
+                    <?php $parentItem = $this->getQuoteParentItem($item);?> 
+                    <input type="text" value="<?php echo (int)$parentItem?>" data-quote-id="<?php echo $item->getItemId()?>" data-action="update" data-id="<?php echo $_product->getId()?>" class="b2b-quick-qty" />
+                <?php endif;?>                                                    
+               </div>
+               <div class="clear"></div>
+            </div>
+        
+    <?php endforeach;?>
+<?php endif;?>

@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+	<catalog_product_view>
+		<reference name="head">
+			<!--<action method="addJs"><script>iwd/stocknotification/stocknotification.js</script></action>-->
+			<!--<action method="addJs"><script>iwd/stocknotification/stocknotification.js</script></action>-->
+            <action method="addItem"><type>skin_js</type><name>js/iwd/stocknotification/stocknotification.js</name></action>
+            <action method="addCss"><stylesheet>iwd/stocknotification/style.css</stylesheet></action>
+		</reference>
+    </catalog_product_view>
+    
+    
+    <customer_account>
+        <reference name="customer_account_navigation">
+            <action method="addLink" translate="label" module="stocknotification"><name>stocknotification_subscriptions</name><path>stocknotification/customer/subscriptions</path><label>My Out of Stock Subscriptions</label></action>
+        </reference>
+    </customer_account>
+    
+    
+     <stocknotification_customer_subscriptions translate="label">
+        <label>Customer My Out of Stock Subscriptions</label>
+        <update handle="customer_account"/>
+        <reference name="my.account.wrapper">
+            <block type="stocknotification/customer_subscriptions_list" name="stocknotification_customer_subscriptions_list" template="stocknotification/customer/subscriptions/list.phtml" />
+        </reference>
+        <reference name="root">
+            <action method="setHeaderTitle" translate="title" module="stocknotification"><title>My Out of Stock Subscriptions</title></action>
+        </reference>
+    </stocknotification_customer_subscriptions>
+    
+    
+
+	<!-- SIMPLE PRODUCT -->
+	<PRODUCT_TYPE_simple>
+		<update handle="product.info.simple" />
+		<reference name="alert.urls">
+			<block type="stocknotification/default" name="default.stocknotofication" as="stocknotofication" template="stocknotification/default.phtml" />
+		</reference>
+	</PRODUCT_TYPE_simple>
+	
+	
+	<!-- CONFIGURABLE PRODUCT -->
+	<PRODUCT_TYPE_configurable>
+   		<update handle="product.info.configurable"/>
+        <reference name="alert.urls">
+			<block type="stocknotification/configurable" name="configurable.stocknotofication" as="stocknotofication" template="stocknotification/configurable.phtml" />
+		</reference>
+    </PRODUCT_TYPE_configurable>
+	
+	
+	<!-- GROUP PRODUCT -->
+	<PRODUCT_TYPE_grouped>
+   		<update handle="product.info.grouped"/>
+        <reference name="product.info">
+            <block type="stocknotification/grouped" name="grouped.stocknotofication" as="stocknotofication" />
+        </reference>
+    </PRODUCT_TYPE_grouped>
+    
+    <!-- BUNDLE PRODUCT -->
+    <PRODUCT_TYPE_bundle>
+   		<update handle="product.info.bundle" />
+		<reference name="alert.urls">
+			<block type="stocknotification/default" name="default.stocknotofication" as="stocknotofication" template="stocknotification/default.phtml" />
+		</reference>
+    </PRODUCT_TYPE_bundle>
+    
+    <!-- VIRTUAL PRODUCT -->
+    <PRODUCT_TYPE_virtual>
+   		<update handle="product.info.virtual"/>
+		<reference name="alert.urls">
+			<block type="stocknotification/default" name="default.stocknotofication" as="stocknotofication" template="stocknotification/default.phtml" />
+		</reference>
+        
+    </PRODUCT_TYPE_virtual>
+    
+     <!-- DOWNLOADABLE PRODUCT -->
+    <PRODUCT_TYPE_downloadable >
+    	<update handle="product.info.downloadable" />		
+        <reference name="alert.urls">
+			<block type="stocknotification/default" name="default.stocknotofication" as="stocknotofication" template="stocknotification/default.phtml" />
+		</reference>
+    </PRODUCT_TYPE_downloadable>
+    
+    
+    <!-- GIFT CARD PRODUCT -->
+    <PRODUCT_TYPE_giftcard>
+    	<update handle="product.info.giftcard" />		
+        <reference name="alert.urls">
+			<block type="stocknotification/default" name="default.stocknotofication" as="stocknotofication" template="stocknotification/default.phtml" />
+		</reference>
+    </PRODUCT_TYPE_giftcard>
+    
+</layout>

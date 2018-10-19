@@ -1,0 +1,39 @@
+    <div class="b2b-download">
+    <div class="b2b-download-title">
+        <h3><?php echo $this->__('DOWNLOAD CENTER')?></h3>
+    </div>
+    <div class="b2b-download-tabs">
+        <ul class="left">
+            <li class="active" data-id="b2b-download-products-tab"><?php echo $this->__('Product')?></li>
+            <li data-id="b2b-download-marketing-tab"><?php echo $this->__('Marketing')?></li>
+        </ul>
+        <div class="right">
+            <select class="b2b-chosen-select" id="b2b-page-limit">
+                <option value="20" selected="selected">20 Per Page</option>
+                <option value="50">50 Per Page</option>
+                <option value="100">100 Per Page</option>
+                <option value="200">200 Per Page</option>
+            </select>
+        </div>
+        <div class="clear"></div>
+        <div class="b2b-download-tabs-container">
+            <div id="b2b-download-products-tab">
+                <?php echo $this->getChildHtml('b2b.download.product')?>
+            </div>
+            <div id="b2b-download-marketing-tab" style="display:none">
+            <?php echo $this->getChildHtml('b2b.download.marketing')?>
+            </div>
+        </div>
+        
+        <div class="b2b-download-product-footer">
+		    <div class="left">
+			   <a href="<?php echo Mage::helper('b2b')->getDashboardUrl()?>" class="btn-small"><?php echo $this->__('BACK TO DASHBOARD')?></a>
+			</div>
+			<div class="right">
+			   <div class="selected-item"><?php echo $this->__('ITEMS SELECTED')?>   <strong>0</strong></div>
+			   <a href="" class="btn-download"><span></span><?php echo $this->__('Download')?></a>
+			</div>
+			<div class="clear"></div>
+        </div>
+    </div>
+</div>

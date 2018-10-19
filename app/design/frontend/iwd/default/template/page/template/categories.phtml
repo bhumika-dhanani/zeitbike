@@ -1,0 +1,12 @@
+<?php
+	$_rootCatId = 2;
+	$_rootCategory  = Mage::getModel('catalog/category')->load($_rootCatId);
+	$collection = $_rootCategory->getChildrenCategories();
+?>
+<?php if(count($collection)):?>
+	<ul class="clearer">
+		<?php foreach($collection as $cat):?>
+			<li><a href="<?php echo $cat->getUrl()?>"><?php echo $cat->getName();?></a></li>
+		<?php endforeach;?>
+	</ul>
+<?php endif;?>

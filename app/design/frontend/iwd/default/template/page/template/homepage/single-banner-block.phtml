@@ -1,0 +1,5 @@
+<?php $cms_block_name = $this->getCmsBlock()?>
+<?php if(!isset($cms_block_name)) return;?>
+<div class="block-container single-banner-block">
+	<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId($cms_block_name)->toHtml()?>
+</div>

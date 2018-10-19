@@ -1,0 +1,47 @@
+	<?php $_helper = Mage::helper('catalog/output');?>
+	<?php $productCollection = $this->getProductCollectionMain();?>
+	<?php if ($productCollection->count()>0):?>
+		<div class="featured-products">
+			<h2 class="subtitle"><?php echo $this->__('Featured Products') ?></h2>
+		    <div class="slides">
+		    <?php $i=0; foreach ($productCollection as $_product): ?>
+		    		<?php $i++;?>
+		            <div class="item<?php if(($i-1)%$productCollection->count()==0): ?> first<?php elseif($i%$productCollection->count()==0): ?> last<?php endif; ?>">
+		                <div class="inner">
+			                <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_product->getName()) ?>" class="product-image">
+			                    <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(230); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+			                </a>
+			                <div class="fixed-block">
+				                <h3 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_product->getName()) ?>"><?php echo $this->escapeHtml($_product->getName()) ?></a></h3>
+				                <?php echo $this->getPriceHtml($_product, true) ?>
+				            </div>    
+			                <div class="actions">
+			                    <?php if($_product->isSaleable()): ?>
+			                        <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+			                    <?php else: ?>
+			                        <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+			                    <?php endif; ?>
+			                </div>
+			             </div>   
+		            </div>
+		           
+		    <?php endforeach; ?>
+		    </div>
+	</div>
+	<script type="text/javascript">
+    $j(window).load(function() {   
+    	$j(".featured-products .slides").owlCarousel({
+    		items : 5,
+    		itemsCustom : false,
+    		itemsDesktop : [1199,4],
+    		itemsDesktopSmall : [770,3],
+    		itemsTablet: [480,2],
+    		itemsTabletSmall: false,
+    		itemsMobile : [320,1],
+	   		navigation : true,
+			navigationText : ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
+			rewindNav : false
+        });
+    });
+	</script>
+	<?php endif; ?>

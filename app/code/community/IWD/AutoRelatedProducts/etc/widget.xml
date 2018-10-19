@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<widgets>
+    <widgettwo_list type="iwd_autorelatedproducts/frontend_block" translate="name description" module="iwd_autorelatedproducts">
+        <name>IWD Auto Related Products</name>
+        <description>IWD Auto Related Products: related products, featured products, who bought this also bought</description>
+        <parameters>
+            <block_type>
+                <label>Block type</label>
+                <visible>1</visible>
+                <required>1</required>
+                <type>select</type>
+                <source_model>iwd_autorelatedproducts/block_options_type</source_model>
+            </block_type>
+            <block_ids>
+                <label>Block IDs</label>
+                <visible>1</visible>
+                <required>0</required>
+                <type>multiselect</type>
+                <source_model>iwd_autorelatedproducts/block_options_blocks</source_model>
+            </block_ids>
+            <template translate="label">
+                <label>Frontend Template</label>
+                <visible>1</visible>
+                <required>1</required>
+                <type>select</type>
+                <values>
+                    <block translate="label">
+                        <value>iwd/autorelatedproducts/block.phtml</value>
+                        <label>Slider</label>
+                    </block>
+                </values>
+            </template>
+        </parameters>
+    </widgettwo_list>
+</widgets>

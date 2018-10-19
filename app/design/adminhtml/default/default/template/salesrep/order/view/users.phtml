@@ -1,0 +1,19 @@
+<div class="content last-fieldset">
+	<div class="product-options">
+		<dl>
+			<dt>
+				<label><?php echo $this->__('Select user')?>:</label>
+			</dt>
+			<dd>	            	
+				<?php $users = $this->getAdminUsers();?>
+				<?php $userActive= $this->getActiveUserOrder();?>
+				<select id="userRepresentative">
+					<option value=""><?php echo $this->__('N/A')?></option>
+					<?php foreach($users as $user):?>
+					<option value="<?php echo $user->getUserId()?>" <?php if ($userActive==$user->getUserId()):?>selected="selected"<?php endif;?>><?php echo $user->getFirstname()?> <?php echo $user->getLastname()?></option>
+					<?php endforeach;?>
+				</select>
+			</dd>
+		</dl>
+	</div>
+</div>

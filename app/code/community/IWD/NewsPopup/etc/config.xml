@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<modules>
+		<IWD_NewsPopup>
+			<version>0.1.5</version>
+		</IWD_NewsPopup>
+	</modules>
+	<frontend>
+	 <routers>
+            <iwdpopup>
+                <use>standard</use>
+                <args>
+                    <module>IWD_NewsPopup</module>
+                    <frontName>iwdpopup</frontName>
+                </args>
+            </iwdpopup>
+        </routers>
+		<layout>
+			<updates>
+				<iwdpopup>
+					<file>iwd_newspopup.xml</file>
+				</iwdpopup>
+			</updates>
+		</layout>
+	</frontend>
+	<adminhtml>
+		<events>
+	       <controller_action_predispatch>
+	           <observers>
+	               <iwdpopup_check_related>
+	                   <type>sinleton</type>
+	                   <class>iwdpopup/observer</class>
+	                   <method>checkRequiredModules</method>
+	               </iwdpopup_check_related>
+	           </observers>
+	       </controller_action_predispatch>
+	       <admin_system_config_changed_section_iwdpopup>
+                <observers>
+                    <iwdpopup_save_load_observer>
+                        <class>iwdpopup/observer</class>
+                        <method>generateCssFile</method>
+                    </iwdpopup_save_load_observer>
+                </observers>
+            </admin_system_config_changed_section_iwdpopup>
+		</events>
+		<layout>
+			<updates>
+				<iwdpopup>
+					<file>iwd_newspopup.xml</file>
+				</iwdpopup>
+			</updates>
+		</layout>
+		 <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <iwdpopup translate="title" module="iwdpopup">
+                                            <title>IWD Newsletter Popup</title>
+                                        </iwdpopup>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+	</adminhtml>
+	<global>
+		<blocks>
+            <iwdpopup>
+                <class>IWD_NewsPopup_Block</class>
+            </iwdpopup>
+        </blocks>
+		<resources>
+			<iwdpopup_setup>
+				<setup>
+					<module>IWD_NewsPopup</module>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</iwdpopup_setup>
+		</resources>
+		<helpers>
+			<iwdpopup>
+				<class>IWD_NewsPopup_Helper</class>
+			</iwdpopup>
+		</helpers>
+		<models>
+			<iwdpopup>
+				<class>IWD_NewsPopup_Model</class>
+			</iwdpopup>
+		</models>
+		
+	</global>
+	<default>
+		<iwdpopup>
+			<general>
+				<newsenabled>1</newsenabled>
+				<newswidth>760</newswidth>
+				<newslink>1</newslink>
+				<newsbuttonbg>#000000</newsbuttonbg>
+				<newsbuttonhover>#3399CC</newsbuttonhover>
+				<newsbuttontext>#FFFFFF</newsbuttontext>
+				<!--newsiconbg>#000000</newsiconbg-->
+				<!--newsiconhover>#3399CC</newsiconhover-->
+				<!--newsicontext>#FFFFFF</newsicontext-->
+				<newspopupdelay>3</newspopupdelay>
+				<newslinktext>Newsletter Subscribe</newslinktext>
+				<newstopspace>40</newstopspace>
+                <multiplesubscriptionguest>0</multiplesubscriptionguest>
+			</general>
+			<socialicons>
+				<newsiconstyle>1</newsiconstyle>
+				
+				<facebookbg>39579a</facebookbg>
+				<facebookicon>ffffff</facebookicon>
+				<facebookbghover>5377c2</facebookbghover>
+				<facebookiconhover>ffffff</facebookiconhover>
+				
+				<twitterbg>52bee6</twitterbg>
+				<twittericon>ffffff</twittericon>
+				<twitterbghover>67d2fa</twitterbghover>
+				<twittericonhover>ffffff</twittericonhover>
+	
+				<linkedinbg>007bb6</linkedinbg>
+				<linkedinicon>ffffff</linkedinicon>
+				<linkedinbghover>1696d4</linkedinbghover>
+				<linkediniconhover>ffffff</linkediniconhover>
+	
+				<googlebg>e65d42</googlebg>
+				<googleicon>ffffff</googleicon>
+				<googlebghover>ff806b</googlebghover>
+				<googleiconhover>ffffff</googleiconhover>
+				
+				<youtubebg>c8312a</youtubebg>
+				<youtubeicon>ffffff</youtubeicon>
+				<youtubebghover>e34d46</youtubebghover>
+				<youtubeiconhover>ffffff</youtubeiconhover>
+				
+				<flickrbg>0062dd</flickrbg>
+				<flickricon>ffffff</flickricon>
+				<flickrbghover>3586ec</flickrbghover>
+				<flickriconhover>ffffff</flickriconhover>
+				
+				<vimeobg>20b9eb</vimeobg>
+				<vimeoicon>ffffff</vimeoicon>
+				<vimeobghover>5acdf2</vimeobghover>
+				<vimeoiconhover>ffffff</vimeoiconhover>
+
+				<pinterestbg>cb2026</pinterestbg>
+				<pinteresticon>ffffff</pinteresticon>
+				<pinterestbghover>e64449</pinterestbghover>
+				<pinteresticonhover>ffffff</pinteresticonhover>
+					
+				<instagrambg>5e4338</instagrambg>			
+				<instagramicon>ffffff</instagramicon>			
+				<instagrambghover>7d5849</instagrambghover>			
+				<instagramiconhover>ffffff</instagramiconhover>			
+				
+				<foursquarebg>156ab1</foursquarebg>			
+				<foursquareicon>ffffff</foursquareicon>			
+				<foursquarebghover>3183c7</foursquarebghover>			
+				<foursquareiconhover>ffffff</foursquareiconhover>			
+				
+				<tumblrbg>304d6b</tumblrbg>			
+				<tumblricon>ffffff</tumblricon>			
+				<tumblrbghover>476d94</tumblrbghover>			
+				<tumblriconhover>ffffff</tumblriconhover>			
+				
+				<rssbg>fe9900</rssbg>			
+				<rssicon>ffffff</rssicon>			
+				<rssbghover>feab2d</rssbghover>			
+				<rssiconhover>ffffff</rssiconhover>			
+
+			</socialicons>
+			<device>
+				<newsmobile>1</newsmobile>
+				<newstablet>1</newstablet>
+			</device>
+		</iwdpopup>
+	</default>
+</config>
