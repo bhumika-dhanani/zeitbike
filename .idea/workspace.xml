@@ -1,7 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="462029a0-0d94-4230-bf96-385a190ae644" name="Default" comment="" />
+    <list default="true" id="462029a0-0d94-4230-bf96-385a190ae644" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/ReadMe - Instructions.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/150-CP-Code-Audit-Zip-File.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/200-Magento-Code-Audit-Report.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/500-Magento-Free-Code-Audit-Show-Details-Report.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/500-Magento-Section-of-Free-Magento-Code-Audit-Report.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/500-Overall-Report-Section-for-Magento-Free-Code-Audit.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/500-mySQL-portion-of-Magento-Code-Audit-Report.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/550-Magento-Code-Audit-File-in-Directory.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/550-Magento-Code-Audit-Page-Mageauditor.php.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/550-Magento-Code-Audit-Report-Screenshot.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/550-Magento-Code-Audit-Report-Success-Email.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/550-Magento-Code-Audit-Success-Message.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/550-php-section-of-Free-Magento-Code-Audit.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/596-Customer-Paradigm-Top-Logo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/Customer-Paradigm-Top-Logo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/Magento-Code-Audit-Create-Directory.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/Magento-Code-Audit-Detailed-View-Full.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/Magento-Code-Audit-File-in-Directory.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/Magento-Code-Audit-Page-Mageauditor.php.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/Magento-Code-Audit-Report-Success-Email.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/Magento-Code-Audit-Set-Folder-Permissions-777.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/Magento-Code-Audit-Success-Message.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/mageaudit/mageauditor.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/._CPaudit" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/._.DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/._ReadMe - Instructions.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/._images" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/._mageaudit" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._150-CP-Code-Audit-Zip-File.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._200-Magento-Code-Audit-Report.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._500-Magento-Free-Code-Audit-Show-Details-Report.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._500-Magento-Section-of-Free-Magento-Code-Audit-Report.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._500-Overall-Report-Section-for-Magento-Free-Code-Audit.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._500-mySQL-portion-of-Magento-Code-Audit-Report.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._550-Magento-Code-Audit-File-in-Directory.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._550-Magento-Code-Audit-Page-Mageauditor.php.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._550-Magento-Code-Audit-Report-Screenshot.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._550-Magento-Code-Audit-Report-Success-Email.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._550-Magento-Code-Audit-Success-Message.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._550-php-section-of-Free-Magento-Code-Audit.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._596-Customer-Paradigm-Top-Logo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._Customer-Paradigm-Top-Logo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._Magento-Code-Audit-Create-Directory.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._Magento-Code-Audit-Detailed-View-Full.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._Magento-Code-Audit-File-in-Directory.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._Magento-Code-Audit-Page-Mageauditor.php.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._Magento-Code-Audit-Report-Success-Email.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._Magento-Code-Audit-Set-Folder-Permissions-777.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._Magento-Code-Audit-Success-Message.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/mageaudit/._.DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/mageaudit/._mageauditor.php" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,10 +65,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="List.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="List.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/code/local/Rishabhsoft/Speedorder/Block/List.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="661">
+            <state relative-caret-position="621">
               <caret line="62" column="9" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
             </state>
           </provider>
@@ -23,16 +77,16 @@
       <file leaf-file-name="OnepageController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Checkout/controllers/OnepageController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
+            <state relative-caret-position="16150">
               <caret line="669" column="37" selection-start-line="669" selection-start-column="37" selection-end-line="669" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="844">
+            <state relative-caret-position="1025">
               <caret line="41" column="19" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
             </state>
           </provider>
@@ -112,6 +166,9 @@
       <dir>C:\wamp\www\zeitbike</dir>
     </dirStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -189,7 +246,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -201,6 +257,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -270,28 +327,28 @@
       <workItem from="1539579407685" duration="20501000" />
       <workItem from="1539665027755" duration="7935000" />
       <workItem from="1539756520515" duration="7575000" />
-      <workItem from="1539927794952" duration="2108000" />
+      <workItem from="1539927794952" duration="2707000" />
+      <workItem from="1540184902350" duration="605000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="306675000" />
+    <option name="totallyTimeSpent" value="307879000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.31610942" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -300,24 +357,25 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.31610942" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32946146" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -558,13 +616,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/ResultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="68" column="17" lean-forward="true" selection-start-line="68" selection-start-column="17" selection-end-line="68" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/ResultController.php" />
     <entry file="file://$PROJECT_DIR$/app/code/community/Rumbleship/Payments/controllers/IndexController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2700" />
@@ -605,38 +657,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/List 2.php">
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/List 2.php" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/List.php" />
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1775">
-          <caret line="94" selection-start-line="94" selection-end-line="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/List.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1575">
-          <caret line="63" column="9" selection-start-line="43" selection-start-column="8" selection-end-line="63" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/local/Rishabhsoft/Speedorder/Block/List.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="661">
-          <caret line="62" column="9" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
+        <state relative-caret-position="1025">
+          <caret line="41" column="19" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Checkout/controllers/OnepageController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
+        <state relative-caret-position="16150">
           <caret line="669" column="37" selection-start-line="669" selection-start-column="37" selection-end-line="669" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/app/code/local/Rishabhsoft/Speedorder/Block/List.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="844">
-          <caret line="41" column="19" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
+        <state relative-caret-position="621">
+          <caret line="62" column="9" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
         </state>
       </provider>
     </entry>
