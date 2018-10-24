@@ -3,58 +3,72 @@
   <component name="ChangeListManager">
     <list default="true" id="462029a0-0d94-4230-bf96-385a190ae644" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/ReadMe - Instructions.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/150-CP-Code-Audit-Zip-File.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/200-Magento-Code-Audit-Report.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/500-Magento-Free-Code-Audit-Show-Details-Report.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/500-Magento-Section-of-Free-Magento-Code-Audit-Report.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/500-Overall-Report-Section-for-Magento-Free-Code-Audit.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/500-mySQL-portion-of-Magento-Code-Audit-Report.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/550-Magento-Code-Audit-File-in-Directory.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/550-Magento-Code-Audit-Page-Mageauditor.php.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/550-Magento-Code-Audit-Report-Screenshot.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/550-Magento-Code-Audit-Report-Success-Email.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/550-Magento-Code-Audit-Success-Message.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/550-php-section-of-Free-Magento-Code-Audit.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/596-Customer-Paradigm-Top-Logo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/Customer-Paradigm-Top-Logo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/Magento-Code-Audit-Create-Directory.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/Magento-Code-Audit-Detailed-View-Full.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/Magento-Code-Audit-File-in-Directory.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/Magento-Code-Audit-Page-Mageauditor.php.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/Magento-Code-Audit-Report-Success-Email.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/Magento-Code-Audit-Set-Folder-Permissions-777.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/images/Magento-Code-Audit-Success-Message.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/CPaudit/mageaudit/mageauditor.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/._CPaudit" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/._.DS_Store" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/._ReadMe - Instructions.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/._images" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/._mageaudit" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._150-CP-Code-Audit-Zip-File.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._200-Magento-Code-Audit-Report.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._500-Magento-Free-Code-Audit-Show-Details-Report.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._500-Magento-Section-of-Free-Magento-Code-Audit-Report.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._500-Overall-Report-Section-for-Magento-Free-Code-Audit.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._500-mySQL-portion-of-Magento-Code-Audit-Report.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._550-Magento-Code-Audit-File-in-Directory.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._550-Magento-Code-Audit-Page-Mageauditor.php.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._550-Magento-Code-Audit-Report-Screenshot.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._550-Magento-Code-Audit-Report-Success-Email.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._550-Magento-Code-Audit-Success-Message.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._550-php-section-of-Free-Magento-Code-Audit.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._596-Customer-Paradigm-Top-Logo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._Customer-Paradigm-Top-Logo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._Magento-Code-Audit-Create-Directory.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._Magento-Code-Audit-Detailed-View-Full.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._Magento-Code-Audit-File-in-Directory.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._Magento-Code-Audit-Page-Mageauditor.php.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._Magento-Code-Audit-Report-Success-Email.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._Magento-Code-Audit-Set-Folder-Permissions-777.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/images/._Magento-Code-Audit-Success-Message.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/mageaudit/._.DS_Store" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPaudit/__MACOSX/CPaudit/mageaudit/._mageauditor.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/community/IWD/B2B/controllers/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/community/IWD/B2B/controllers/AccountController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/community/IWD/Opc/controllers/JsonController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/community/IWD/Opc/controllers/JsonController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/community/IWD/Signin/controllers/JsonController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/community/IWD/Signin/controllers/JsonController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/core/Mage/Admin/Model/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/core/Mage/Admin/Model/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/core/Mage/Admin/etc/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/core/Mage/Admin/etc/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/core/Mage/Adminhtml/Block/Catalog/Product/Edit/Tab/Super/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/core/Mage/Adminhtml/Block/Catalog/Product/Edit/Tab/Super/Config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/core/Mage/Adminhtml/Block/Widget/Grid/Massaction/Abstract.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/core/Mage/Adminhtml/Block/Widget/Grid/Massaction/Abstract.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/core/Mage/Adminhtml/Model/LayoutUpdate/Validator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/core/Mage/Adminhtml/Model/LayoutUpdate/Validator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/core/Mage/Adminhtml/controllers/Catalog/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/core/Mage/Adminhtml/controllers/Catalog/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/core/Mage/Adminhtml/controllers/Permissions/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/core/Mage/Adminhtml/controllers/Permissions/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/core/Mage/Adminhtml/etc/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/core/Mage/Adminhtml/etc/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/core/Mage/Checkout/Model/Api/Resource/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/core/Mage/Checkout/Model/Api/Resource/Customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/core/Mage/Checkout/Model/Type/Onepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/core/Mage/Checkout/Model/Type/Onepage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/core/Mage/Cms/Model/Wysiwyg/Images/Storage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/core/Mage/Cms/Model/Wysiwyg/Images/Storage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/core/Mage/Core/etc/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/core/Mage/Core/etc/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/core/Mage/Core/etc/system.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/core/Mage/Core/etc/system.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/core/Mage/Customer/Helper/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/core/Mage/Customer/Helper/Data.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/core/Mage/Customer/Model/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/core/Mage/Customer/Model/Customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/core/Mage/Customer/Model/Resource/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/core/Mage/Customer/Model/Resource/Customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/core/Mage/Customer/controllers/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/core/Mage/Customer/controllers/AccountController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/core/Mage/Customer/etc/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/core/Mage/Customer/etc/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/core/Mage/Paypal/Model/Express/Checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/core/Mage/Paypal/Model/Express/Checkout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/core/Mage/XmlConnect/controllers/ReviewController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/core/Mage/XmlConnect/controllers/ReviewController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/code/core/Zend/Filter/PregReplace.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/code/core/Zend/Filter/PregReplace.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/adminhtml/default/default/template/bundle/product/edit/bundle/option.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/adminhtml/default/default/template/bundle/product/edit/bundle/option.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/adminhtml/default/default/template/bundle/sales/creditmemo/create/items/renderer.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/adminhtml/default/default/template/bundle/sales/creditmemo/create/items/renderer.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/adminhtml/default/default/template/bundle/sales/creditmemo/view/items/renderer.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/adminhtml/default/default/template/bundle/sales/creditmemo/view/items/renderer.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/adminhtml/default/default/template/bundle/sales/invoice/create/items/renderer.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/adminhtml/default/default/template/bundle/sales/invoice/create/items/renderer.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/adminhtml/default/default/template/bundle/sales/invoice/view/items/renderer.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/adminhtml/default/default/template/bundle/sales/invoice/view/items/renderer.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/adminhtml/default/default/template/bundle/sales/order/view/items/renderer.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/adminhtml/default/default/template/bundle/sales/order/view/items/renderer.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/adminhtml/default/default/template/bundle/sales/shipment/create/items/renderer.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/adminhtml/default/default/template/bundle/sales/shipment/create/items/renderer.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/adminhtml/default/default/template/bundle/sales/shipment/view/items/renderer.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/adminhtml/default/default/template/bundle/sales/shipment/view/items/renderer.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/adminhtml/default/default/template/catalog/product/helper/gallery.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/adminhtml/default/default/template/catalog/product/helper/gallery.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/base/default/template/bundle/email/order/items/creditmemo/default.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/base/default/template/bundle/email/order/items/creditmemo/default.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/base/default/template/bundle/email/order/items/invoice/default.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/base/default/template/bundle/email/order/items/invoice/default.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/base/default/template/bundle/email/order/items/order/default.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/base/default/template/bundle/email/order/items/order/default.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/base/default/template/bundle/email/order/items/shipment/default.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/base/default/template/bundle/email/order/items/shipment/default.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/base/default/template/bundle/sales/order/creditmemo/items/renderer.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/base/default/template/bundle/sales/order/creditmemo/items/renderer.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/base/default/template/bundle/sales/order/invoice/items/renderer.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/base/default/template/bundle/sales/order/invoice/items/renderer.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/base/default/template/bundle/sales/order/items/renderer.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/base/default/template/bundle/sales/order/items/renderer.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/base/default/template/bundle/sales/order/shipment/items/renderer.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/base/default/template/bundle/sales/order/shipment/items/renderer.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/base/default/template/downloadable/checkout/multishipping/item/downloadable.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/base/default/template/downloadable/checkout/multishipping/item/downloadable.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/base/default/template/downloadable/email/order/items/creditmemo/downloadable.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/base/default/template/downloadable/email/order/items/creditmemo/downloadable.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/base/default/template/downloadable/email/order/items/invoice/downloadable.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/base/default/template/downloadable/email/order/items/invoice/downloadable.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/base/default/template/downloadable/email/order/items/order/downloadable.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/base/default/template/downloadable/email/order/items/order/downloadable.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/base/default/template/downloadable/sales/order/creditmemo/items/renderer/downloadable.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/base/default/template/downloadable/sales/order/creditmemo/items/renderer/downloadable.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/base/default/template/downloadable/sales/order/invoice/items/renderer/downloadable.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/base/default/template/downloadable/sales/order/invoice/items/renderer/downloadable.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/default/iphone/template/bundle/sales/order/items/renderer.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/default/iphone/template/bundle/sales/order/items/renderer.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/default/iphone/template/downloadable/sales/order/creditmemo/items/renderer/downloadable.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/default/iphone/template/downloadable/sales/order/creditmemo/items/renderer/downloadable.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/default/iphone/template/downloadable/sales/order/invoice/items/renderer/downloadable.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/default/iphone/template/downloadable/sales/order/invoice/items/renderer/downloadable.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/default/iphone/template/downloadable/sales/order/items/renderer/downloadable.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/default/iphone/template/downloadable/sales/order/items/renderer/downloadable.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/iwd/default/template/bundle/sales/order/items/renderer.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/iwd/default/template/bundle/sales/order/items/renderer.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/rwd/default/template/bundle/email/order/items/creditmemo/default.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/rwd/default/template/bundle/email/order/items/creditmemo/default.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/rwd/default/template/bundle/email/order/items/invoice/default.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/rwd/default/template/bundle/email/order/items/invoice/default.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/rwd/default/template/bundle/email/order/items/order/default.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/rwd/default/template/bundle/email/order/items/order/default.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/rwd/default/template/bundle/email/order/items/shipment/default.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/rwd/default/template/bundle/email/order/items/shipment/default.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/rwd/default/template/bundle/sales/order/items/renderer.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/rwd/default/template/bundle/sales/order/items/renderer.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/rwd/default/template/downloadable/email/order/items/creditmemo/downloadable.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/rwd/default/template/downloadable/email/order/items/creditmemo/downloadable.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/rwd/default/template/downloadable/email/order/items/invoice/downloadable.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/rwd/default/template/downloadable/email/order/items/invoice/downloadable.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/design/frontend/rwd/default/template/downloadable/email/order/items/order/downloadable.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/design/frontend/rwd/default/template/downloadable/email/order/items/order/downloadable.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/etc/applied.patches.list" beforeDir="false" afterPath="$PROJECT_DIR$/app/etc/applied.patches.list" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/locale/en_US/Mage_Adminhtml.csv" beforeDir="false" afterPath="$PROJECT_DIR$/app/locale/en_US/Mage_Adminhtml.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/locale/en_US/Mage_Adminhtml.csv.orig" beforeDir="false" afterPath="$PROJECT_DIR$/app/locale/en_US/Mage_Adminhtml.csv.orig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/locale/en_US/Mage_Customer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/app/locale/en_US/Mage_Customer.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/locale/en_US/template/email/account_password_reset_confirmation.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/locale/en_US/template/email/account_password_reset_confirmation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloader/Maged/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/downloader/Maged/Controller.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -65,29 +79,83 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="List.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/code/local/Rishabhsoft/Speedorder/Block/List.php">
+      <file leaf-file-name="account_password_reset_confirmation.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/locale/en_US/template/email/account_password_reset_confirmation.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
-              <caret line="62" column="9" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
+            <state relative-caret-position="175">
+              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OnepageController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Checkout/controllers/OnepageController.php">
+      <file leaf-file-name="renderer.phtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/design/frontend/iwd/default/template/bundle/sales/order/items/renderer.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16150">
-              <caret line="669" column="37" selection-start-line="669" selection-start-column="37" selection-end-line="669" selection-end-column="37" />
+            <state relative-caret-position="550">
+              <caret line="45" column="96" selection-start-line="45" selection-start-column="96" selection-end-line="45" selection-end-column="96" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="system.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Core/etc/system.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1025">
-              <caret line="41" column="19" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
+            <state relative-caret-position="29950">
+              <caret line="1198" column="54" selection-start-line="1198" selection-start-column="25" selection-end-line="1198" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AccountController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Customer/controllers/AccountController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="16925">
+              <caret line="700" column="18" selection-start-line="700" selection-start-column="18" selection-end-line="700" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomerController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/code/core/Mage/XmlConnect/controllers/CustomerController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7725">
+              <caret line="332" column="18" selection-start-line="332" selection-start-column="18" selection-end-line="332" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JsonController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/code/community/IWD/Signin/controllers/JsonController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="8425">
+              <caret line="337" column="30" selection-start-line="336" selection-start-column="12" selection-end-line="337" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AccountController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/code/community/IWD/B2B/controllers/AccountController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="25">
+              <caret line="276" column="21" selection-start-line="276" selection-start-column="21" selection-end-line="276" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JsonController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/code/community/IWD/Opc/controllers/JsonController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19125">
+              <caret line="765" column="98" selection-start-line="765" selection-start-column="98" selection-end-line="765" selection-end-column="98" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="default.phtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/design/frontend/base/default/template/bundle/email/order/items/creditmemo/default.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -96,21 +164,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>wholesale l</find>
-      <find>portal/account/register</find>
-      <find>top</find>
-      <find>mage_cms</find>
-      <find>&lt;routers&gt;</find>
-      <find>Mage_Cms_PageController</find>
-      <find>class Mage_Catalog_Model_Resource_Product_Type_Configurable_Attribute_Collection</find>
-      <find>mage_cata</find>
-      <find>class=&quot;nav-primary&quot;</find>
-      <find>str_pos</find>
-      <find>.page-header .nav-primary a.level0</find>
-      <find>getQuickOrderUrl</find>
-      <find>Start quick ordering</find>
-      <find>is back in stock</find>
-      <find>app.js</find>
       <find>Marketing Material Box</find>
       <find>Marketing mat</find>
       <find>getCssJsHtml</find>
@@ -126,6 +179,21 @@
       <find>checkout</find>
       <find>country</find>
       <find>region</find>
+      <find>extends Mage_Customer_AccountController</find>
+      <find>extends Mage_Paypal_Model_Express_Checkout</find>
+      <find>_prepareNewCustomerQuote</find>
+      <find>option-label</find>
+      <find>sendAdminNotification</find>
+      <find>create_admin_user_notification</find>
+      <find>crate_admin_user_notification</find>
+      <find>There was recently a request to change the password for your account.</find>
+      <find>forgotpasswordpostaction</find>
+      <find>If there is an account associated with</find>
+      <find>n forgotpasswordpost</find>
+      <find>n forgotpasswordaction</find>
+      <find>_getHelper</find>
+      <find>gethel</find>
+      <find>verac</find>
     </findStrings>
     <replaceStrings>
       <replace>{{var data.storename}}</replace>
@@ -172,10 +240,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/code/local/Bss/FastOrder/controllers/IndexController.php" />
-        <option value="$PROJECT_DIR$/app/design/frontend/base/default/layout/bss/fastorder.xml" />
-        <option value="$PROJECT_DIR$/app/locale/en_US/template/email/b2b/new_application_received.html" />
-        <option value="$PROJECT_DIR$/app/design/frontend/iwd/wholesale/template/b2b/account/register/store-info.phtml" />
         <option value="$PROJECT_DIR$/app/design/frontend/iwd/wholesale/template/b2b/account/register/shipping.phtml" />
         <option value="$PROJECT_DIR$/app/design/frontend/iwd/wholesale/template/page/html/header.phtml" />
         <option value="$PROJECT_DIR$/app/code/local/Bss/FastOrder/Block/Collection.php" />
@@ -201,7 +265,6 @@
         <option value="$PROJECT_DIR$/app/code/core/Mage/Cms/controllers/IndexController.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/AjaxController.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/PageController.php" />
-        <option value="$PROJECT_DIR$/app/code/community/IWD/B2B/controllers/AccountController.php" />
         <option value="$PROJECT_DIR$/app/code/local/Rishabhsoft/Speedorder/controllers/AjaxController.php" />
         <option value="$PROJECT_DIR$/skin/frontend/iwd/default/js/cms.js" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/PageController 2.php" />
@@ -223,6 +286,11 @@
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/List.php" />
         <option value="$PROJECT_DIR$/app/code/local/Rishabhsoft/Speedorder/Block/List.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/app/code/core/Mage/Checkout/controllers/OnepageController.php" />
+        <option value="$PROJECT_DIR$/app/design/frontend/iwd/default/template/bundle/sales/order/items/renderer.phtml" />
+        <option value="$PROJECT_DIR$/app/code/community/IWD/Signin/controllers/JsonController.php" />
+        <option value="$PROJECT_DIR$/app/code/community/IWD/B2B/controllers/AccountController.php" />
+        <option value="$PROJECT_DIR$/app/code/community/IWD/Opc/controllers/JsonController.php" />
       </list>
     </option>
   </component>
@@ -246,6 +314,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -257,7 +326,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -269,15 +337,15 @@
     <property name="two.files.diff.last.used.folder" value="$PROJECT_DIR$/app/code/community/Bss1/Autoinvoice" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\zeitbike\app\code\local\Rishabhsoft" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp\www\zeitbike\skin\frontend\base\default\css" />
       <recent name="C:\wamp\www\zeitbike\app\design\frontend\iwd\default\template\page\html" />
       <recent name="C:\wamp\www\zeitbike\app\design\frontend\iwd\wholesale\template\page\html" />
       <recent name="C:\wamp\www\zeitbike\app\code\local\Rishabhsoft\Speedorder\controllers" />
       <recent name="C:\wamp\www\zeitbike\app\code\local\Rishabhsoft\Speedorder\etc" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp\www\zeitbike\app\code\local\Rishabhsoft" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -328,27 +396,29 @@
       <workItem from="1539665027755" duration="7935000" />
       <workItem from="1539756520515" duration="7575000" />
       <workItem from="1539927794952" duration="2707000" />
-      <workItem from="1540184902350" duration="605000" />
+      <workItem from="1540184902350" duration="2087000" />
+      <workItem from="1540272170237" duration="10693000" />
+      <workItem from="1540356333350" duration="1340000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="307879000" />
+    <option name="totallyTimeSpent" value="321394000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18020834" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3157339" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -357,7 +427,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.31610942" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -393,249 +462,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/PageController 3.php" />
-    <entry file="file://$PROJECT_DIR$/app/code/community/Auctane/Api/etc/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="306" column="8" selection-start-line="306" selection-start-column="8" selection-end-line="306" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/community/Ebizmarts/Autoresponder/etc/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="180" column="8" selection-start-line="180" selection-start-column="8" selection-end-line="180" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/community/Ebizmarts/AbandonedCart/etc/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="160" column="8" selection-start-line="160" selection-start-column="8" selection-end-line="160" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/community/Ebizmarts/MageMonkey/etc/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="165" column="8" selection-start-line="165" selection-start-column="8" selection-end-line="165" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/264809955687" />
-    <entry file="file://$PROJECT_DIR$/app/code/community/IWD/AAC/etc/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/community/IWD/All/etc/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="101" column="8" selection-start-line="101" selection-start-column="8" selection-end-line="101" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/etc/modules/Mage_All.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="108" column="26" selection-start-line="108" selection-start-column="22" selection-end-line="108" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/etc/modules/Rishabhsoft_Cms.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/etc/modules/Rishabhsoft_Speedorder.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="9" lean-forward="true" selection-end-line="8" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/PageController 2.php" />
-    <entry file="file://$PROJECT_DIR$/app/code/community/Hackathon/HoneySpam/etc/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="113" column="8" selection-start-line="113" selection-start-column="8" selection-end-line="113" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/community/Ebizmarts/Mandrill/etc/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="46" column="8" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/local/Rishabhsoft/Speedorder/etc/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="20" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Cms/etc/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="35" column="16" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/local/Mage/Catalog/Model/Resource/Product/Type/Configurable/Attribute/Collection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="142" column="5" lean-forward="true" selection-start-line="142" selection-start-column="5" selection-end-line="142" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/local/Rishabhsoft/Cms/etc/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/local/Rishabhsoft/Cms/controllers/PageController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="26" column="22" lean-forward="true" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/community/IWD/B2B/controllers/DashboardController.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/design/frontend/base/default/template/b2b/dashboard.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/design/frontend/iwd/default/template/b2b/dashboard.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="775">
-          <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/design/frontend/iwd/default/template/page/html/topmenu.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="40" column="145" selection-start-line="40" selection-start-column="145" selection-end-line="40" selection-end-column="145" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/community/IWD/B2B/controllers/CartController.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/community/IWD/B2B/controllers/DownloadController.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/community/IWD/B2B/controllers/OrderController.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/community/IWD/B2B/controllers/ProductController.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/community/IWD/B2B/controllers/QuicklyController.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/locale/en_US/template/email/stocknotification.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="26" column="6" lean-forward="true" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/community/IWD/B2B/controllers/SearchController.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Page/Block/Html/Head.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3450">
-          <caret line="161" column="20" selection-start-line="161" selection-start-column="20" selection-end-line="161" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/design/frontend/iwd/default/template/page/html/head.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="35" column="14" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/skin/frontend/base/default/css/cms.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9850">
-          <caret line="394" column="88" selection-start-line="394" selection-end-line="394" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/design/frontend/iwd/default/layout/page.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2550">
-          <caret line="102" column="85" selection-start-line="102" selection-start-column="85" selection-end-line="102" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/skin/frontend/iwd/default/css/cms.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9850">
-          <caret line="394" column="88" selection-start-line="394" selection-start-column="88" selection-end-line="394" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/design/frontend/iwd/default/template/catalog/product/list_speed_order.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="157" column="120" selection-start-line="157" selection-start-column="120" selection-end-line="157" selection-end-column="120" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/local/Rishabhsoft/Speedorder/controllers/AjaxController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="34" column="31" lean-forward="true" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/Inchoo/HelloDeveloper/controllers/IndexController.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/design/frontend/iwd/default/template/catalogsearch/result.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="41" column="40" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/ResultController.php" />
-    <entry file="file://$PROJECT_DIR$/app/code/community/Rumbleship/Payments/controllers/IndexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2700" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/Inchoo/Inchoo/HelloDeveloper/controllers/Adminhtml/HelloDeveloper/IndexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="121" column="33" selection-start-line="121" selection-start-column="21" selection-end-line="121" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/CatalogSearch/Model/Query.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="193" column="20" selection-start-line="193" selection-start-column="20" selection-end-line="193" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Catalog/Block/Product/List/Promotion.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="369">
@@ -666,17 +492,306 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Checkout/controllers/OnepageController.php">
+    <entry file="file://$PROJECT_DIR$/app/code/local/Rishabhsoft/Speedorder/Block/List.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16150">
-          <caret line="669" column="37" selection-start-line="669" selection-start-column="37" selection-end-line="669" selection-end-column="37" />
+        <state relative-caret-position="1550">
+          <caret line="62" column="9" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/local/Rishabhsoft/Speedorder/Block/List.php">
+    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Checkout/controllers/OnepageController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="62" column="9" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
+        <state relative-caret-position="320">
+          <caret line="436" column="7" selection-start-line="436" selection-start-column="7" selection-end-line="436" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Admin/Model/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="26" column="3" lean-forward="true" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Adminhtml/Block/Catalog/Product/Edit.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Admin/etc/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Adminhtml/Block/Catalog/Product/Edit/Tab/Super/Config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="38" column="18" lean-forward="true" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Adminhtml/Block/Widget/Grid/Massaction/Abstract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="38" column="19" lean-forward="true" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Adminhtml/Model/LayoutUpdate/Validator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="33" column="29" lean-forward="true" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Adminhtml/controllers/Catalog/ProductController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="28" column="2" lean-forward="true" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Adminhtml/controllers/Permissions/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="33" lean-forward="true" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Adminhtml/etc/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Checkout/Model/Api/Resource/Customer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="35" column="7" lean-forward="true" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Checkout/Model/Type/Onepage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="33" column="7" lean-forward="true" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Cms/Model/Wysiwyg/Images/Storage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="36" column="24" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Core/etc/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Customer/Helper/Data.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="33" column="3" lean-forward="true" selection-start-line="33" selection-start-column="3" selection-end-line="33" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Customer/Model/Customer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="30" column="29" lean-forward="true" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Customer/Model/Resource/Customer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="36" column="7" lean-forward="true" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Customer/etc/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="2" lean-forward="true" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/PaypalUk/Model/Express/Checkout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="30" column="43" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Paypal/Model/Express/Checkout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="940" column="47" selection-start-line="940" selection-start-column="23" selection-end-line="940" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/design/adminhtml/default/default/template/catalog/product/helper/gallery.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="32" column="16" lean-forward="true" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/design/adminhtml/default/default/template/bundle/sales/creditmemo/create/items/renderer.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="37" column="22" lean-forward="true" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/design/adminhtml/default/default/template/bundle/sales/creditmemo/view/items/renderer.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="34" column="29" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/design/adminhtml/default/default/template/bundle/product/edit/bundle/option.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="34" column="19" lean-forward="true" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/core/Zend/Filter/PregReplace.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="32" column="26" lean-forward="true" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/XmlConnect/controllers/ReviewController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="38" column="41" lean-forward="true" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Customer/sql/customer_setup/upgrade-1.6.2.0.3.1.2-1.6.2.0.3.1.3.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="31" column="52" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/design/frontend/base/default/template/bundle/sales/order/items/renderer.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="45" column="67" selection-start-line="45" selection-start-column="49" selection-end-line="45" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/design/frontend/iwd/default/template/downloadable/sales/order/items/renderer/downloadable.phtml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/design/frontend/base/default/template/downloadable/checkout/multishipping/item/downloadable.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="33" column="36" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/locale/en_US/Mage_Adminhtml.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="17" lean-forward="true" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/locale/en_US/Mage_Customer.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="43" lean-forward="true" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/skin/adminhtml/default/enterprise/images/placeholder/thumbnail.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/locale/en_US/template/email/admin_new_user_notification.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/locale/en_US/template/email/account_password_reset_confirmation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/design/frontend/iwd/default/template/bundle/sales/order/items/renderer.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="45" column="96" selection-start-line="45" selection-start-column="96" selection-end-line="45" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Core/etc/system.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29950">
+          <caret line="1198" column="54" selection-start-line="1198" selection-start-column="25" selection-end-line="1198" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/design/frontend/base/default/template/bundle/email/order/items/creditmemo/default.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/default.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="42" column="64" selection-start-line="42" selection-start-column="64" selection-end-line="42" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/Customer/controllers/AccountController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16925">
+          <caret line="700" column="18" selection-start-line="700" selection-start-column="18" selection-end-line="700" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/core/Mage/XmlConnect/controllers/CustomerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7725">
+          <caret line="332" column="18" selection-start-line="332" selection-start-column="18" selection-end-line="332" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/community/IWD/Signin/controllers/JsonController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8425">
+          <caret line="337" column="30" selection-start-line="336" selection-start-column="12" selection-end-line="337" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/community/IWD/Opc/controllers/JsonController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19125">
+          <caret line="765" column="98" selection-start-line="765" selection-start-column="98" selection-end-line="765" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/community/IWD/B2B/controllers/AccountController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="276" column="21" selection-start-line="276" selection-start-column="21" selection-end-line="276" selection-end-column="21" />
         </state>
       </provider>
     </entry>

@@ -319,46 +319,49 @@ class IWD_Signin_JsonController extends Mage_Core_Controller_Front_Action
 	public function forgotpasswordAction(){
 		$response = array();
 		$email = (string) $this->getRequest()->getPost('email');
-		
+
 		if ($email) {
 			if (!Zend_Validate::is($email, 'EmailAddress')) {
 				$this->_getSession()->setForgottenEmail($email);
-				
+
 				$response['error'] = 1;
 				$response['message'] = $this->__('Invalid email address.');
 				$this->getResponse()->setBody(Mage::helper('core')->jsonEncode($response));
 				return;
 			}
-		
+
 			/** @var $customer Mage_Customer_Model_Customer */
 			$customer = Mage::getModel('customer/customer')
 					->setWebsiteId(Mage::app()->getStore()->getWebsiteId())
 					->loadByEmail($email);
-		
-			if ($customer->getId()) {
-				try {
-					$newResetPasswordLinkToken = Mage::helper('customer')->generateResetPasswordLinkToken();
-					$customer->changeResetPasswordLinkToken($newResetPasswordLinkToken);
-					$customer->sendPasswordResetConfirmationEmail();
-				} catch (Exception $exception) {
-					
-					$response['error'] = 1;
-					$response['message'] = $exception->getMessage();
-					$this->getResponse()->setBody(Mage::helper('core')->jsonEncode($response));
-				
-					return;
-				}
-			}
+            $customerId = $customer->getId();
+            if ($customerId) {
+                try {
+                    $newResetPasswordLinkToken = Mage::helper('customer')->generateResetPasswordLinkToken();
+                    $newResetPasswordLinkCustomerId = Mage::helper('customer')
+                        ->generateResetPasswordLinkCustomerId($customerId);
+                    $customer->changeResetPasswordLinkCustomerId($newResetPasswordLinkCustomerId);
+                    $customer->changeResetPasswordLinkToken($newResetPasswordLinkToken);
+                    $customer->sendPasswordResetConfirmationEmail();
+                } catch (Exception $exception) {
+
+                    $response['error'] = 1;
+                    $response['message'] = $exception->getMessage();
+                    $this->getResponse()->setBody(Mage::helper('core')->jsonEncode($response));
+
+                    return;
+                }
+            }
 			$this->_getSession()->addSuccess(Mage::helper('customer')->__('If there is an account associated with %s you will receive an email with a link to reset your password.', Mage::helper('customer')->htmlEscape($email)));
 			$this->getResponse()->setBody(Mage::helper('core')->jsonEncode($response));
 			return;
 		} else {
-			
-			
+
+
 			$response['error'] = 1;
 			$response['message'] = $this->__('Please enter your email.');
 			$this->getResponse()->setBody(Mage::helper('core')->jsonEncode($response));
-			
+
 			return;
 		}
 	}

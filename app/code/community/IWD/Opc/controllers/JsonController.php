@@ -757,9 +757,13 @@ class IWD_Opc_JsonController extends Mage_Core_Controller_Front_Action{
 				->setWebsiteId(Mage::app()->getStore()->getWebsiteId())
 				->loadByEmail($email);
 
-			if ($customer->getId()) {
+            $customerId = $customer->getId();
+            if ($customerId) {
 				try {
 					$newResetPasswordLinkToken = Mage::helper('customer')->generateResetPasswordLinkToken();
+                    $newResetPasswordLinkCustomerId = Mage::helper('customer')
+                        ->generateResetPasswordLinkCustomerId($customerId);
+                    $customer->changeResetPasswordLinkCustomerId($newResetPasswordLinkCustomerId);
 					$customer->changeResetPasswordLinkToken($newResetPasswordLinkToken);
 					$customer->sendPasswordResetConfirmationEmail();
 				} catch (Exception $exception) {
